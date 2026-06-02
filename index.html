@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rhea Sushara — Senior Product Designer</title>
+<meta name="description" content="Senior product designer working at the intersection of trust and usability — regulated digital identity products across 8 languages and 3 platforms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400;1,9..144,500;1,9..144,600&family=Space+Mono:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#e9e4d7; --paper-2:#efebe0; --ink:#1c1b17;
+    --ink-soft:rgba(28,27,23,.62); --ink-faint:rgba(28,27,23,.38);
+    --coral:#e8553a; --ochre:#c9952b;
+    --vellum:rgba(255,253,247,.46); --vellum-strong:rgba(255,253,247,.64);
+    --hairline:rgba(28,27,23,.16); --highlight:rgba(255,255,255,.85); --blur:14px;
+    --serif:"Fraunces",serif; --grotesque:"Archivo",sans-serif; --mono:"Space Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--grotesque);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden;}
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.06;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  .wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 34px;}
+
+  .label{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);}
+  .num{font-family:var(--mono);font-size:11px;color:var(--coral);letter-spacing:.08em;}
+
+  /* top bar + nav */
+  .topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--hairline);}
+  .topbar .label{display:flex;gap:18px;}
+  .live{display:inline-flex;align-items:center;gap:6px;color:var(--coral);}
+  .live::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--coral);box-shadow:0 0 8px var(--coral);}
+  nav{position:sticky;top:14px;z-index:50;margin-top:20px;display:flex;align-items:center;gap:26px;padding:11px 12px 11px 20px;border-radius:999px;
+    background:var(--vellum);backdrop-filter:blur(var(--blur)) saturate(1.3);-webkit-backdrop-filter:blur(var(--blur)) saturate(1.3);
+    border:1px solid var(--highlight);box-shadow:0 1px 0 var(--hairline),0 14px 30px -18px rgba(28,27,23,.4),inset 0 1px 0 rgba(255,255,255,.9);}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:17px;letter-spacing:-.01em;}
+  .brand .mark{width:26px;height:26px;border-radius:7px;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-family:"Special Elite",monospace;font-style:normal;font-size:15px;}
+  nav .links{display:flex;gap:22px;margin-left:4px;}
+  nav .links a{color:var(--ink-soft);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;}
+  nav .links a:hover{color:var(--ink);}
+  nav .spacer{flex:1;}
+
+  .btn{font-family:var(--grotesque);font-weight:600;font-size:13.5px;cursor:pointer;border-radius:999px;padding:11px 18px;display:inline-flex;align-items:center;gap:8px;transition:transform .2s,box-shadow .2s,background .2s;text-decoration:none;}
+  .btn-coral{background:var(--coral);color:#fff5ef;border:none;box-shadow:0 8px 22px -8px rgba(232,85,58,.7);}
+  .btn-coral:hover{transform:translateY(-2px);box-shadow:0 14px 30px -8px rgba(232,85,58,.8);}
+  .btn-ghost{background:var(--vellum-strong);color:var(--ink);border:1px solid var(--hairline);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
+  .btn-ghost:hover{transform:translateY(-2px);background:var(--paper-2);}
+
+  /* section header */
+  .sechead{display:flex;align-items:baseline;gap:14px;margin:0 0 30px;padding-top:8px;}
+  .sechead .dash{width:26px;height:1px;background:var(--coral);align-self:center;}
+  .sechead h2{font-weight:900;font-size:clamp(22px,3vw,30px);letter-spacing:-.02em;}
+  .sechead h2 em{font-family:var(--serif);font-style:italic;font-weight:500;}
+  .sechead .num{margin-left:auto;}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;padding:54px 0 36px;align-items:start;}
+  .kicker{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+  .kicker .dash{width:26px;height:1px;background:var(--coral);}
+  h1{font-weight:900;font-size:clamp(40px,6vw,74px);line-height:.96;letter-spacing:-.025em;}
+  h1 .it{font-family:var(--serif);font-weight:500;font-style:italic;letter-spacing:-.01em;}
+  h1 .it.coral{color:var(--coral);}
+  h1 .dot{color:var(--coral);}
+  .lead{color:var(--ink-soft);font-size:16.5px;line-height:1.55;max-width:42ch;margin-top:26px;}
+  .actions{display:flex;gap:12px;margin-top:30px;}
+  .badges{display:flex;gap:30px;margin-top:42px;padding-top:22px;border-top:1px solid var(--hairline);}
+  .badge{display:flex;align-items:center;gap:11px;}
+  .badge .ring{width:40px;height:40px;border-radius:50%;border:1px dashed var(--ink-faint);display:grid;place-items:center;font-family:var(--mono);font-size:13px;}
+  .badge .bt{font-size:12px;font-weight:700;letter-spacing:.04em;}
+  .badge .bs{font-family:var(--mono);font-size:10px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.1em;}
+
+  /* plate (hero art) */
+  .plate{position:relative;aspect-ratio:4/4.4;border:1px solid var(--hairline);border-radius:4px;overflow:hidden;background:var(--paper-2);}
+  .art{position:absolute;inset:0;z-index:1;}
+  .art .circle{position:absolute;width:74%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 38% 32%,#f0795f,var(--coral) 60%,#cf4127);top:12%;left:14%;}
+  .art .disc{position:absolute;width:17%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e2b75a,var(--ochre));bottom:16%;right:20%;box-shadow:0 10px 30px -8px rgba(201,149,43,.6);}
+  .art .ring{position:absolute;width:30%;aspect-ratio:1;border:1px solid rgba(28,27,23,.28);border-radius:50%;bottom:20%;left:16%;}
+  .art .grid{position:absolute;top:9%;right:12%;width:70px;height:50px;background-image:radial-gradient(rgba(28,27,23,.4) 1px,transparent 1px);background-size:9px 9px;}
+  .plate-corners{position:absolute;inset:14px;display:flex;justify-content:space-between;z-index:4;pointer-events:none;}
+  .plate-corners .label{font-size:10px;}
+  .frost{position:absolute;z-index:3;right:16px;bottom:16px;width:60%;padding:18px;border-radius:14px;background:var(--vellum-strong);
+    backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border:1px solid var(--highlight);
+    box-shadow:0 16px 36px -16px rgba(28,27,23,.5),inset 0 1px 0 rgba(255,255,255,.95);}
+  .frost .ft{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px;}
+  .frost ol{list-style:none;display:grid;gap:9px;}
+  .frost li{display:flex;align-items:baseline;gap:10px;font-size:14px;font-weight:600;letter-spacing:-.01em;}
+  .frost li .n{font-family:var(--mono);font-size:11px;color:var(--coral);}
+  .frost li.active{font-family:var(--serif);font-style:italic;font-weight:500;}
+  .plate::after{content:"";position:absolute;inset:0;z-index:5;pointer-events:none;background:radial-gradient(300px circle at var(--mx,70%) var(--my,20%),rgba(255,255,255,.25),transparent 60%);transition:background .12s;}
+
+  /* hero — infinite grid effect (light theme) */
+  .hero{position:relative;}
+  .hero-copy,.hero .plate{position:relative;z-index:2;}
+  .gridfx{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+  .gridfx .glayer{position:absolute;inset:-60px;
+    background-image:linear-gradient(to right,var(--ink) 1px,transparent 1px),linear-gradient(to bottom,var(--ink) 1px,transparent 1px);
+    background-size:42px 42px;animation:gridscroll 7s linear infinite;}
+  .gridfx .glayer.base{opacity:.05;}
+  .gridfx .glayer.reveal{opacity:.22;
+    -webkit-mask-image:radial-gradient(250px circle at var(--gx,64%) var(--gy,40%),#000 0,transparent 70%);
+    mask-image:radial-gradient(250px circle at var(--gx,64%) var(--gy,40%),#000 0,transparent 70%);}
+  @keyframes gridscroll{to{background-position:42px 42px;}}
+  .gridfx .orb{position:absolute;border-radius:50%;filter:blur(90px);}
+  .gridfx .orb.coral{width:40%;aspect-ratio:1;background:rgba(232,85,58,.30);top:-14%;right:4%;}
+  .gridfx .orb.ochre{width:28%;aspect-ratio:1;background:rgba(201,149,43,.24);bottom:-18%;left:-2%;}
+
+  /* domain marquee */
+  .domains{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);padding:14px 0;margin-top:8px;overflow:hidden;}
+  .domains .track{display:flex;gap:34px;white-space:nowrap;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);animation:scroll 32s linear infinite;}
+  .domains .track span{display:inline-flex;gap:34px;}
+  .domains .track b{color:var(--coral);font-weight:400;}
+  @keyframes scroll{to{transform:translateX(-50%);}}
+
+  /* work */
+  section{padding:64px 0;}
+  .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);padding:5px 11px;border-radius:999px;border:1px solid var(--hairline);background:var(--paper-2);}
+
+  /* selected work — full-bleed ash-black band */
+  .work-dark{position:relative;width:100vw;margin-left:calc(50% - 50vw);background:#161510;color:#f2efe6;padding:72px 0 78px;margin-top:10px;}
+  .wd-inner{max-width:1240px;margin:0 auto;padding:0 34px;}
+  .wd-bar{display:flex;justify-content:space-between;align-items:center;gap:18px;padding-bottom:20px;border-bottom:1px solid rgba(242,239,230,.15);}
+  .wd-bar .label{color:rgba(242,239,230,.5);}
+  .wd-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin:42px 0 36px;}
+  .wd-head h2{font-weight:900;font-size:clamp(32px,4.8vw,58px);line-height:.98;letter-spacing:-.025em;max-width:15ch;}
+  .wd-head h2 em{font-family:var(--serif);font-style:italic;font-weight:500;}
+  .wd-head h2 .dot{color:var(--coral);}
+  .wd-viewall{display:inline-flex;align-items:center;gap:8px;color:rgba(242,239,230,.7);text-decoration:none;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;transition:color .2s;}
+  .wd-viewall:hover{color:#f2efe6;}
+  .wd-viewall .arr{color:var(--coral);}
+
+  .wd-row{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(330px,1fr);gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:none;}
+  .wd-row::-webkit-scrollbar{display:none;}
+  .wd-card{scroll-snap-align:start;background:var(--paper-2);color:var(--ink);border-radius:16px;padding:16px;display:flex;flex-direction:column;text-decoration:none;transition:transform .25s,box-shadow .25s;border:1px solid rgba(0,0,0,.05);}
+  .wd-card:hover{transform:translateY(-4px);box-shadow:0 34px 64px -30px rgba(0,0,0,.7);}
+  .wd-card-top{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-bottom:13px;}
+  .wd-ctitle{font-weight:900;font-size:19px;letter-spacing:-.015em;}
+  .wd-ctitle em{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--coral);}
+  .wd-cno{font-family:var(--mono);font-size:11px;color:var(--ink-faint);flex:none;}
+  .wd-art{position:relative;border-radius:11px;overflow:hidden;aspect-ratio:4/3;background:var(--paper);border:1px solid var(--hairline);}
+  .wd-art .circle{position:absolute;width:58%;aspect-ratio:1;border-radius:50%;top:11%;left:9%;}
+  .wd-art .disc{position:absolute;width:20%;aspect-ratio:1;border-radius:50%;bottom:14%;right:15%;box-shadow:0 8px 22px -6px rgba(0,0,0,.25);}
+  .wd-art .fig{position:absolute;top:10px;left:12px;z-index:3;font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);}
+  .wd-art .frostlbl{position:absolute;left:12px;bottom:12px;right:12px;padding:9px 11px;border-radius:10px;background:var(--vellum-strong);
+    backdrop-filter:blur(13px) saturate(1.4);-webkit-backdrop-filter:blur(13px) saturate(1.4);border:1px solid var(--highlight);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.95);font-family:var(--mono);font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);line-height:1.4;}
+  .wd-pitch{color:var(--ink-soft);font-size:13.5px;line-height:1.5;margin-top:14px;flex:1;}
+  .wd-foot{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:13px;border-top:1px solid var(--hairline);}
+  .wd-foot .scope{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);}
+  .wd-foot .read{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--coral);font-weight:700;}
+  .wd-foot .read.soon{color:var(--ink-faint);font-weight:400;}
+
+  .wd-controls{display:flex;justify-content:flex-end;align-items:center;gap:14px;margin-top:26px;}
+  .wd-dot{width:11px;height:11px;border-radius:50%;background:var(--coral);box-shadow:0 0 14px var(--coral);}
+  .wd-nav{width:46px;height:46px;border-radius:50%;border:1px solid rgba(242,239,230,.3);background:transparent;color:#f2efe6;cursor:pointer;display:grid;place-items:center;font-size:17px;transition:background .2s,transform .2s;}
+  .wd-nav:hover{background:rgba(242,239,230,.12);transform:translateY(-2px);}
+
+  @media (max-width:880px){
+    .wd-head{flex-direction:column;align-items:flex-start;gap:18px;}
+    .wd-row{grid-auto-columns:minmax(280px,86%);}
+  }
+
+  /* about */
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+  .about .philosophy{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(22px,2.8vw,30px);line-height:1.32;letter-spacing:-.01em;}
+  .about .philosophy b{font-style:normal;font-family:var(--grotesque);font-weight:800;color:var(--coral);}
+  .about p{color:var(--ink-soft);font-size:15.5px;line-height:1.6;margin-top:18px;}
+  .collab{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px;}
+
+  /* contact */
+  .colophon{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;padding:60px 0 30px;border-top:1px solid var(--hairline);}
+  .colophon h3{font-weight:900;font-size:clamp(30px,5vw,56px);line-height:.98;letter-spacing:-.025em;}
+  .colophon h3 em{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--coral);}
+  .contact-links{display:grid;gap:12px;}
+  .contact-links a{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid var(--hairline);color:var(--ink);text-decoration:none;font-weight:600;font-size:15px;transition:color .2s;}
+  .contact-links a:hover{color:var(--coral);}
+  .contact-links a .label{font-size:10px;}
+  .contact-links a .ci{display:inline-flex;align-items:center;color:var(--ink-soft);transition:color .2s;}
+  .contact-links a:hover .ci{color:var(--coral);}
+  .contact-links a .ci svg{width:19px;height:19px;display:block;}
+  .foot{display:flex;justify-content:space-between;align-items:center;padding:24px 0 50px;}
+  .foot .label{font-size:10px;}
+
+  @media (max-width:880px){
+    .hero{grid-template-columns:1fr;gap:34px;}
+    .about,.colophon{grid-template-columns:1fr;gap:26px;}
+    nav .links{display:none;}
+    .badges{flex-wrap:wrap;gap:18px;}
+  }
+  @media (max-width:680px){
+    .topbar{flex-wrap:wrap;gap:6px 14px;}
+    .topbar > .label:nth-child(2){display:none;}
+    nav{gap:12px;padding:10px 10px 10px 16px;}
+    .brand{font-size:15px;}
+    .wd-bar{flex-wrap:wrap;gap:6px 14px;}
+    .wd-bar > .label:nth-child(2){display:none;}
+  }
+  @media (max-width:520px){
+    .wrap{padding:0 20px;}
+    .wd-inner{padding:0 20px;}
+    section{padding:48px 0;}
+    .hero{padding-top:32px !important;}
+    h1{font-size:clamp(34px,10vw,44px);}
+    .lead{font-size:15.5px;}
+    .btn{padding:10px 15px;font-size:13px;}
+    .badges{gap:14px;}
+    .badge .ring{width:36px;height:36px;font-size:12px;}
+    .work-dark{padding:52px 0 58px;}
+    .wd-head h2{font-size:clamp(28px,8vw,36px);}
+    .colophon h3{font-size:clamp(28px,8vw,38px);}
+    .contact-links a{font-size:14px;}
+    .foot{flex-direction:column;gap:8px;align-items:flex-start;}
+  }
+  @media (max-width:400px){
+    nav .btn-ghost{display:none;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="label"><span>SUSHARA / 2026</span><span>PORTFOLIO</span></div>
+    <div class="label">SENIOR PRODUCT DESIGNER — <span style="color:var(--coral)">DIGITAL IDENTITY</span></div>
+    <div class="label live">AMSTERDAM · NL</div>
+  </div>
+
+  <nav>
+    <div class="brand"><span class="mark">R</span>Rhea Sushara</div>
+    <div class="links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="spacer"></div>
+    <a href="cv.html" class="btn btn-ghost">CV ↗</a>
+    <a href="#contact" class="btn btn-coral">Get in touch ●</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" style="padding-top:54px;">
+    <div class="gridfx" aria-hidden="true">
+      <div class="glayer base"></div>
+      <div class="glayer reveal"></div>
+      <div class="orb coral"></div>
+      <div class="orb ochre"></div>
+    </div>
+    <div class="hero-copy">
+      <div class="kicker"><span class="dash"></span><span class="label">SENIOR PRODUCT DESIGNER</span></div>
+      <h1>I design <span class="it coral">trust</span><br>in <span class="it">high&#8209;stakes</span><br>digital products<span class="dot">.</span></h1>
+      <p class="lead">I'm Rhea — a senior product designer building digital identity and verification experiences used across EU markets. I operate as the sole designer on cross-functional teams, turning regulated, security-heavy systems into intuitive products across 8 languages, iOS, Android, and web.</p>
+      <div class="actions">
+        <a href="#work" class="btn btn-coral">View selected work →</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+      <div class="badges">
+        <div class="badge"><span class="ring">3+</span><div><div class="bt">CASE STUDIES</div><div class="bs">shipped work</div></div></div>
+        <div class="badge"><span class="ring">08</span><div><div class="bt">LANGUAGES</div><div class="bs">localised</div></div></div>
+        <div class="badge"><span class="ring">03</span><div><div class="bt">PLATFORMS</div><div class="bs">iOS · Android · Web</div></div></div>
+      </div>
+    </div>
+    <div class="plate" id="plate">
+      <div class="art">
+        <div class="circle"></div><div class="disc"></div><div class="ring"></div><div class="grid"></div>
+      </div>
+      <div class="plate-corners"><span class="label">FIG. 01 / ST-01</span><span class="label">PLATE Nº 01</span></div>
+      <div class="frost">
+        <div class="ft">How the work happens</div>
+        <ol>
+          <li><span class="n">01</span> Discover</li>
+          <li class="active"><span class="n">02</span> Define</li>
+          <li><span class="n">03</span> Design</li>
+          <li><span class="n">04</span> Deliver</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOMAIN MARQUEE -->
+  <div class="domains">
+    <div class="track">
+      <span>Digital Identity<b>·</b> Regulated Products <b>·</b> Multilingual (8 langs) <b>·</b> Native Mobile <b>·</b> Web + Mobile <b>·</b> Design Systems <b>·</b> Sole Designer / Cross-functional Lead <b>·</b>&nbsp;</span>
+      <span>Digital Identity<b>·</b> Regulated Products <b>·</b> Multilingual (8 langs) <b>·</b> Native Mobile <b>·</b> Web + Mobile <b>·</b> Design Systems <b>·</b> Sole Designer / Cross-functional Lead <b>·</b>&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- SELECTED WORK — dark band -->
+  <section id="work" class="work-dark">
+    <div class="wd-inner">
+      <div class="wd-bar">
+        <span class="label">SELECTED WORK · CASE CATALOG</span>
+        <span class="label">EDITED BY R. SUSHARA · 2026</span>
+      </div>
+
+      <div class="wd-head">
+        <h2>Work that turns <em>complex systems</em><br>into <em>trusted</em> products<span class="dot">.</span></h2>
+        <a class="wd-viewall" href="#work">View all work <span class="arr">→</span></a>
+      </div>
+
+      <div class="wd-row" id="wdRow">
+
+        <!-- Card 1 -->
+        <a class="wd-card" href="case-account-recovery.html">
+          <div class="wd-card-top"><div class="wd-ctitle">Account <em>Recovery</em></div><div class="wd-cno">01</div></div>
+          <div class="wd-art">
+            <span class="fig">FIG. 01</span>
+            <div class="circle" style="background:radial-gradient(circle at 38% 32%,#f0795f,#e8553a 60%,#cf4127);"></div>
+            <div class="disc" style="background:radial-gradient(circle at 35% 30%,#e2b75a,#c9952b);"></div>
+            <div class="frostlbl">Web → Native Mobile · 5 scenarios · 8 languages</div>
+          </div>
+          <p class="wd-pitch">A fragmented, web-only recovery flow full of dead ends, rebuilt as a self-serve native mobile experience for users locked out of their legally binding credentials.</p>
+          <div class="wd-foot"><span class="scope">Lead · Native Mobile</span><span class="read">Read →</span></div>
+        </a>
+
+        <!-- Card 2 -->
+        <a class="wd-card" href="case-account-switcher.html">
+          <div class="wd-card-top"><div class="wd-ctitle">Account <em>Switcher</em></div><div class="wd-cno">02</div></div>
+          <div class="wd-art">
+            <span class="fig">FIG. 02</span>
+            <div class="circle" style="background:radial-gradient(circle at 40% 34%,#8fb6c9,#4a7d96 62%,#2f5a70);"></div>
+            <div class="disc" style="background:radial-gradient(circle at 35% 30%,#f0795f,#e8553a);"></div>
+            <div class="frostlbl">Hidden icon → upfront carousel · Liquid Glass</div>
+          </div>
+          <p class="wd-pitch">Replaced an undiscoverable switch icon with a carousel showing every account at a glance — validated through workshops and surveys across 12+ stakeholder reviews.</p>
+          <div class="wd-foot"><span class="scope">Lead · iOS + Android</span><span class="read">Read →</span></div>
+        </a>
+
+        <!-- Card 3 -->
+        <a class="wd-card" href="case-single-pin.html">
+          <div class="wd-card-top"><div class="wd-ctitle">One <em>PIN</em></div><div class="wd-cno">03</div></div>
+          <div class="wd-art">
+            <span class="fig">FIG. 03</span>
+            <div class="circle" style="background:radial-gradient(circle at 38% 32%,#e2b75a,#c9952b 60%,#9c6f17);"></div>
+            <div class="disc" style="background:radial-gradient(circle at 35% 30%,#f0795f,#e8553a);"></div>
+            <div class="frostlbl">Many PINs → one PIN · 300K+ users · rebrand</div>
+          </div>
+          <p class="wd-pitch">Consolidated a confusing multi-PIN, multi-smart-card system into one PIN per account for 300K+ users — and rebranded the technical jargon users never understood.</p>
+          <div class="wd-foot"><span class="scope">Sole · Migration</span><span class="read">Read →</span></div>
+        </a>
+
+      </div>
+
+      <div class="wd-controls">
+        <span class="wd-dot"></span>
+        <button class="wd-nav" onclick="document.getElementById('wdRow').scrollBy({left:-360,behavior:'smooth'})" aria-label="Previous">←</button>
+        <button class="wd-nav" onclick="document.getElementById('wdRow').scrollBy({left:360,behavior:'smooth'})" aria-label="Next">→</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / HOW I WORK -->
+  <section id="about">
+    <div class="sechead"><span class="dash"></span><h2>How I <em>Work</em></h2></div>
+    <div class="about">
+      <div>
+        <p class="philosophy">I work at the intersection of <b>trust</b> and usability — designing experiences where getting it wrong means someone can't sign a contract, file taxes, or prove their identity.</p>
+      </div>
+      <div>
+        <p>As the sole designer on regulated products, I lead through collaboration — working directly with PMs, engineers, security and compliance teams, the service desk, and QA to make the right trade-offs between compliance requirements and user experience.</p>
+        <p>I believe the best design work in regulated spaces comes from understanding constraints deeply enough to design <em>within</em> them gracefully, rather than fighting against them. I own the design system, ship across three platforms, and write copy that survives translation into eight languages.</p>
+        <div class="collab">
+          <span class="tag">Product</span><span class="tag">Engineering</span><span class="tag">Security &amp; Compliance</span><span class="tag">Service Desk</span><span class="tag">QA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="padding-bottom:0;">
+    <div class="sechead"><span class="dash"></span><h2>Let's <em>talk</em></h2></div>
+    <div class="colophon">
+      <h3>Open to senior &amp; lead<br><em>product design</em> roles.</h3>
+      <div class="contact-links">
+        <a href="mailto:hello@rheasushara.com">hello@rheasushara.com <span class="ci" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span></a>
+        <a href="https://www.linkedin.com/in/rheasushara" target="_blank">LinkedIn <span class="ci" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.25 8.25h4.5V23h-4.5V8.25zM8 8.25h4.31v2.02h.06c.6-1.13 2.07-2.32 4.26-2.32 4.56 0 5.4 3 5.4 6.9V23h-4.5v-6.25c0-1.49-.03-3.4-2.07-3.4-2.07 0-2.39 1.62-2.39 3.29V23H8V8.25z"/></svg></span></a>
+        <a href="cv.html">View CV <span class="ci" aria-label="View CV"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="foot">
+    <span class="label">↳ AMSTERDAM · 52.37° N · 4.89° E</span>
+    <span class="label">RHEA SUSHARA · PORTFOLIO 2026</span>
+  </div>
+
+</div>
+
+<script>
+  const plate=document.getElementById('plate');
+  if(plate){plate.addEventListener('pointermove',e=>{const r=plate.getBoundingClientRect();
+    plate.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
+    plate.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');});}
+
+  const heroEl=document.querySelector('.hero');
+  const reveal=document.querySelector('.gridfx .reveal');
+  if(heroEl&&reveal){heroEl.addEventListener('pointermove',e=>{const r=heroEl.getBoundingClientRect();
+    reveal.style.setProperty('--gx',(e.clientX-r.left)+'px');
+    reveal.style.setProperty('--gy',(e.clientY-r.top)+'px');});}
+</script>
+</body>
+</html>
