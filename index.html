@@ -168,6 +168,12 @@
   .about .philosophy b{font-style:normal;font-family:var(--grotesque);font-weight:800;color:var(--coral);}
   .about p{color:var(--ink-soft);font-size:15.5px;line-height:1.6;margin-top:18px;}
   .collab{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px;}
+  .strengths{margin-top:40px;padding-top:30px;border-top:1px solid var(--hairline);}
+  .strengths .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);display:block;margin-bottom:20px;}
+  .strengths ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:18px 48px;}
+  .strengths li{position:relative;padding-left:22px;font-size:15px;line-height:1.55;color:var(--ink-soft);}
+  .strengths li::before{content:"—";position:absolute;left:0;color:var(--coral);}
+  @media(max-width:680px){.strengths ul{grid-template-columns:1fr;gap:14px;}}
 
   /* contact */
   .colophon{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;padding:60px 0 30px;border-top:1px solid var(--hairline);}
@@ -235,8 +241,7 @@
       <a href="#contact">Contact</a>
     </div>
     <div class="spacer"></div>
-    <a href="cv.html" class="btn btn-ghost">CV ↗</a>
-    <a href="#contact" class="btn btn-coral">Get in touch ●</a>
+    <a href="cv.html" class="btn btn-coral">CV →</a>
   </nav>
 
   <!-- HERO -->
@@ -353,15 +358,24 @@
     <div class="sechead"><span class="dash"></span><h2>How I <em>Work</em></h2></div>
     <div class="about">
       <div>
-        <p class="philosophy">I work at the intersection of <b>trust</b> and usability — designing experiences where getting it wrong means someone can't sign a contract, file taxes, or prove their identity.</p>
+        <p class="philosophy">I work at the intersection of <b>trust</b> and usability — turning complex problems into experiences that feel clear, effortless, and genuinely usable for everyone.</p>
       </div>
       <div>
-        <p>As the sole designer on regulated products, I lead through collaboration — working directly with PMs, engineers, security and compliance teams, the service desk, and QA to make the right trade-offs between compliance requirements and user experience.</p>
-        <p>I believe the best design work in regulated spaces comes from understanding constraints deeply enough to design <em>within</em> them gracefully, rather than fighting against them. I own the design system, ship across three platforms, and write copy that survives translation into eight languages.</p>
+        <p>As the sole designer on complex, high-stakes products, I lead through collaboration — working directly with PMs, engineers, security and compliance, the service desk, and QA to make the right trade-offs between hard constraints and the user experience.</p>
+        <p>I believe the best design comes from understanding constraints deeply enough to design <em>within</em> them gracefully, rather than fighting against them — grounded in research, testing, and iteration. I own the design system, ship across three platforms, and write copy that survives translation into eight languages.</p>
         <div class="collab">
           <span class="tag">Product</span><span class="tag">Engineering</span><span class="tag">Security &amp; Compliance</span><span class="tag">Service Desk</span><span class="tag">QA</span>
         </div>
       </div>
+    </div>
+    <div class="strengths">
+      <span class="lbl">What I bring</span>
+      <ul>
+        <li>Deep understanding of UX research, usability testing, and iterative design methodologies.</li>
+        <li>Ability to synthesize feedback and adapt designs quickly to evolving requirements.</li>
+        <li>Familiarity with accessible and inclusive design principles.</li>
+        <li>Organized, self-motivated, and proactive in solving design challenges.</li>
+      </ul>
     </div>
   </section>
 

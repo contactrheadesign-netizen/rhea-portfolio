@@ -45,8 +45,14 @@
   /* HERO — profile card + experience list */
   .hero{display:grid;grid-template-columns:1fr 1.15fr;gap:28px;padding:34px 0 20px;align-items:start;}
 
-  .profile{position:relative;border-radius:24px;padding:30px;background:linear-gradient(160deg,var(--panel),#15130e 70%);border:1px solid var(--hair);overflow:hidden;box-shadow:0 30px 70px -30px #000;}
-  .profile::after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,var(--coral),transparent 70%);opacity:.22;right:-90px;bottom:-110px;}
+  .profile{position:relative;border-radius:24px;padding:30px;background:linear-gradient(160deg,var(--panel),#15130e 70%);border:1px solid var(--hair);overflow:hidden;box-shadow:0 30px 70px -30px #000;--gx:88%;--gy:90%;--mx:50%;--my:50%;transition:box-shadow .4s,border-color .4s;}
+  .profile:hover{border-color:rgba(232,85,58,.4);box-shadow:0 36px 80px -28px #000,0 0 0 1px rgba(232,85,58,.08);}
+  .profile .pglow{position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,var(--coral),transparent 70%);opacity:.2;left:var(--gx);top:var(--gy);transform:translate(-50%,-50%);transition:left .5s cubic-bezier(.22,1,.36,1),top .5s cubic-bezier(.22,1,.36,1),transform .6s ease,opacity .5s;pointer-events:none;z-index:0;filter:blur(4px);animation:pdrift 13s ease-in-out infinite;}
+  @keyframes pdrift{0%{transform:translate(-50%,-50%) translate(0,0);opacity:.18;}33%{transform:translate(-50%,-50%) translate(-30px,22px);opacity:.27;}66%{transform:translate(-50%,-50%) translate(24px,32px);opacity:.22;}100%{transform:translate(-50%,-50%) translate(0,0);opacity:.18;}}
+  .profile:hover .pglow{opacity:.38;animation:none;}
+  .profile .pspec{position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:1;opacity:0;transition:opacity .45s;background:radial-gradient(240px circle at var(--mx) var(--my),rgba(255,255,255,.09),transparent 62%);}
+  .profile:hover .pspec{opacity:1;}
+  @media (prefers-reduced-motion:reduce){.profile .pglow{animation:none;transition:opacity .4s;}}
   .profile .ptop{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2;}
   .pill{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);}
   .pill .b{background:var(--coral);color:#1a1208;border-radius:6px;padding:2px 7px;font-weight:700;}
@@ -151,6 +157,8 @@
   <section class="hero" style="border-top:none;">
     <!-- profile card -->
     <div class="profile">
+      <div class="pglow" aria-hidden="true"></div>
+      <div class="pspec" aria-hidden="true"></div>
       <div class="ptop">
         <span class="pill">Product Designer</span>
         <span class="label">8+ YEARS</span>
@@ -348,5 +356,21 @@
   </div>
 
 </div>
+<script>
+(function(){
+  var card=document.querySelector('.profile');
+  if(!card) return;
+  card.addEventListener('pointermove',function(e){
+    var r=card.getBoundingClientRect();
+    var x=((e.clientX-r.left)/r.width*100).toFixed(1)+'%';
+    var y=((e.clientY-r.top)/r.height*100).toFixed(1)+'%';
+    card.style.setProperty('--gx',x);card.style.setProperty('--gy',y);
+    card.style.setProperty('--mx',x);card.style.setProperty('--my',y);
+  });
+  card.addEventListener('pointerleave',function(){
+    card.style.setProperty('--gx','88%');card.style.setProperty('--gy','90%');
+  });
+})();
+</script>
 </body>
 </html>
