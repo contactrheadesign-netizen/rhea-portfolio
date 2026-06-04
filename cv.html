@@ -12,7 +12,7 @@
   :root{
     --bg:#141310;--panel:#1d1b15;--panel-2:#211e17;
     --ink:#f3f0e7;--soft:rgba(243,240,231,.62);--faint:rgba(243,240,231,.36);
-    --coral:#e8553a;--ochre:#c9952b;
+    --coral:#bb0a1e;--ochre:#c9952b;
     --hair:rgba(243,240,231,.13);--glass:rgba(243,240,231,.05);
     --serif:"Fraunces",serif;--grotesque:"Archivo",sans-serif;--mono:"Space Mono",monospace;
   }
@@ -37,7 +37,7 @@
   nav .back{font-size:13.5px;font-weight:600;color:var(--soft);text-decoration:none;}
   nav .back:hover{color:var(--coral);}
   .btn{font-family:var(--grotesque);font-weight:600;font-size:13.5px;cursor:pointer;border-radius:999px;padding:10px 17px;display:inline-flex;align-items:center;gap:8px;transition:transform .2s,background .2s;text-decoration:none;}
-  .btn-coral{background:var(--coral);color:#fff5ef;border:none;box-shadow:0 8px 22px -8px rgba(232,85,58,.6);}
+  .btn-coral{background:var(--coral);color:#fff5ef;border:none;box-shadow:0 8px 22px -8px rgba(187,10,30,.6);}
   .btn-coral:hover{transform:translateY(-2px);}
   .btn-ghost{background:var(--glass);color:var(--ink);border:1px solid var(--hair);}
   .btn-ghost:hover{transform:translateY(-2px);background:rgba(243,240,231,.1);}
@@ -46,7 +46,7 @@
   .hero{display:grid;grid-template-columns:1fr 1.15fr;gap:28px;padding:34px 0 20px;align-items:start;}
 
   .profile{position:relative;border-radius:24px;padding:30px;background:linear-gradient(160deg,var(--panel),#15130e 70%);border:1px solid var(--hair);overflow:hidden;box-shadow:0 30px 70px -30px #000;--gx:88%;--gy:90%;--mx:50%;--my:50%;transition:box-shadow .4s,border-color .4s;}
-  .profile:hover{border-color:rgba(232,85,58,.4);box-shadow:0 36px 80px -28px #000,0 0 0 1px rgba(232,85,58,.08);}
+  .profile:hover{border-color:rgba(187,10,30,.4);box-shadow:0 36px 80px -28px #000,0 0 0 1px rgba(187,10,30,.08);}
   .profile .pglow{position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,var(--coral),transparent 70%);opacity:.2;left:var(--gx);top:var(--gy);transform:translate(-50%,-50%);transition:left .5s cubic-bezier(.22,1,.36,1),top .5s cubic-bezier(.22,1,.36,1),transform .6s ease,opacity .5s;pointer-events:none;z-index:0;filter:blur(4px);animation:pdrift 13s ease-in-out infinite;}
   @keyframes pdrift{0%{transform:translate(-50%,-50%) translate(0,0);opacity:.18;}33%{transform:translate(-50%,-50%) translate(-30px,22px);opacity:.27;}66%{transform:translate(-50%,-50%) translate(24px,32px);opacity:.22;}100%{transform:translate(-50%,-50%) translate(0,0);opacity:.18;}}
   .profile:hover .pglow{opacity:.38;animation:none;}
@@ -56,7 +56,7 @@
   .profile .ptop{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2;}
   .pill{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);}
   .pill .b{background:var(--coral);color:#1a1208;border-radius:6px;padding:2px 7px;font-weight:700;}
-  .avatar{width:96px;height:96px;border-radius:50%;margin:26px 0 22px;border:2px solid var(--coral);display:grid;place-items:center;font-family:"Rye",serif;font-style:normal;font-size:38px;color:var(--ink);background:radial-gradient(circle at 40% 30%,#2c2820,#171510);position:relative;z-index:2;box-shadow:0 0 24px -4px rgba(232,85,58,.5);}
+  .avatar{width:96px;height:96px;border-radius:50%;margin:26px 0 22px;border:2px solid var(--coral);display:grid;place-items:center;font-family:"Rye",serif;font-style:normal;font-size:38px;color:var(--ink);background:radial-gradient(circle at 40% 30%,#2c2820,#171510);position:relative;z-index:2;box-shadow:0 0 24px -4px rgba(187,10,30,.5);}
   .pname{font-family:"Rye",serif;font-weight:400;font-size:clamp(32px,4.2vw,46px);line-height:1.08;letter-spacing:0;position:relative;z-index:2;}
   .phandle{font-family:var(--mono);font-size:12px;color:var(--soft);margin-top:12px;position:relative;z-index:2;}
   .pquote{position:relative;z-index:2;margin:24px 0 26px;padding-left:18px;border-left:2px solid var(--coral);font-family:var(--serif);font-style:italic;font-weight:400;font-size:19px;line-height:1.45;color:var(--ink);max-width:34ch;}
@@ -79,7 +79,7 @@
   .xp-co{font-family:var(--mono);font-size:11.5px;color:var(--soft);margin-top:3px;}
   .xp-co .now{color:var(--coral);}
   .xp-yr{font-family:var(--mono);font-size:12px;color:var(--soft);text-align:center;white-space:nowrap;}
-  .xp-row.feat{background:linear-gradient(90deg,rgba(232,85,58,.10),transparent);border-radius:10px;}
+  .xp-row.feat{background:linear-gradient(90deg,rgba(187,10,30,.10),transparent);border-radius:10px;}
 
   /* sections */
   section{padding:52px 0;border-top:1px solid var(--hair);}
@@ -376,14 +376,14 @@
   if(sessionStorage.getItem('rs_auth')==='1')return;
   document.documentElement.style.overflow='hidden';
   var o=document.createElement('div');o.id='pw-gate';
-  o.innerHTML='<div style="position:fixed;inset:0;z-index:9999;background:#1c1b17;display:grid;place-items:center;font-family:Archivo,sans-serif"><div style="text-align:center;max-width:340px;padding:24px"><div style="font-size:40px;margin-bottom:24px;font-family:Rye,serif;font-style:normal;color:#e8553a">R</div><p style="color:rgba(243,240,231,.6);font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px">Password required</p><input id="pw-input" type="password" placeholder="Enter password" style="width:100%;padding:12px 16px;border-radius:999px;border:1px solid rgba(243,240,231,.13);background:rgba(243,240,231,.05);color:#f3f0e7;font-size:14px;font-family:inherit;outline:none;text-align:center" /><p id="pw-err" style="color:#e8553a;font-size:12px;margin-top:10px;opacity:0">Incorrect password</p></div></div>';
+  o.innerHTML='<div style="position:fixed;inset:0;z-index:9999;background:#1c1b17;display:grid;place-items:center;font-family:Archivo,sans-serif"><div style="text-align:center;max-width:340px;padding:24px"><div style="font-size:40px;margin-bottom:24px;font-family:Rye,serif;font-style:normal;color:#bb0a1e">R</div><p style="color:rgba(243,240,231,.6);font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px">Password required</p><input id="pw-input" type="password" placeholder="Enter password" style="width:100%;padding:12px 16px;border-radius:999px;border:1px solid rgba(243,240,231,.13);background:rgba(243,240,231,.05);color:#f3f0e7;font-size:14px;font-family:inherit;outline:none;text-align:center" /><p id="pw-err" style="color:#bb0a1e;font-size:12px;margin-top:10px;opacity:0">Incorrect password</p></div></div>';
   document.body.prepend(o);
   var inp=document.getElementById('pw-input'),err=document.getElementById('pw-err');
   inp.focus();
   inp.addEventListener('keydown',function(e){
     if(e.key==='Enter'){
       if(inp.value==='portfolio'){sessionStorage.setItem('rs_auth','1');o.remove();document.documentElement.style.overflow='';}
-      else{err.style.opacity='1';inp.value='';inp.style.borderColor='#e8553a';setTimeout(function(){inp.style.borderColor='rgba(243,240,231,.13)';},800);}
+      else{err.style.opacity='1';inp.value='';inp.style.borderColor='#bb0a1e';setTimeout(function(){inp.style.borderColor='rgba(243,240,231,.13)';},800);}
     }
   });
 })();

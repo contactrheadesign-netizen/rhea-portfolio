@@ -12,7 +12,7 @@
   :root{
     --paper:#e9e4d7; --paper-2:#efebe0; --ink:#1c1b17;
     --ink-soft:rgba(28,27,23,.62); --ink-faint:rgba(28,27,23,.38);
-    --coral:#e8553a; --ochre:#c9952b;
+    --coral:#bb0a1e; --ochre:#c9952b;
     --vellum:rgba(255,253,247,.46); --vellum-strong:rgba(255,253,247,.64);
     --hairline:rgba(28,27,23,.16); --highlight:rgba(255,255,255,.85); --blur:14px;
     --serif:"Fraunces",serif; --grotesque:"Archivo",sans-serif; --mono:"Space Mono",monospace;
@@ -43,8 +43,8 @@
   nav .spacer{flex:1;}
 
   .btn{font-family:var(--grotesque);font-weight:600;font-size:13.5px;cursor:pointer;border-radius:999px;padding:11px 18px;display:inline-flex;align-items:center;gap:8px;transition:transform .2s,box-shadow .2s,background .2s;text-decoration:none;}
-  .btn-coral{background:var(--coral);color:#fff5ef;border:none;box-shadow:0 8px 22px -8px rgba(232,85,58,.7);}
-  .btn-coral:hover{transform:translateY(-2px);box-shadow:0 14px 30px -8px rgba(232,85,58,.8);}
+  .btn-coral{background:var(--coral);color:#fff5ef;border:none;box-shadow:0 8px 22px -8px rgba(187,10,30,.7);}
+  .btn-coral:hover{transform:translateY(-2px);box-shadow:0 14px 30px -8px rgba(187,10,30,.8);}
   .btn-ghost{background:var(--vellum-strong);color:var(--ink);border:1px solid var(--hairline);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
   .btn-ghost:hover{transform:translateY(-2px);background:var(--paper-2);}
 
@@ -74,7 +74,7 @@
   /* plate (hero art) */
   .plate{position:relative;aspect-ratio:4/4.4;border:1px solid var(--hairline);border-radius:4px;overflow:hidden;background:var(--paper-2);}
   .art{position:absolute;inset:0;z-index:1;}
-  .art .circle{position:absolute;width:74%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 38% 32%,#f0795f,var(--coral) 60%,#cf4127);top:12%;left:14%;}
+  .art .circle{position:absolute;width:74%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 38% 32%,#f32a40,var(--coral) 60%,#820614);top:12%;left:14%;}
   .art .disc{position:absolute;width:17%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e2b75a,var(--ochre));bottom:16%;right:20%;box-shadow:0 10px 30px -8px rgba(201,149,43,.6);}
   .art .ring{position:absolute;width:30%;aspect-ratio:1;border:1px solid rgba(28,27,23,.28);border-radius:50%;bottom:20%;left:16%;}
   .art .grid{position:absolute;top:9%;right:12%;width:70px;height:50px;background-image:radial-gradient(rgba(28,27,23,.4) 1px,transparent 1px);background-size:9px 9px;}
@@ -103,7 +103,7 @@
     mask-image:radial-gradient(250px circle at var(--gx,64%) var(--gy,40%),#000 0,transparent 70%);}
   @keyframes gridscroll{to{background-position:42px 42px;}}
   .gridfx .orb{position:absolute;border-radius:50%;filter:blur(90px);}
-  .gridfx .orb.coral{width:40%;aspect-ratio:1;background:rgba(232,85,58,.30);top:-14%;right:4%;}
+  .gridfx .orb.coral{width:40%;aspect-ratio:1;background:rgba(187,10,30,.30);top:-14%;right:4%;}
   .gridfx .orb.ochre{width:28%;aspect-ratio:1;background:rgba(201,149,43,.24);bottom:-18%;left:-2%;}
 
   /* domain marquee */
@@ -323,7 +323,7 @@
           <div class="wd-art">
             <span class="fig">FIG. 02</span>
             <div class="circle" style="background:radial-gradient(circle at 40% 34%,#8fb6c9,#4a7d96 62%,#2f5a70);"></div>
-            <div class="disc" style="background:radial-gradient(circle at 35% 30%,#f0795f,#e8553a);"></div>
+            <div class="disc" style="background:radial-gradient(circle at 35% 30%,#f32a40,#bb0a1e);"></div>
             <div class="frostlbl">Hidden icon → upfront carousel · Liquid Glass</div>
           </div>
           <p class="wd-pitch">Replaced an undiscoverable switch icon with a carousel showing every account at a glance — validated through workshops and surveys across 12+ stakeholder reviews.</p>
@@ -336,7 +336,7 @@
           <div class="wd-art">
             <span class="fig">FIG. 03</span>
             <div class="circle" style="background:radial-gradient(circle at 38% 32%,#e2b75a,#c9952b 60%,#9c6f17);"></div>
-            <div class="disc" style="background:radial-gradient(circle at 35% 30%,#f0795f,#e8553a);"></div>
+            <div class="disc" style="background:radial-gradient(circle at 35% 30%,#f32a40,#bb0a1e);"></div>
             <div class="frostlbl">Many PINs → one PIN · 300K+ users · rebrand</div>
           </div>
           <p class="wd-pitch">Consolidated a confusing multi-PIN, multi-smart-card system into one PIN per account for 300K+ users — and rebranded the technical jargon users never understood.</p>
@@ -348,7 +348,7 @@
           <div class="wd-art">
             <span class="fig">FIG. 04</span>
             <div class="circle" style="background:radial-gradient(circle at 40% 34%,#8fb6c9,#4a7d96 62%,#2f5a70);"></div>
-            <div class="disc" style="background:radial-gradient(circle at 35% 30%,#f0795f,#e8553a);"></div>
+            <div class="disc" style="background:radial-gradient(circle at 35% 30%,#f32a40,#bb0a1e);"></div>
             <div class="frostlbl">Third-party SDK → owned NFC flow · iOS + Android</div>
           </div>
           <p class="wd-pitch">Replaced a third-party NFC SDK with an in-house identity verification flow — illustration, animation, and full UX across passport, ID and driving licence.</p>
@@ -428,14 +428,14 @@
   if(sessionStorage.getItem('rs_auth')==='1')return;
   document.documentElement.style.overflow='hidden';
   var o=document.createElement('div');o.id='pw-gate';
-  o.innerHTML='<div style="position:fixed;inset:0;z-index:9999;background:#1c1b17;display:grid;place-items:center;font-family:Archivo,sans-serif"><div style="text-align:center;max-width:340px;padding:24px"><div style="font-size:40px;margin-bottom:24px;font-family:Rye,serif;font-style:normal;color:#e8553a">R</div><p style="color:rgba(243,240,231,.6);font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px">Password required</p><input id="pw-input" type="password" placeholder="Enter password" style="width:100%;padding:12px 16px;border-radius:999px;border:1px solid rgba(243,240,231,.13);background:rgba(243,240,231,.05);color:#f3f0e7;font-size:14px;font-family:inherit;outline:none;text-align:center" /><p id="pw-err" style="color:#e8553a;font-size:12px;margin-top:10px;opacity:0">Incorrect password</p></div></div>';
+  o.innerHTML='<div style="position:fixed;inset:0;z-index:9999;background:#1c1b17;display:grid;place-items:center;font-family:Archivo,sans-serif"><div style="text-align:center;max-width:340px;padding:24px"><div style="font-size:40px;margin-bottom:24px;font-family:Rye,serif;font-style:normal;color:#bb0a1e">R</div><p style="color:rgba(243,240,231,.6);font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px">Password required</p><input id="pw-input" type="password" placeholder="Enter password" style="width:100%;padding:12px 16px;border-radius:999px;border:1px solid rgba(243,240,231,.13);background:rgba(243,240,231,.05);color:#f3f0e7;font-size:14px;font-family:inherit;outline:none;text-align:center" /><p id="pw-err" style="color:#bb0a1e;font-size:12px;margin-top:10px;opacity:0">Incorrect password</p></div></div>';
   document.body.prepend(o);
   var inp=document.getElementById('pw-input'),err=document.getElementById('pw-err');
   inp.focus();
   inp.addEventListener('keydown',function(e){
     if(e.key==='Enter'){
       if(inp.value==='portfolio'){sessionStorage.setItem('rs_auth','1');o.remove();document.documentElement.style.overflow='';}
-      else{err.style.opacity='1';inp.value='';inp.style.borderColor='#e8553a';setTimeout(function(){inp.style.borderColor='rgba(243,240,231,.13)';},800);}
+      else{err.style.opacity='1';inp.value='';inp.style.borderColor='#bb0a1e';setTimeout(function(){inp.style.borderColor='rgba(243,240,231,.13)';},800);}
     }
   });
 })();
