@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 886 1064" fill="none">
+  <rect width="886" height="1064" fill="#5090A8"/>
+
+  <!-- Passport body -->
+  <rect x="218" y="100" width="450" height="620" rx="24" fill="#D4A0A8" />
+  <rect x="228" y="108" width="430" height="602" rx="18" fill="#5C1A2A" />
+
+  <!-- Globe icon -->
+  <g transform="translate(443, 330)" stroke="#5CC8BE" stroke-width="8" fill="none">
+    <circle r="90" />
+    <ellipse rx="50" ry="90" />
+    <line x1="-90" y1="0" x2="90" y2="0" />
+    <line x1="0" y1="-90" x2="0" y2="90" />
+    <path d="M-80,-45 Q0,-55 80,-45" />
+    <path d="M-80,45 Q0,55 80,45" />
+  </g>
+
+  <!-- NFC chip rectangle -->
+  <rect x="338" y="490" width="210" height="130" rx="8" fill="#5CC8BE" />
+  <line x1="338" y1="540" x2="548" y2="540" stroke="#5C1A2A" stroke-width="4" />
+  <line x1="338" y1="570" x2="548" y2="570" stroke="#5C1A2A" stroke-width="4" />
+  <circle cx="443" cy="555" r="28" fill="#5C1A2A" stroke="#5C1A2A" stroke-width="2" />
+  <circle cx="443" cy="555" r="16" fill="#5CC8BE" />
+
+  <!-- Phone at bottom -->
+  <rect x="343" y="800" width="200" height="400" rx="30" fill="#1a1a1a" />
+  <rect x="353" y="810" width="180" height="370" rx="22" fill="#2a2a2a" />
+  <!-- Dynamic island -->
+  <rect x="403" y="816" width="80" height="22" rx="11" fill="#111" />
+</svg>

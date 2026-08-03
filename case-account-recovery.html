@@ -53,7 +53,7 @@
   .metagrid .v{font-size:14px;font-weight:700;margin-top:6px;line-height:1.3;}
 
   /* big hero plate */
-  .hplate{position:relative;margin-top:34px;border:1px solid var(--hairline);border-radius:8px;overflow:hidden;aspect-ratio:16/7;background:var(--paper-2);}
+  .hplate{position:relative;margin-top:34px;border:1px solid var(--hairline);border-radius:8px;overflow:hidden;aspect-ratio:16/5;background:var(--paper-2);}
   .hplate .circle{position:absolute;width:36%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 38% 32%,#f32a40,var(--coral) 60%,#820614);top:18%;left:8%;}
   .hplate .disc{position:absolute;width:11%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e2b75a,var(--ochre));bottom:18%;left:30%;}
   .hplate .cap{position:absolute;right:18px;bottom:16px;padding:11px 14px;border-radius:11px;background:var(--vellum-strong);
@@ -173,10 +173,8 @@
       <div class="cell"><div class="k">Impact</div><div class="v" style="color:var(--coral);">5 scenarios → 1 native flow</div></div>
     </div>
 
-    <div class="hplate">
-      <div class="circle"></div><div class="disc"></div>
-      <span class="label fig">FIG. 01 / FINAL</span>
-      <div class="cap">Add hero image — polished device-framed mockup of the final native recovery flow</div>
+    <div class="hplate" style="background:#7A101C;display:flex;align-items:center;justify-content:center;">
+      <img src="hero-recovery.png" alt="Account Recovery — full recovery flow screens" style="width:100%;height:100%;object-fit:cover;">
     </div>
   </header>
 
@@ -278,9 +276,8 @@
 
     <p class="body soft">Once I understood the assurance rules properly, the design stopped trying to force one universal flow and instead routed each user down the correct path for their credential level. The lesson I carry forward: in regulated products, pin down the compliance logic <em>before</em> designing the screens, not during.</p>
 
-    <div class="imgplate">
-      <div class="circle" style="background:var(--ochre);"></div>
-      <div class="cnt"><div class="fig">FIG. 03 — Add image</div><div class="desc">Before vs. After: the old single overloaded flow vs. the routed three-happy-path model, annotated with what changed and why.</div></div>
+    <div class="imgplate" style="background:#2a0a0f;padding:0;overflow:hidden;">
+      <img src="fig03-pivot.png" alt="Before vs. After: the old single overloaded flow vs. the routed three-happy-path model" style="width:100%;display:block;border-radius:10px;">
     </div>
   </section>
 
