@@ -22,7 +22,7 @@
   body{font-family:var(--grotesque);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden;}
   body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.06;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
-  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 34px;}
+  .wrap{position:relative;z-index:1;max-width:none;margin:0 auto;padding:0 48px;}
   .label{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);}
   .num{font-family:var(--mono);font-size:11px;color:var(--coral);letter-spacing:.08em;}
 
@@ -117,10 +117,16 @@
   .foot{display:flex;justify-content:space-between;align-items:center;padding:24px 0 50px;}
   .foot .label{font-size:10px;}
 
+  .fig02-row{display:flex;gap:40px;align-items:flex-start;margin-top:22px;}
+  .fig02-row > div{flex:1;min-width:0;}
+  .fig02-table{width:340px;flex-shrink:0;}
+
   @media (max-width:820px){
     .metagrid{grid-template-columns:repeat(2,1fr);}
     .two{grid-template-columns:1fr;}
     nav .brand span:not(.mark){display:none;}
+    .fig02-row{flex-direction:column;}
+    .fig02-table{width:100%;max-width:480px;}
   }
   @media (max-width:680px){
     .topbar{flex-wrap:wrap;gap:6px 14px;}
@@ -128,7 +134,7 @@
     nav{gap:12px;padding:10px 10px 10px 14px;}
   }
   @media (max-width:520px){
-    .wrap{padding:0 20px;}
+    .wrap{padding:0 24px;}
     section{padding:44px 0;}
     .chero{padding-top:32px;}
     h1.case{font-size:clamp(32px,9vw,42px);}
@@ -174,9 +180,7 @@
     </div>
 
     <div class="hplate">
-      <div class="circle"></div><div class="disc"></div>
-      <span class="label fig">FIG. 01 / FINAL</span>
-      <div class="cap">Add hero image — the final NFC scanning flow across passport, ID and driving licence</div>
+      <img src="hero-nfc.png" alt="NFC ID scanning flow — passport, ID card and driving licence" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
     </div>
   </header>
 
@@ -215,13 +219,17 @@
     <h3 class="sub">The Core Decision: Two Ways In</h3>
     <p class="body">An NFC read can't happen until the app has the document's key data. There are only two ways to get it: make the user <b>type it</b> — more steps, more errors — or <b>scan the machine-readable zone</b> to capture it automatically. I mapped both and argued for the second: <b>MRZ pre-validation</b>, to collapse the steps and take decisions off the user's plate.</p>
 
-    <div class="imgplate">
-      <div class="circle" style="background:#4a7d96;"></div>
-      <div class="cnt"><div class="fig">FIG. 02 — Add image</div><div class="desc">The two routes side by side — manual entry vs. MRZ pre-validation — showing where steps and decisions drop out.</div></div>
+    <div style="margin-top:22px;width:100vw;margin-left:calc(50% - 50vw);background:#d4f5e0;padding:0;">
+      <img src="fig02-nfc-flow.png" alt="End-to-end NFC ID verification flow diagram" style="width:100%;display:block;">
     </div>
 
-    <h3 class="sub">One Pattern, Three Documents</h3>
-    <p class="body">Passport, ID card and driving licence each got their own positioning guidance, scan sequence, and success / error states — unified under a single, consistent pattern so the flow felt like one product, not three.</p>
+    <div class="fig02-row">
+      <div>
+        <h3 class="sub">One Pattern, Three Documents</h3>
+        <p class="body">Passport, ID card and driving licence each got their own positioning guidance, scan sequence, and success / error states — unified under a single, consistent pattern so the flow felt like one product, not three.</p>
+      </div>
+      <img src="fig02-nfc-matrix.png" alt="Product-specific ID configuration matrix" class="fig02-table" style="border-radius:10px;padding:4px;background:#fff;">
+    </div>
 
     <h3 class="sub">Instruction as a Design Discipline</h3>
     <p class="body soft">Because users didn't understand the MRZ or chip placement, instruction became a craft in its own right. I designed and illustrated animated guidance showing exactly how to position the phone against each document type — the hand-holding ReadID never offered.</p>
@@ -237,22 +245,24 @@
     <p class="body">Replicating ReadID surfaced exactly the friction I'd predicted: without pre-validation, users were left to understand the MRZ and scanning on their own, so the whole flow leaned on instructional animation to carry them through. The pipeline was constrained too — engineering pushed back hard on Lottie, so I built everything in Figma, screen-recorded to MP4, and compressed the files through HandBrake to keep them shippable. And it was all iPhone-first.</p>
     <p class="body soft">Then in Phase 2, stakeholders asked to cut screens and steps — which led straight back to the MRZ pre-validation flow I'd originally proposed. I'm now reverse-engineering toward it. Engineering also adopted Lottie at last, letting me replace the heavy MP4 workaround with lighter, per-device animations instead of one iPhone-centric set.</p>
 
-    <div class="two">
-      <div class="phase">
-        <div class="tag">Phase 1 · 2024</div>
-        <h4>Replicate &amp; instruct</h4>
-        <p>MRZ pre-validation deprioritised; the ReadID steps mirrored to de-risk the launch. Heavy instructional animation, built Figma → MP4 → HandBrake, and iPhone-first.</p>
-      </div>
-      <div class="phase">
-        <div class="tag">Phase 2 · 2026 →</div>
-        <h4>Fewer steps, my way</h4>
-        <p>The org circles back to MRZ pre-validation. Screens and user decisions cut, Lottie adopted at last, and animations rebuilt per device — a cleaner, more scalable foundation.</p>
-      </div>
+    <div class="phase">
+      <div class="tag">Phase 1 · 2024</div>
+      <h4>Replicate &amp; instruct</h4>
+      <p>MRZ pre-validation deprioritised; the ReadID steps mirrored to de-risk the launch. Heavy instructional animation, built Figma → MP4 → HandBrake, and iPhone-first.</p>
     </div>
 
-    <div class="imgplate">
-      <div class="circle" style="background:var(--coral);"></div>
-      <div class="cnt"><div class="fig">FIG. 03 — Add image</div><div class="desc">Annotated before / after — the replicated ReadID flow vs. the leaner MRZ pre-validation flow.</div></div>
+    <div style="margin-top:22px;">
+      <img src="fig-nfc-2119.png" alt="Phase 1 screens — replicated ReadID flow with instructional animation" style="width:100%;border-radius:10px;display:block;">
+    </div>
+
+    <div class="phase" style="margin-top:22px;">
+      <div class="tag">Phase 2 · 2026 →</div>
+      <h4>Fewer steps, my way</h4>
+      <p>The org circles back to MRZ pre-validation. Screens and user decisions cut, Lottie adopted at last, and animations rebuilt per device — a cleaner, more scalable foundation.</p>
+    </div>
+
+    <div style="margin-top:22px;">
+      <img src="fig-nfc-2121.png" alt="Phase 2 screens — leaner MRZ pre-validation flow" style="width:100%;border-radius:10px;display:block;">
     </div>
   </section>
 
