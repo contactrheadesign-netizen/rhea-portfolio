@@ -195,6 +195,10 @@
       </ul>
     </div>
 
+    <div style="margin-top:22px;">
+      <img src="fig-switcher-problem.png" alt="The problem — hidden account switcher icon vs. upfront login" style="width:100%;border-radius:10px;display:block;">
+    </div>
+
     <h3 class="sub">Who I Designed For</h3>
     <p class="body">Existing users with multiple accounts and credentials — typically EU-based professionals who hold both personal and business identity products (eHerkenning, eSGN) and switch between them regularly. The design also had to stay clean and simple for single-account users, who shouldn't pay a complexity tax for a feature they don't need.</p>
 
@@ -213,13 +217,12 @@
     <h3 class="sub">Three Competing Directions</h3>
     <p class="body">Rather than commit to one idea, I designed and prototyped three: a <b>Small Carousel</b>, a <b>Big Carousel</b>, and a <b>Dropdown</b>. Each made a different bet about how visible account switching should be, and each was mapped against five core login scenarios.</p>
 
-    <div class="imgplate">
-      <div class="circle" style="background:#4a7d96;"></div>
-      <div class="cnt"><div class="fig">FIG. 02 — Add image</div><div class="desc">The three directions side by side — Small Carousel, Big Carousel, Dropdown — across the five core scenarios.</div></div>
-    </div>
-
     <h3 class="sub">Workshops Instead of a Vacuum</h3>
     <p class="body soft">Because I couldn't run external user tests, I ran cross-functional workshops with the people closest to the product — the CTO, service desk, product managers, and developers — to pressure-test each direction against real user pain, technical reality, and support burden.</p>
+
+    <div style="margin-top:22px;">
+      <img src="fig02-switcher.png" alt="The three directions side by side — Small Carousel, Big Carousel, Dropdown — across the five core scenarios" style="width:100%;border-radius:10px;display:block;">
+    </div>
   </section>
 
   <!-- PIVOT -->
@@ -232,9 +235,15 @@
     <p class="body">So I ran a structured internal survey using the prototypes, asking participants to complete real tasks and rate each option screen by screen. The result was clear: the <b>Carousel beat the Dropdown</b> overall — 7 votes to 5 [confirm sample size] — and won decisively on the screens that mattered most: seeing every account at once and discovering "Add account" (both ~54%). The Dropdown edged ahead only on single-account login, where there's nothing to switch between. That gave the team a defensible, data-backed direction instead of a stylistic argument.</p>
     <p class="body soft">There was a second pivot outside my control: the project paused for reprioritisation and restarted in mid-2025 — right as Apple announced Liquid Glass at WWDC. The translucent direction I'd already been exploring suddenly became the platform standard, so I leaned into it rather than fighting the tide.</p>
 
-    <div class="imgplate">
-      <div class="circle" style="background:var(--coral);"></div>
-      <div class="cnt"><div class="fig">FIG. 03 — Add image</div><div class="desc">Survey results favouring the carousel, and the before/after of the chosen direction.</div></div>
+    <div style="margin-top:22px;">
+      <img src="fig-switcher-glass.png" alt="Liquid Glass treatment — translucent headers and refraction on account cards" style="width:100%;border-radius:10px;display:block;">
+    </div>
+
+    <h3 class="sub">Aligning with Liquid Glass</h3>
+    <p class="body">I brought Liquid Glass-inspired treatments into the final design — translucent headers and subtle refraction on the account cards — so it felt native to iOS 26 while staying true to the Digidentity brand. For Android, I adapted the visual treatment to feel native to Material Design while keeping the same interaction patterns and hierarchy.</p>
+
+    <div style="margin-top:22px;">
+      <img src="fig-switcher-glass2.png" alt="Final screens — carousel, key states, and dark-mode Liquid Glass treatment" style="width:100%;border-radius:10px;display:block;">
     </div>
   </section>
 
@@ -253,15 +262,11 @@
       <div class="row"><span class="n">04</span><span class="t">Blocked, inactive, and add-account states — each with a clear next step, plus a full dark-mode treatment.</span></div>
     </div>
 
-    <h3 class="sub">Aligning with Liquid Glass</h3>
-    <p class="body">I brought Liquid Glass-inspired treatments into the final design — translucent headers and subtle refraction on the account cards — so it felt native to iOS 26 while staying true to the Digidentity brand. For Android, I adapted the visual treatment to feel native to Material Design while keeping the same interaction patterns and hierarchy.</p>
-
     <h3 class="sub">Design System &amp; Handoff</h3>
     <p class="body soft">The account tile shipped as a reusable component with variants for active, blocked, inactive, and selected states, and I updated the PIN pad and login flow to match. Everything was handed off with detailed iOS and Android specs — interaction details, edge-case documentation, responsive behaviour, and prototype flows developers could step through for every scenario.</p>
 
-    <div class="imgplate">
-      <div class="circle" style="background:#4a7d96;"></div>
-      <div class="cnt"><div class="fig">FIG. 04 — Add image</div><div class="desc">High-res final screens — the carousel, key states, and the dark-mode Liquid Glass treatment.</div></div>
+    <div style="margin-top:22px;">
+      <img src="fig-switcher-handoff.png" alt="Design system components and handoff specs" style="width:100%;border-radius:10px;display:block;">
     </div>
   </section>
 
