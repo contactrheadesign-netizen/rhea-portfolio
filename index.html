@@ -11,7 +11,7 @@
 <style>
   :root{
     --paper:#e9e4d7; --paper-2:#efebe0; --ink:#1c1b17;
-    --ink-soft:rgba(28,27,23,.62); --ink-faint:rgba(28,27,23,.38);
+    --ink-soft:rgba(28,27,23,.68); --ink-faint:rgba(28,27,23,.64);
     --coral:#bb0a1e; --ochre:#c9952b;
     --vellum:rgba(255,253,247,.46); --vellum-strong:rgba(255,253,247,.64);
     --hairline:rgba(28,27,23,.16); --highlight:rgba(255,255,255,.85); --blur:14px;
@@ -41,6 +41,8 @@
   nav .links a{color:var(--ink-soft);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;}
   nav .links a:hover{color:var(--ink);}
   nav .spacer{flex:1;}
+  .mob-menu-btn{display:none;align-items:center;justify-content:center;width:34px;height:34px;border:none;background:none;cursor:pointer;padding:0;}
+  .mob-menu-btn svg{width:20px;height:20px;stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round;}
 
   .btn{font-family:var(--grotesque);font-weight:600;font-size:13.5px;cursor:pointer;border-radius:999px;padding:11px 18px;display:inline-flex;align-items:center;gap:8px;transition:transform .2s,box-shadow .2s,background .2s;text-decoration:none;}
   .btn-coral{background:var(--coral);color:#fff5ef;border:none;box-shadow:0 8px 22px -8px rgba(187,10,30,.7);}
@@ -189,6 +191,11 @@
     .hero{grid-template-columns:1fr;gap:34px;}
     .about,.colophon{grid-template-columns:1fr;gap:26px;}
     nav .links{display:none;}
+    .mob-menu-btn{display:flex;}
+    .mob-menu{display:none;position:absolute;top:calc(100% + 8px);right:12px;background:var(--paper);border:1px solid var(--hairline);border-radius:14px;padding:10px 0;min-width:160px;box-shadow:0 12px 32px rgba(28,27,23,.12);z-index:60;}
+    .mob-menu.open{display:flex;flex-direction:column;}
+    .mob-menu a{padding:10px 20px;font-size:14px;font-weight:500;color:var(--ink-soft);text-decoration:none;transition:background .15s;}
+    .mob-menu a:hover{background:var(--vellum);color:var(--ink);}
     .badges{flex-wrap:wrap;gap:18px;}
   }
   @media (max-width:680px){
@@ -236,7 +243,15 @@
       <a href="#contact">Contact</a>
     </div>
     <div class="spacer"></div>
+    <button class="mob-menu-btn" aria-label="Menu" onclick="document.getElementById('mobMenu').classList.toggle('open')">
+      <svg viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
     <a href="cv.html" class="btn btn-coral">CV →</a>
+    <div class="mob-menu" id="mobMenu">
+      <a href="#work" onclick="this.parentElement.classList.remove('open')">Work</a>
+      <a href="#about" onclick="this.parentElement.classList.remove('open')">About</a>
+      <a href="#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
+    </div>
   </nav>
 
   <!-- HERO -->
@@ -274,7 +289,7 @@
   <div class="domains">
     <div class="track">
       <span>Digital Identity<b>·</b> Regulated Products <b>·</b> Multilingual (8 langs) <b>·</b> Native Mobile <b>·</b> Web + Mobile <b>·</b> Design Systems <b>·</b> Sole Designer / Cross-functional Lead <b>·</b>&nbsp;</span>
-      <span>Digital Identity<b>·</b> Regulated Products <b>·</b> Multilingual (8 langs) <b>·</b> Native Mobile <b>·</b> Web + Mobile <b>·</b> Design Systems <b>·</b> Sole Designer / Cross-functional Lead <b>·</b>&nbsp;</span>
+      <span aria-hidden="true">Digital Identity<b>·</b> Regulated Products <b>·</b> Multilingual (8 langs) <b>·</b> Native Mobile <b>·</b> Web + Mobile <b>·</b> Design Systems <b>·</b> Sole Designer / Cross-functional Lead <b>·</b>&nbsp;</span>
     </div>
   </div>
 
@@ -409,7 +424,7 @@
   if(sessionStorage.getItem('rs_auth')==='1')return;
   document.documentElement.style.overflow='hidden';
   var o=document.createElement('div');o.id='pw-gate';
-  o.innerHTML='<div style="position:fixed;inset:0;z-index:9999;background:#1c1b17;display:grid;place-items:center;font-family:Archivo,sans-serif"><div style="text-align:center;max-width:340px;padding:24px"><div style="font-size:40px;margin-bottom:24px;font-family:Rye,serif;font-style:normal;color:#bb0a1e">R</div><p style="color:rgba(243,240,231,.6);font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px">Password required</p><input id="pw-input" type="password" placeholder="Enter password" style="width:100%;padding:12px 16px;border-radius:999px;border:1px solid rgba(243,240,231,.13);background:rgba(243,240,231,.05);color:#f3f0e7;font-size:14px;font-family:inherit;outline:none;text-align:center" /><p id="pw-err" style="color:#bb0a1e;font-size:12px;margin-top:10px;opacity:0">Incorrect password</p></div></div>';
+  o.innerHTML='<div style="position:fixed;inset:0;z-index:9999;background:#1c1b17;display:grid;place-items:center;font-family:Archivo,sans-serif"><div style="text-align:center;max-width:340px;padding:24px"><div style="font-size:40px;margin-bottom:24px;font-family:Rye,serif;font-style:normal;color:#bb0a1e">R</div><p style="color:rgba(243,240,231,.6);font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px">Password required</p><input id="pw-input" type="password" aria-label="Password" placeholder="Enter password" style="width:100%;padding:12px 16px;border-radius:999px;border:1px solid rgba(243,240,231,.13);background:rgba(243,240,231,.05);color:#f3f0e7;font-size:14px;font-family:inherit;outline:none;text-align:center" /><p id="pw-err" style="color:#bb0a1e;font-size:12px;margin-top:10px;opacity:0">Incorrect password</p></div></div>';
   document.body.prepend(o);
   var inp=document.getElementById('pw-input'),err=document.getElementById('pw-err');
   inp.focus();
@@ -591,38 +606,20 @@ var S={
   draw:function(t,T,dt){
     var c=SC,ctx=this.ctx,w=this.w,h=this.h;
     ctx.clearRect(0,0,w,h);
-    if(t<this.lastT){this.cur=this.line.map(function(p){return[p[0],p[1]];});this.snap=null;}
-    this.lastT=t;
-    var relaxEnd=1-c.hold-0.18;
-    var holdEnd=relaxEnd+c.hold;
-    var draw=this.cur,settle=0;
-    if(t<0.08){settle=1;}
-    else if(t<holdEnd){
-      var ramp=seg(t,0.08,relaxEnd);
-      settle=1-eOut(ramp);
-      if(t<relaxEnd){
-        var progress=eOut(ramp);
-        var o=this.orig,l=this.line;
-        for(var si=0;si<this.cur.length;si++){
-          this.cur[si][0]=lerp(l[si][0],o[si][0],progress);
-          this.cur[si][1]=lerp(l[si][1],o[si][1],progress);
-        }
-      }else{
-        for(var hi=0;hi<this.cur.length;hi++){
-          this.cur[hi][0]=this.orig[hi][0];
-          this.cur[hi][1]=this.orig[hi][1];
-        }
-      }
-      this.snap=null;
-    }else{
-      if(!this.snap)this.snap=this.cur.map(function(p){return[p[0],p[1]];});
-      var back=eInOut(seg(t,holdEnd,1));
-      settle=back;
-      var l=this.line,s=this.snap,tmp=[];
-      for(var i=0;i<s.length;i++)tmp.push([lerp(s[i][0],l[i][0],back),lerp(s[i][1],l[i][1],back)]);
-      draw=tmp;
-      this.cur=tmp.map(function(p){return[p[0],p[1]];});
+    var o=this.orig,l=this.line;
+    var toScribEnd=0.35;
+    var holdEnd=1-c.hold-0.18;
+    var toLineEnd=1.0;
+    var blend=0;
+    if(t<0.04){blend=0;}
+    else if(t<toScribEnd){blend=eInOut(seg(t,0.04,toScribEnd));}
+    else if(t<holdEnd){blend=1;}
+    else{blend=1-eInOut(seg(t,holdEnd,toLineEnd));}
+    var draw=[];
+    for(var i=0;i<l.length;i++){
+      draw.push([lerp(l[i][0],o[i][0],blend),lerp(l[i][1],o[i][1],blend)]);
     }
+    var settle=1-blend;
     var alpha=lerp(c.contrast*0.62,c.contrast,settle);
     ctx.lineCap='round';ctx.lineJoin='round';
     function trace(){
