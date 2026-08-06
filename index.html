@@ -574,7 +574,9 @@ var S={
       pts[m][0]+=d0[0]*fall+d1[0]*rise;pts[m][1]+=d0[1]*fall+d1[1]*rise;
     }
     this.orig=pts;
-    this.cur=pts.map(function(p){return[p[0],p[1]];});
+    var p0=pts[0],pN=pts[n-1];
+    this.line=pts.map(function(p,i){var u=i/(pts.length-1);return[p0[0]+(pN[0]-p0[0])*u,p0[1]+(pN[1]-p0[1])*u];});
+    this.cur=this.line.map(function(p){return[p[0],p[1]];});
     this.snap=null;this.lastT=0;
   },
   relaxStep:function(iters){
@@ -589,40 +591,35 @@ var S={
   draw:function(t,T,dt){
     var c=SC,ctx=this.ctx,w=this.w,h=this.h;
     ctx.clearRect(0,0,w,h);
-    if(t<this.lastT){this.cur=this.orig.map(function(p){return[p[0],p[1]];});this.snap=null;}
+    if(t<this.lastT){this.cur=this.line.map(function(p){return[p[0],p[1]];});this.snap=null;}
     this.lastT=t;
     var relaxEnd=1-c.hold-0.18;
     var holdEnd=relaxEnd+c.hold;
     var draw=this.cur,settle=0;
-    if(t<0.08){}
+    if(t<0.08){settle=1;}
     else if(t<holdEnd){
       var ramp=seg(t,0.08,relaxEnd);
-      settle=eOut(ramp);
+      settle=1-eOut(ramp);
       if(t<relaxEnd){
-        this.relaxStep(Math.max(1,Math.round(c.relax*(0.35+ramp*1.6)*Math.min(dt*60,2))));
-        var snap2=Math.pow(ramp,3);
-        var p0=this.cur[0],pN=this.cur[this.cur.length-1];
-        for(var si=1;si<this.cur.length-1;si++){
-          var u3=si/(this.cur.length-1);
-          var lx=p0[0]+(pN[0]-p0[0])*u3,ly=p0[1]+(pN[1]-p0[1])*u3;
-          this.cur[si][0]=lerp(this.cur[si][0],lx,snap2);
-          this.cur[si][1]=lerp(this.cur[si][1],ly,snap2);
+        var progress=eOut(ramp);
+        var o=this.orig,l=this.line;
+        for(var si=0;si<this.cur.length;si++){
+          this.cur[si][0]=lerp(l[si][0],o[si][0],progress);
+          this.cur[si][1]=lerp(l[si][1],o[si][1],progress);
         }
       }else{
-        var p0h=this.cur[0],pNh=this.cur[this.cur.length-1];
-        for(var hi=1;hi<this.cur.length-1;hi++){
-          var uh=hi/(this.cur.length-1);
-          this.cur[hi][0]=p0h[0]+(pNh[0]-p0h[0])*uh;
-          this.cur[hi][1]=p0h[1]+(pNh[1]-p0h[1])*uh;
+        for(var hi=0;hi<this.cur.length;hi++){
+          this.cur[hi][0]=this.orig[hi][0];
+          this.cur[hi][1]=this.orig[hi][1];
         }
       }
       this.snap=null;
     }else{
       if(!this.snap)this.snap=this.cur.map(function(p){return[p[0],p[1]];});
       var back=eInOut(seg(t,holdEnd,1));
-      settle=1-back;
-      var o=this.orig,s=this.snap,tmp=[];
-      for(var i=0;i<o.length;i++)tmp.push([lerp(s[i][0],o[i][0],back),lerp(s[i][1],o[i][1],back)]);
+      settle=back;
+      var l=this.line,s=this.snap,tmp=[];
+      for(var i=0;i<s.length;i++)tmp.push([lerp(s[i][0],l[i][0],back),lerp(s[i][1],l[i][1],back)]);
       draw=tmp;
       this.cur=tmp.map(function(p){return[p[0],p[1]];});
     }

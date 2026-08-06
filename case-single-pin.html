@@ -103,7 +103,7 @@
   .imgplate .desc{font-size:13.5px;color:var(--ink-soft);margin-top:8px;max-width:46ch;}
 
   /* pull quote */
-  .pull{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(22px,3vw,30px);line-height:1.34;letter-spacing:-.01em;margin:30px 0;max-width:26ch;}
+  .pull{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(22px,3vw,30px);line-height:1.34;letter-spacing:-.01em;margin:30px 0;max-width:42ch;}
   .pull b{font-style:normal;font-family:var(--grotesque);font-weight:800;color:var(--coral);}
 
   .collab-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
@@ -213,9 +213,8 @@
     <h3 class="sub">Mapping Every User State</h3>
     <p class="body">I started by inventorying the full landscape: seven distinct user states across new and existing users — single account with one card, multiple accounts each with one card, one account with multiple cards, and so on — and mapped single-PIN eligibility for each. A scenario matrix made the old vs. new behaviour explicit for every case.</p>
 
-    <div class="imgplate">
-      <div class="circle" style="background:var(--ochre);"></div>
-      <div class="cnt"><div class="fig">FIG. 02 — Add image</div><div class="desc">The eligibility matrix / scenario map across the seven user states, old vs. new.</div></div>
+    <div style="margin-top:22px;">
+      <img src="fig02-single-pin.png" alt="The eligibility matrix / scenario map across the seven user states, old vs. new" style="width:100%;border-radius:10px;display:block;">
     </div>
 
     <h3 class="sub">Designing the Migration</h3>
@@ -231,9 +230,12 @@
 
     <p class="body">The real problem wasn't the word; it was the idea. Users didn't understand "smart card" and didn't need to. So instead of renaming it, I removed it from the login screen entirely and let the product speak in the model people already hold: one email = one account = one PIN. "Certificate" language now surfaces only where a legal or security requirement genuinely demands it — for example, upgrading to a higher assurance level like Level 4 eHerkenning.</p>
 
-    <div class="imgplate">
-      <div class="circle" style="background:var(--coral);"></div>
-      <div class="cnt"><div class="fig">FIG. 03 — Add image</div><div class="desc">Before vs. after: "Select a smartcard" → "Select a certificate," and "smart card" removed from the login entirely.</div></div>
+    <div style="margin-top:22px;">
+      <img src="fig03-single-pin.png" alt="Before vs. after: Select a smartcard becomes Select a certificate, smart card removed from login" style="width:100%;border-radius:10px;display:block;">
+    </div>
+
+    <div style="margin-top:22px;">
+      <img src="certificate-creation.gif" alt="Certificate creation animation" style="width:100%;border-radius:10px;display:block;">
     </div>
   </section>
 
@@ -245,11 +247,14 @@
     <p class="body">On renewal, users migrate to a single PIN seamlessly. The happy path is calm and legible — <b>log in → account updating → account active → wallet</b> — and the unhappy path never strands anyone: an error leads to a clear retry loop, and if it still can't resolve, a clean handoff to the service desk rather than a dead end.</p>
 
     <h3 class="sub">The Rebrand, In Practice</h3>
-    <p class="body soft">"Select a smartcard" became "Select a certificate," and the smart-card concept disappeared from the login screen. The terminology change was scoped carefully so it stayed consistent across the product and only resurfaced where compliance required it.</p>
+    <p class="body soft">The word "smart card" disappears from every user-facing surface, replaced by "account." Underneath, the architecture doesn't change — each product is still tied to its own certificate (technically, a Level of Assurance certificate), and each certificate still holds its own PIN. What changes is what the user has to manage: instead of setting and remembering a separate PIN per smart card, they're guided to set the same PIN across every certificate they hold, so someone with three smart cards ends up with one PIN in practice, even though the backend still stores three. Anyone with genuinely separate accounts keeps a separate PIN per account — the consolidation happens within an account, not across them.</p>
 
-    <div class="imgplate">
-      <div class="circle" style="background:var(--ochre);"></div>
-      <div class="cnt"><div class="fig">FIG. 04 — Add image</div><div class="desc">The shipped migration screens — happy path (updating → active → wallet) and the unhappy-path retry/service-desk fallback.</div></div>
+    <div style="margin-top:22px;">
+      <img src="fig04-single-pin.png" alt="The shipped migration screens — happy path and unhappy-path retry/service-desk fallback" style="width:100%;border-radius:10px;display:block;">
+    </div>
+
+    <div style="margin-top:22px;">
+      <img src="fig05-single-pin.png" alt="Migration flow screens — detailed view" style="width:100%;border-radius:10px;display:block;">
     </div>
   </section>
 
