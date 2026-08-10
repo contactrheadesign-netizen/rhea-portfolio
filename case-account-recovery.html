@@ -294,12 +294,28 @@
     <h3 class="sub">The Final Flow</h3>
     <p class="body">A fully native recovery experience covering three happy paths plus the corner cases that matter most: <b>invitation + recovery</b>, <b>sign/login + recovery</b> (handled inline via push notification, returning users to their original task), and <b>suspected fraud</b> — where the user sees a clear "unusual activity" explanation and is guided through identity verification and a new PIN, with no dead ends.</p>
 
+    <div style="margin-top:28px;display:flex;flex-wrap:wrap;justify-content:center;gap:28px;">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:12px;flex:0 1 300px;">
+        <video src="recovery-selfie-route.mp4" autoplay muted loop playsinline controls style="width:100%;max-width:300px;border-radius:18px;display:block;"></video>
+        <p style="font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink-soft);text-align:center;max-width:34ch;">When profile picture available (except smartcard Lvl 4) — selfie route</p>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:12px;flex:0 1 300px;">
+        <video src="recovery-document-route.mp4" autoplay muted loop playsinline controls style="width:100%;max-width:300px;border-radius:18px;display:block;"></video>
+        <p style="font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink-soft);text-align:center;max-width:34ch;">Profile picture available (Smart 4) or profile picture unavailable — document upload required</p>
+      </div>
+    </div>
+
+    <div style="margin-top:22px;">
+      <div style="font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;">FIG. 04 — Recovery flow for suspected-fraud users</div>
+      <img src="fig04-recovery-final.png" alt="Recovery flow for suspected-fraud users — multiple-devices warning, identity verification, new PIN creation, securing the account, and recovered wallet" style="width:100%;border-radius:10px;display:block;">
+    </div>
+
     <h3 class="sub">Safety Nets</h3>
     <p class="body soft">Users who attempt recovery too many times are redirected to the service desk with a clear message — an intentional escalation, not a dead end. Failure states were redesigned to explain what happened and offer a next step, rather than showing an error icon and stopping.</p>
 
-    <div class="imgplate">
-      <div class="circle" style="background:var(--coral);"></div>
-      <div class="cnt"><div class="fig">FIG. 04 — Add image</div><div class="desc">High-res annotated screens of the 3 happy paths + key corner-case screens (invitation, sign+recovery, fraud).</div></div>
+    <div style="margin-top:22px;">
+      <div style="font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;">FIG. 05 — Recovery status: product active vs. unable to activate</div>
+      <img src="fig05-recovery-safetynet.png" alt="Recovery status states — account and product active, versus account active with a product unable to activate and marked incomplete" style="width:100%;border-radius:10px;display:block;">
     </div>
 
     <h3 class="sub">Design System &amp; Accessibility</h3>
