@@ -11,7 +11,7 @@
 <style>
   :root{
     --paper:#e9e4d7;--paper-2:#efebe0;--ink:#1c1b17;
-    --ink-soft:rgba(28,27,23,.68);--ink-faint:rgba(28,27,23,.64);
+    --ink-soft:rgba(28,27,23,.78);--ink-faint:rgba(28,27,23,.75);
     --coral:#bb0a1e;--ochre:#c9952b;
     --vellum:rgba(255,253,247,.46);--vellum-strong:rgba(255,253,247,.64);
     --hairline:rgba(28,27,23,.16);--highlight:rgba(255,255,255,.85);--blur:14px;
@@ -264,7 +264,6 @@
 
     <h3 class="sub">Results</h3>
     <p class="body">A single PIN per account for 300K+ users, and a login that finally matches how people actually think about their identity — one email, one account, one PIN — with the technical scaffolding tucked safely out of sight.</p>
-    <p class="body soft" style="font-size:13.5px;"><span class="num">Note to self:</span> add the strongest metrics here once confirmed — PIN-related support tickets and smart-card lockout rates, before vs. after launch.</p>
 
     <h3 class="sub">Reflections</h3>
     <p class="body">The unhappy path didn't work the way I first designed it. My initial version gave users a "try again" button when migration failed, based on early conversations with engineering — but once it rolled out in batches, "try again" turned out to do nothing: it just re-ran the same failed process. Of the first 100 accounts migrated, 5 called customer support before we caught it. I redesigned the failure state so users could continue into the wallet with the affected product marked "incomplete" and finish migration later — introducing a new incomplete-status model that wasn't in the original scope. The same gap put me in real friction with our Security &amp; Compliance lead: my PO, tech lead, and I hadn't fully understood where certification logic actually lived in the architecture, and the upgrade sequencing had to be reworked because of it — friction that was fair, since we'd underestimated it going in. A multi-pseudonym / multi-device edge case can still cause PINs to diverge; solving it fully needs backend work in a future iteration. And "certificate," while clearer than "smart card," is still a compromise — ideally users would never need to see it at all.</p>
