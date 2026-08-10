@@ -44,9 +44,9 @@
   .chero{padding:50px 0 30px;border-bottom:1px solid var(--hairline);}
   .kicker{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
   .kicker .dash{width:26px;height:1px;background:var(--coral);}
-  h1.case{font-weight:900;font-size:clamp(36px,5.6vw,68px);line-height:.98;letter-spacing:-.025em;max-width:16ch;}
+  h1.case{font-weight:900;font-size:clamp(36px,5.6vw,68px);line-height:.98;letter-spacing:-.025em;}
   h1.case em{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--coral);}
-  .chero .lead{color:var(--ink-soft);font-size:17px;line-height:1.55;max-width:60ch;margin-top:22px;}
+  .chero .lead{color:var(--ink-soft);font-size:17px;line-height:1.55;margin-top:22px;}
   .metagrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline);border-radius:12px;overflow:hidden;margin-top:34px;}
   .metagrid .cell{background:var(--paper-2);padding:16px 18px;}
   .metagrid .k{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);}
@@ -69,7 +69,7 @@
   .sechead h2 em{font-family:var(--serif);font-style:italic;font-weight:500;}
   .sechead .num{margin-left:auto;}
   h3.sub{font-weight:800;font-size:16px;letter-spacing:.01em;margin:26px 0 10px;text-transform:uppercase;font-family:var(--mono);}
-  p.body{color:var(--ink);font-size:16px;line-height:1.62;max-width:64ch;margin-top:12px;}
+  p.body{color:var(--ink);font-size:16px;line-height:1.62;margin-top:12px;}
   p.body.soft{color:var(--ink-soft);}
 
   /* frosted callout (HMW / insight) */
@@ -100,10 +100,10 @@
   .imgplate .circle{position:absolute;width:30%;aspect-ratio:1;border-radius:50%;opacity:.5;top:20%;left:8%;}
   .imgplate .cnt{position:relative;z-index:2;padding:0 24px;}
   .imgplate .fig{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);}
-  .imgplate .desc{font-size:13.5px;color:var(--ink-soft);margin-top:8px;max-width:46ch;}
+  .imgplate .desc{font-size:13.5px;color:var(--ink-soft);margin-top:8px;}
 
   /* pull quote */
-  .pull{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(22px,3vw,30px);line-height:1.34;letter-spacing:-.01em;margin:30px 0;max-width:26ch;}
+  .pull{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(22px,3vw,30px);line-height:1.34;letter-spacing:-.01em;margin:30px 0;}
   .pull b{font-style:normal;font-family:var(--grotesque);font-weight:800;color:var(--coral);}
 
   .collab-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
@@ -170,7 +170,7 @@
     <div class="kicker"><span class="dash"></span><span class="label">CASE STUDY · DIGITAL IDENTITY</span></div>
     <h1 class="case">Bringing NFC ID verification <em>in-house</em></h1>
     <p class="lead">Digidentity verified people's identities through ReadID — a third-party NFC SDK we didn't control. I designed the in-house replacement end to end, from illustration and animation to the full UI and UX, so the company could finally own the most critical moment in its product: proving you are who you say you are.</p>
-    <p style="font-size:13.5px;line-height:1.5;color:var(--ink-faint);margin-top:14px;max-width:62ch;">Context — Digidentity is an eIDAS Qualified Trust Service Provider on the EU Trusted List, whose platform has created 25M+ verified identities across 180+ nationalities.</p>
+    <p style="font-size:13.5px;line-height:1.5;color:var(--ink-faint);margin-top:14px;">Context — Digidentity is an eIDAS Qualified Trust Service Provider on the EU Trusted List, whose platform has created 25M+ verified identities across 180+ nationalities.</p>
 
     <div class="metagrid">
       <div class="cell"><div class="k">Role</div><div class="v">Sole Designer<br><span style="font-weight:400;color:var(--ink-soft);font-size:12px;">illustration → UX</span></div></div>
@@ -223,16 +223,16 @@
       <img src="fig02-nfc-flow.png" alt="End-to-end NFC ID verification flow diagram" style="width:100%;display:block;">
     </div>
 
-    <div class="fig02-row">
+    <div class="two">
       <div>
         <h3 class="sub">One Pattern, Three Documents</h3>
         <p class="body">Passport, ID card and driving licence each got their own positioning guidance, scan sequence, and success / error states — unified under a single, consistent pattern so the flow felt like one product, not three.</p>
       </div>
-      <img src="fig02-nfc-matrix.png" alt="Product-specific ID configuration matrix" class="fig02-table" style="border-radius:10px;padding:4px;background:#fff;">
+      <div>
+        <h3 class="sub">Instruction as a Design Discipline</h3>
+        <p class="body">Because users didn't understand the MRZ or chip placement, instruction became a craft in its own right. I designed and illustrated animated guidance showing exactly how to position the phone against each document type — the hand-holding ReadID never offered.</p>
+      </div>
     </div>
-
-    <h3 class="sub">Instruction as a Design Discipline</h3>
-    <p class="body soft">Because users didn't understand the MRZ or chip placement, instruction became a craft in its own right. I designed and illustrated animated guidance showing exactly how to position the phone against each document type — the hand-holding ReadID never offered.</p>
   </section>
 
   <!-- PIVOT -->
@@ -294,6 +294,7 @@
 
     <h3 class="sub">Results</h3>
     <p class="body">Phase 1 shipped: Digidentity now runs its own NFC verification instead of ReadID, owning the experience and removing the third-party dependency — across three document types, two platforms, and eight languages. The redesigned experience cut UI-related errors by <b>80%</b> and abandonment by <b>25%</b>.</p>
+    <p class="body">I track NFC verification health through a live analytics dashboard (Evidence Studio), monitoring session outcomes and failure taxonomy across 210,000+ sessions over the past year. This data-driven view lets me distinguish user-facing UX friction from underlying technical failure modes — informing where design intervention can help versus where the fix sits outside the interface.</p>
 
     <h3 class="sub">Reflections</h3>
     <p class="body">With more capacity up front, MRZ pre-validation would have shipped in Phase 1 and saved a redesign loop — and earlier Lottie adoption would have spared the MP4 / HandBrake workaround. The phased reality taught me something I value now: keep a good idea documented and ready, because the constraints that kill it today often lift tomorrow. Post-launch data also showed that strong UX can't fix every platform constraint — upload-size handling and document/country eligibility still caused some scans to fail regardless of instructions. That finding was translated directly into next-iteration technical priorities: file-size validation, clearer upload feedback, and better handling of restricted document cases.</p>
