@@ -80,7 +80,7 @@
   .badge .bs{font-family:var(--grotesque);font-size:10px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.1em;}
 
   /* plate (hero art) */
-  .plate{position:relative;aspect-ratio:4/4.4;border:none;border-radius:0;overflow:visible;background:transparent;margin-top:-42px;}
+  .plate{position:relative;aspect-ratio:4/2.9;border:none;border-radius:0;overflow:visible;background:transparent;margin-top:-42px;}
   .plate::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
     mask-image:radial-gradient(ellipse 80% 75% at 50% 50%,black 40%,transparent 100%);
     -webkit-mask-image:radial-gradient(ellipse 80% 75% at 50% 50%,black 40%,transparent 100%);}
@@ -284,15 +284,6 @@
     </div>
     <div class="plate" id="plate">
       <canvas id="cvHero" style="position:absolute;inset:0;width:100%;height:100%;z-index:1;mask-image:radial-gradient(ellipse 85% 80% at 50% 50%,black 35%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 85% 80% at 50% 50%,black 35%,transparent 100%);"></canvas>
-      <div class="frost">
-        <div class="ft">How the work happens</div>
-        <ol>
-          <li><span class="n">01</span> Discover</li>
-          <li class="active"><span class="n">02</span> Define</li>
-          <li><span class="n">03</span> Develop</li>
-          <li><span class="n">04</span> Deliver</li>
-        </ol>
-      </div>
     </div>
   </section>
 
@@ -470,7 +461,7 @@ function mul(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15
 function ink(a){return 'rgba('+INK+','+a+')';}
 function acc(a){return 'rgba('+ACC+','+a+')';}
 
-var CFG={density:220,dot:2.30,contrast:.34,period:5,hold:.62,snap:.18,accentPct:4};
+var CFG={density:165,dot:2.30,contrast:.34,period:5,hold:.62,snap:.18,accentPct:4};
 
 var H={
   cv:null,ctx:null,w:0,h:0,dpr:1,pts:[],clock:0,playing:!REDUCED,rows:0,cols:0,
