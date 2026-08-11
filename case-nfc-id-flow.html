@@ -149,7 +149,7 @@
     .foot{flex-direction:column;gap:8px;align-items:flex-start;}
   }
   /* accessibility — focus + skip link */
-  .skip-link{position:fixed;left:8px;top:8px;z-index:200;padding:10px 16px;border-radius:8px;background:#1c1b17;color:#f3f0e7;font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.04em;text-decoration:none;transform:translateY(-200%);transition:transform .16s ease;}
+  .skip-link{position:fixed;left:8px;top:8px;z-index:200;display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;border-radius:8px;background:#1c1b17;color:#f3f0e7;font-family:var(--mono);font-weight:600;font-size:13px;letter-spacing:.04em;text-decoration:none;transform:translateY(-200%);transition:transform .16s ease;}
   .skip-link:focus{transform:translateY(0);}
   :focus-visible{outline:2px solid var(--coral);outline-offset:3px;border-radius:4px;}
 </style>
@@ -171,7 +171,7 @@
   </nav>
 
   <!-- HERO -->
-  <header class="chero" id="main" tabindex="-1">
+  <main class="chero" id="main" tabindex="-1">
     <div class="kicker"><span class="dash"></span><span class="label">CASE STUDY · DIGITAL IDENTITY</span></div>
     <h1 class="case">Bringing NFC ID verification <em>in-house</em></h1>
     <p class="lead">Digidentity verified people's identities through ReadID, a third-party NFC SDK we didn't control. I designed the in-house replacement end to end, from illustration and animation to the full UI and UX, so the company could finally own the most critical moment in its product: proving you are who you say you are.</p>
@@ -187,7 +187,7 @@
     <div class="hplate">
       <img src="hero-nfc.png" alt="NFC ID scanning flow — passport, ID card and driving licence" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
     </div>
-  </header>
+  </main>
 
   <!-- DISCOVERY -->
   <section>
