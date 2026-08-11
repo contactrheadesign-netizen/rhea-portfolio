@@ -174,15 +174,19 @@
     <div class="label">DIGIDENTITY — <span style="color:var(--coral)">SINGLE PIN</span></div>
   </div>
 
-  <nav>
+  <header>
+  <nav aria-label="Main">
     <a class="brand" href="index.html"><span class="mark">R</span>Rhea Sushara</a>
     <div class="spacer"></div>
     <a class="back" href="index.html">← All work</a>
     <a class="btn btn-coral" href="index.html#contact">Get in touch ●</a>
   </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
 
   <!-- HERO -->
-  <main class="chero" id="main" tabindex="-1">
+  <section class="chero">
     <div class="kicker"><span class="dash"></span><span class="label">CASE STUDY · DIGITAL IDENTITY</span></div>
     <h1 class="case">One account, <em>one PIN</em></h1>
     <p class="lead">I consolidated a confusing multi-PIN, multi-smart-card system into a single PIN per account for 300K+ users, and rebranded the product's core terminology to remove technical jargon people never understood. The goal was one clean mental model: one email, one account, one PIN.</p>
@@ -198,7 +202,7 @@
     <div class="hplate">
       <img src="hero-single-pin.png" alt="Single PIN consolidation — before and after screens" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
     </div>
-  </main>
+  </section>
 
   <!-- DISCOVERY -->
   <section>
@@ -298,20 +302,23 @@
       <span class="tag">Service Desk · ticket burden &amp; validation</span>
     </div>
   </section>
+  </main>
 
   <!-- NEXT -->
-  <div class="nextcase">
+  <nav class="nextcase" aria-label="Next case study">
     <div>
       <div class="label2">Back to the start →</div>
-      <h3>See <em>all</em> case studies</h3>
+      <p style="font-weight:900;font-size:clamp(var(--step-4),3vw,var(--step-5));letter-spacing:-.02em;margin-top:6px;">See <em style="font-family:var(--serif);font-style:italic;font-weight:500;color:var(--coral);">all</em> case studies</p>
     </div>
     <a class="btn btn-coral" href="index.html#work">Back to all work →</a>
-  </div>
+  </nav>
 
+  <footer>
   <div class="foot">
     <span class="label">↳ AMSTERDAM · 52.37° N</span>
     <span class="label">RHEA SUSHARA · CASE STUDY</span>
   </div>
+  </footer>
 
 </div>
 <script>

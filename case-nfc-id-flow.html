@@ -180,15 +180,19 @@
     <div class="label">DIGIDENTITY — <span style="color:var(--coral)">NFC ID FLOW</span></div>
   </div>
 
-  <nav>
+  <header>
+  <nav aria-label="Main">
     <a class="brand" href="index.html"><span class="mark">R</span>Rhea Sushara</a>
     <div class="spacer"></div>
     <a class="back" href="index.html">← All work</a>
     <a class="btn btn-coral" href="index.html#contact">Get in touch ●</a>
   </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
 
   <!-- HERO -->
-  <main class="chero" id="main" tabindex="-1">
+  <section class="chero">
     <div class="kicker"><span class="dash"></span><span class="label">CASE STUDY · DIGITAL IDENTITY</span></div>
     <h1 class="case">Bringing NFC ID verification <em>in-house</em></h1>
     <p class="lead">Digidentity verified people's identities through ReadID, a third-party NFC SDK we didn't control. I designed the in-house replacement end to end, from illustration and animation to the full UI and UX, so the company could finally own the most critical moment in its product: proving you are who you say you are.</p>
@@ -204,7 +208,7 @@
     <div class="hplate">
       <img src="hero-nfc.png" alt="NFC ID scanning flow — passport, ID card and driving licence" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
     </div>
-  </main>
+  </section>
 
   <!-- DISCOVERY -->
   <section>
@@ -329,20 +333,23 @@
       <span class="tag">Supporting Designer · cover during leave</span>
     </div>
   </section>
+  </main>
 
   <!-- NEXT -->
-  <div class="nextcase">
+  <nav class="nextcase" aria-label="Next case study">
     <div>
       <div class="label2">Next case →</div>
-      <h3>One account, <em>one PIN</em></h3>
+      <p style="font-weight:900;font-size:clamp(var(--step-4),3vw,var(--step-5));letter-spacing:-.02em;margin-top:6px;">One account, <em style="font-family:var(--serif);font-style:italic;font-weight:500;color:var(--coral);">one PIN</em></p>
     </div>
     <a class="btn btn-coral" href="case-single-pin.html">Read next case →</a>
-  </div>
+  </nav>
 
+  <footer>
   <div class="foot">
     <span class="label">↳ AMSTERDAM · 52.37° N</span>
     <span class="label">RHEA SUSHARA · CASE STUDY</span>
   </div>
+  </footer>
 
 </div>
 <script>

@@ -174,15 +174,19 @@
     <div class="label">DIGIDENTITY — <span style="color:var(--coral)">ACCOUNT SWITCHER</span></div>
   </div>
 
-  <nav>
+  <header>
+  <nav aria-label="Main">
     <a class="brand" href="index.html"><span class="mark">R</span>Rhea Sushara</a>
     <div class="spacer"></div>
     <a class="back" href="index.html">← All work</a>
     <a class="btn btn-coral" href="index.html#contact">Get in touch ●</a>
   </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
 
   <!-- HERO -->
-  <main class="chero" id="main" tabindex="-1">
+  <section class="chero">
     <div class="kicker"><span class="dash"></span><span class="label">CASE STUDY · DIGITAL IDENTITY</span></div>
     <h1 class="case">From a hidden icon to an <em>upfront</em> login</h1>
     <p class="lead">I redesigned Digidentity's login and account switching, replacing an undiscoverable switch icon with a carousel that shows users every account at a glance. With no user testing available on a regulated product, I drove the decision with workshops and a structured survey, and aligned the final design with Apple's Liquid Glass as it launched mid-project.</p>
@@ -198,7 +202,7 @@
     <div style="margin-top:34px;">
       <img src="hero-account-switcher.png" alt="Account Switcher hero — final screens" style="width:100%;border-radius:8px;display:block;">
     </div>
-  </main>
+  </section>
 
   <!-- DISCOVERY -->
   <section>
@@ -315,20 +319,23 @@
       <span class="tag">Engineering · feasibility &amp; handoff</span>
     </div>
   </section>
+  </main>
 
   <!-- NEXT -->
-  <div class="nextcase">
+  <nav class="nextcase" aria-label="Next case study">
     <div>
       <div class="label2">Next case →</div>
-      <h3>One account, <em>one PIN</em></h3>
+      <p style="font-weight:900;font-size:clamp(var(--step-4),3vw,var(--step-5));letter-spacing:-.02em;margin-top:6px;">One account, <em style="font-family:var(--serif);font-style:italic;font-weight:500;color:var(--coral);">one PIN</em></p>
     </div>
     <a class="btn btn-coral" href="case-single-pin.html">Read next case →</a>
-  </div>
+  </nav>
 
+  <footer>
   <div class="foot">
     <span class="label">↳ AMSTERDAM · 52.37° N</span>
     <span class="label">RHEA SUSHARA · CASE STUDY</span>
   </div>
+  </footer>
 
 </div>
 <script>
