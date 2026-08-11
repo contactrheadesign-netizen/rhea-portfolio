@@ -7,7 +7,7 @@
 <meta name="description" content="Senior product designer working at the intersection of trust and usability — regulated digital identity products across 8 languages and 3 platforms.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Frank+Ruhl+Libre:wght@900&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400;1,9..144,500;1,9..144,600&family=Space+Mono:wght@400;700&family=Rye&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=IBM+Plex+Mono:wght@400;500;600&family=Rye&display=swap" rel="stylesheet">
 <style>
   :root{
     --paper:#e9e4d7; --paper-2:#efebe0; --ink:#1c1b17;
@@ -15,7 +15,7 @@
     --coral:#bb0a1e; --ochre:#c9952b;
     --vellum:rgba(255,253,247,.46); --vellum-strong:rgba(255,253,247,.64);
     --hairline:rgba(28,27,23,.16); --highlight:rgba(255,255,255,.85); --blur:14px;
-    --serif:"Fraunces",serif; --grotesque:"Archivo",sans-serif; --mono:"Space Mono",monospace;
+    --serif:"Fraunces",serif; --grotesque:"Archivo",sans-serif; --mono:"IBM Plex Mono",monospace;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -24,7 +24,7 @@
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
   .wrap{position:relative;z-index:1;max-width:none;margin:0 auto;padding:0 48px;}
 
-  .label{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);}
+  .label{font-family:var(--grotesque);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);}
   .num{font-family:var(--mono);font-size:11px;color:var(--coral);letter-spacing:.08em;}
 
   /* top bar + nav */
@@ -36,13 +36,19 @@
     background:var(--vellum);backdrop-filter:blur(var(--blur)) saturate(1.3);-webkit-backdrop-filter:blur(var(--blur)) saturate(1.3);
     border:1px solid var(--highlight);box-shadow:0 1px 0 var(--hairline),0 14px 30px -18px rgba(28,27,23,.4),inset 0 1px 0 rgba(255,255,255,.9);}
   .brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:17px;letter-spacing:-.01em;}
-  .brand .mark{width:26px;height:26px;border-radius:7px;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-family:"Rye",serif;font-style:normal;font-size:15px;}
+  .brand .mark{width:26px;height:26px;border-radius:7px;background:var(--coral);color:#fff5ef;display:grid;place-items:center;font-family:var(--grotesque);font-weight:900;font-size:15px;}
   nav .links{display:flex;gap:22px;margin-left:4px;}
   nav .links a{color:var(--ink-soft);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;}
   nav .links a:hover{color:var(--ink);}
   nav .spacer{flex:1;}
   .mob-menu-btn{display:none;align-items:center;justify-content:center;width:34px;height:34px;border:none;background:none;cursor:pointer;padding:0;}
   .mob-menu-btn svg{width:20px;height:20px;stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round;}
+  .mob-menu{display:none;}
+
+  /* accessibility — focus + skip link */
+  .skip-link{position:fixed;left:8px;top:8px;z-index:200;padding:10px 16px;border-radius:8px;background:#1c1b17;color:#f3f0e7;font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.04em;text-decoration:none;transform:translateY(-200%);transition:transform .16s ease;}
+  .skip-link:focus{transform:translateY(0);}
+  :focus-visible{outline:2px solid var(--coral);outline-offset:3px;border-radius:4px;}
 
   .btn{font-family:var(--grotesque);font-weight:600;font-size:13.5px;cursor:pointer;border-radius:999px;padding:11px 18px;display:inline-flex;align-items:center;gap:8px;transition:transform .2s,box-shadow .2s,background .2s;text-decoration:none;}
   .btn-coral{background:var(--coral);color:#fff5ef;border:none;box-shadow:0 8px 22px -8px rgba(187,10,30,.7);}
@@ -71,7 +77,7 @@
   .badge{display:flex;align-items:center;gap:11px;}
   .badge .ring{width:40px;height:40px;border-radius:50%;border:1px dashed var(--ink-faint);display:grid;place-items:center;font-family:var(--mono);font-size:13px;}
   .badge .bt{font-size:12px;font-weight:700;letter-spacing:.04em;}
-  .badge .bs{font-family:var(--mono);font-size:10px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.1em;}
+  .badge .bs{font-family:var(--grotesque);font-size:10px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.1em;}
 
   /* plate (hero art) */
   .plate{position:relative;aspect-ratio:4/4.4;border:none;border-radius:0;overflow:visible;background:transparent;margin-top:-42px;}
@@ -88,7 +94,7 @@
   .frost{position:absolute;z-index:3;right:16px;bottom:16px;width:auto;padding:18px;border-radius:14px;background:rgba(255,253,247,.10);
     backdrop-filter:blur(32px) saturate(1.6);-webkit-backdrop-filter:blur(32px) saturate(1.6);border:1px solid rgba(255,255,255,.15);
     box-shadow:0 16px 36px -16px rgba(28,27,23,.08),inset 0 1px 0 rgba(255,255,255,.2);}
-  .frost .ft{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px;}
+  .frost .ft{font-family:var(--grotesque);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px;}
   .frost ol{list-style:none;display:grid;gap:9px;}
   .frost li{display:flex;align-items:baseline;gap:10px;font-size:14px;font-weight:600;letter-spacing:-.01em;}
   .frost li .n{font-family:var(--mono);font-size:11px;color:var(--coral);}
@@ -113,14 +119,14 @@
 
   /* domain marquee */
   .domains{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);padding:14px 0;margin-top:8px;overflow:hidden;}
-  .domains .track{display:flex;gap:34px;white-space:nowrap;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);animation:scroll 32s linear infinite;}
+  .domains .track{display:flex;gap:34px;white-space:nowrap;font-family:var(--grotesque);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);animation:scroll 32s linear infinite;}
   .domains .track span{display:inline-flex;gap:34px;}
   .domains .track b{color:var(--coral);font-weight:400;}
   @keyframes scroll{to{transform:translateX(-50%);}}
 
   /* work */
   section{padding:64px 0;}
-  .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);padding:5px 11px;border-radius:999px;border:1px solid var(--hairline);background:var(--paper-2);}
+  .tag{font-family:var(--grotesque);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);padding:5px 11px;border-radius:999px;border:1px solid var(--hairline);background:var(--paper-2);}
 
   /* selected work — full-bleed ash-black band */
   .work-dark{position:relative;width:100vw;margin-left:calc(50% - 50vw);background:#161510;color:#f2efe6;padding:72px 0 78px;margin-top:10px;}
@@ -131,7 +137,7 @@
   .wd-head h2{font-weight:900;font-size:clamp(32px,4.8vw,58px);line-height:.98;letter-spacing:-.025em;max-width:22ch;}
   .wd-head h2 em{font-family:var(--serif);font-style:italic;font-weight:500;}
   .wd-head h2 .dot{color:var(--coral);}
-  .wd-viewall{display:inline-flex;align-items:center;gap:8px;color:rgba(242,239,230,.7);text-decoration:none;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;transition:color .2s;}
+  .wd-viewall{display:inline-flex;align-items:center;gap:8px;color:rgba(242,239,230,.7);text-decoration:none;font-family:var(--grotesque);font-size:11px;text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;transition:color .2s;}
   .wd-viewall:hover{color:#f2efe6;}
   .wd-viewall .arr{color:var(--coral);}
 
@@ -145,8 +151,8 @@
   .wd-card:hover .wd-art img{transform:scale(1.08);}
   .wd-art img{width:100%;height:100%;object-fit:cover;object-position:top;}
   .wd-card-bottom{background:var(--paper-2);padding:22px 24px 18px;display:flex;flex-direction:column;border-radius:0 0 18px 18px;}
-  .wd-headline{font-family:"Frank Ruhl Libre",var(--serif),serif;font-weight:900;font-size:clamp(18px,2.2vw,26px);line-height:1.1;letter-spacing:-.01em;color:var(--ink);}
-  .wd-cta{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:clamp(11px,1.2vw,13px);letter-spacing:.04em;text-transform:uppercase;color:var(--coral);font-weight:700;margin-top:12px;align-self:flex-end;text-decoration:none;}
+  .wd-headline{font-family:var(--serif),serif;font-weight:600;font-size:clamp(18px,2.2vw,26px);line-height:1.12;letter-spacing:-.01em;color:var(--ink);}
+  .wd-cta{display:inline-flex;align-items:center;gap:8px;font-family:var(--grotesque);font-size:clamp(11px,1.2vw,13px);letter-spacing:.04em;text-transform:uppercase;color:var(--coral);font-weight:700;margin-top:12px;align-self:flex-end;text-decoration:none;}
   .wd-cta .arr{transition:transform .2s;}
   .wd-card:hover .wd-cta .arr{transform:translateX(3px);}
 
@@ -167,7 +173,7 @@
   .about p{color:var(--ink-soft);font-size:15.5px;line-height:1.6;margin-top:18px;}
   .collab{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px;}
   .strengths{margin-top:40px;padding-top:30px;border-top:1px solid var(--hairline);}
-  .strengths .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);display:block;margin-bottom:20px;}
+  .strengths .lbl{font-family:var(--grotesque);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);display:block;margin-bottom:20px;}
   .strengths ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:18px 48px;}
   .strengths li{position:relative;padding-left:22px;font-size:15px;line-height:1.55;color:var(--ink-soft);}
   .strengths li::before{content:"—";position:absolute;left:0;color:var(--coral);}
@@ -226,12 +232,13 @@
     nav .btn-ghost{display:none;}
   }
   .coda-illustration{padding:40px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);text-align:center;}
-  .coda-label{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px;}
+  .coda-label{font-family:var(--grotesque);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px;}
   .coda-link{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(24px,3.2vw,34px);color:var(--coral);text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:transform .2s,text-shadow .2s;}
   .coda-link:hover{transform:translateY(-2px);text-shadow:0 14px 30px rgba(187,10,30,.4);}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <div class="wrap">
 
   <div class="topbar">
@@ -259,7 +266,7 @@
   </nav>
 
   <!-- HERO -->
-  <section class="hero" style="padding-top:54px;">
+  <section class="hero" id="main" tabindex="-1" style="padding-top:54px;">
     <div class="gridfx" aria-hidden="true">
       <div class="glayer base"></div>
       <div class="glayer reveal"></div>
@@ -268,8 +275,8 @@
     </div>
     <div class="hero-copy">
       <div class="kicker"><span class="dash"></span><span class="label">SENIOR PRODUCT DESIGNER</span></div>
-      <h1>I design <span class="it coral">trust</span><br>in <span class="it">high&#8209;stakes</span><br>digital products<span class="dot">.</span></h1>
-      <p class="lead">I'm Rhea — a senior product designer at Digidentity, a Qualified Trust Service Provider whose platform has created 25M+ digital identities across 180+ nationalities. As the sole designer across iOS, Android, and web, I turn regulated, security-heavy systems — identity verification, recovery, and digital signatures — into products people can actually use, in 8 languages.</p>
+      <h1>I design <span class="it coral">trust</span><br>in <span class="it">high-stakes</span><br>digital products<span class="dot">.</span></h1>
+      <p class="lead">I'm Rhea, a senior product designer at Digidentity, a Qualified Trust Service Provider whose platform has created 25M+ digital identities across 180+ nationalities. As the sole designer across iOS, Android, and web, I turn regulated, security-heavy systems (identity verification, recovery, and digital signatures) into products people can actually use, in 8 languages.</p>
       <div class="actions">
         <a href="#work" class="btn btn-coral">View selected work →</a>
         <a href="#contact" class="btn btn-ghost">Get in touch</a>
@@ -378,11 +385,11 @@
     <div class="sechead"><span class="dash"></span><h2>How I <em>Work</em></h2></div>
     <div class="about">
       <div>
-        <p class="philosophy">I work at the intersection of <b>trust</b> and usability — turning complex problems into experiences that feel clear, effortless, and genuinely usable for everyone.</p>
+        <p class="philosophy">I work at the intersection of <b>trust</b> and usability, turning complex problems into experiences that feel clear, effortless, and genuinely usable for everyone.</p>
       </div>
       <div>
-        <p>As the sole designer on complex, high-stakes products, I lead through collaboration — working directly with PMs, engineers, security and compliance, the service desk, and QA to make the right trade-offs between hard constraints and the user experience.</p>
-        <p>I believe the best design comes from understanding constraints deeply enough to design <em>within</em> them gracefully, rather than fighting against them — grounded in research, testing, and iteration. I own the design system, ship across three platforms, and write copy that survives translation into eight languages.</p>
+        <p>As the sole designer on complex, high-stakes products, I lead through collaboration, working directly with PMs, engineers, security and compliance, the service desk, and QA to make the right trade-offs between hard constraints and the user experience.</p>
+        <p>I believe the best design comes from understanding constraints deeply enough to design <em>within</em> them gracefully, rather than fighting against them. It's grounded in research, testing, and iteration. I own the design system, ship across three platforms, and write copy that survives translation into eight languages.</p>
         <div class="collab">
           <span class="tag">Product</span><span class="tag">Engineering</span><span class="tag">Security &amp; Compliance</span><span class="tag">Service Desk</span><span class="tag">QA</span>
         </div>
@@ -391,9 +398,9 @@
     <div class="strengths">
       <span class="lbl">What I bring</span>
       <ul>
-        <li>Regulated digital identity depth — eIDAS, qualified electronic signatures, eHerkenning, and the EU Digital Identity Wallet. Fluent in the compliance logic, not just the screens.</li>
-        <li>Evidence-led decisions under real constraints — when external user testing isn't possible, I validate direction through structured surveys and stakeholder research.</li>
-        <li>An illustration and motion background I bring into product — from instructional scan animations to a design system that holds across three platforms and eight languages.</li>
+        <li>Regulated digital identity depth: eIDAS, qualified electronic signatures, eHerkenning, and the EU Digital Identity Wallet. Fluent in the compliance logic, not just the screens.</li>
+        <li>Evidence-led decisions under real constraints. When external user testing isn't possible, I validate direction through structured surveys and stakeholder research.</li>
+        <li>An illustration and motion background I bring into product, from instructional scan animations to a design system that holds across three platforms and eight languages.</li>
       </ul>
     </div>
   </section>
