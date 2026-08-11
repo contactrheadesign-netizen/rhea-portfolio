@@ -174,8 +174,8 @@
   <header class="chero" id="main" tabindex="-1">
     <div class="kicker"><span class="dash"></span><span class="label">CASE STUDY · DIGITAL IDENTITY</span></div>
     <h1 class="case">Bringing NFC ID verification <em>in-house</em></h1>
-    <p class="lead">Digidentity verified people's identities through ReadID — a third-party NFC SDK we didn't control. I designed the in-house replacement end to end, from illustration and animation to the full UI and UX, so the company could finally own the most critical moment in its product: proving you are who you say you are.</p>
-    <p style="font-size:13.5px;line-height:1.5;color:var(--ink-faint);margin-top:14px;">Context — Digidentity is an eIDAS Qualified Trust Service Provider on the EU Trusted List, whose platform has created 25M+ verified identities across 180+ nationalities.</p>
+    <p class="lead">Digidentity verified people's identities through ReadID, a third-party NFC SDK we didn't control. I designed the in-house replacement end to end, from illustration and animation to the full UI and UX, so the company could finally own the most critical moment in its product: proving you are who you say you are.</p>
+    <p style="font-size:13.5px;line-height:1.5;color:var(--ink-faint);margin-top:14px;">Context: Digidentity is an eIDAS Qualified Trust Service Provider on the EU Trusted List, whose platform has created 25M+ verified identities across 180+ nationalities.</p>
 
     <div class="metagrid">
       <div class="cell"><div class="k">Role</div><div class="v">Sole Designer<br><span style="font-weight:400;color:var(--ink-soft);font-size:12px;">illustration → UX</span></div></div>
@@ -195,10 +195,10 @@
 
     <h3 class="sub">The Problem</h3>
     <p class="body">Identity verification — the single most important action in our product — was outsourced to ReadID, a third-party NFC SDK. We couldn't shape the experience, the branding, or the cost. Bringing it in-house meant ownership, but NFC scanning is genuinely hard for ordinary people: most users don't know what an <em>MRZ</em> is, where the NFC chip sits inside their document, or how to hold the phone steady long enough to read it.</p>
-    <p class="body soft">And every failed first attempt turns into a support ticket — so the experience design wasn't a nice-to-have, it was the difference between a verification that completes and one that lands on the service desk.</p>
+    <p class="body soft">And every failed first attempt turns into a support ticket, so the experience design wasn't a nice-to-have, it was the difference between a verification that completes and one that lands on the service desk.</p>
 
     <div class="callout">
-      <div class="ct">The opportunity — How might we…</div>
+      <div class="ct">The opportunity: How might we…</div>
       <ul>
         <li>own the most critical moment in our product instead of renting it from a third party?</li>
         <li>guide a non-technical user through an NFC scan they've never been taught to do?</li>
@@ -211,7 +211,7 @@
 
     <h3 class="sub">Constraints I Designed Within</h3>
     <div class="rows">
-      <div class="row"><span class="n">01</span><span class="t">NFC chip behaviour differs by document and device — and unlocking the chip at all requires the document number, date of birth and expiry date, data the user otherwise has to type by hand.</span></div>
+      <div class="row"><span class="n">01</span><span class="t">NFC chip behaviour differs by document and device, and unlocking the chip at all requires the document number, date of birth and expiry date, data the user otherwise has to type by hand.</span></div>
       <div class="row"><span class="n">02</span><span class="t">Limited engineering capacity, and as a regulated identity product, security and compliance shaped every decision.</span></div>
       <div class="row"><span class="n">03</span><span class="t">Phase 1 carried a clear mandate from senior stakeholders: mirror ReadID as closely as possible to de-risk the migration.</span></div>
     </div>
@@ -222,7 +222,7 @@
     <div class="sechead"><span class="dash"></span><h2>Strategy &amp; <em>Logic</em></h2></div>
 
     <h3 class="sub">The Core Decision: Two Ways In</h3>
-    <p class="body">An NFC read can't happen until the app has the document's key data. There are only two ways to get it: make the user <b>type it</b> — more steps, more errors — or <b>scan the machine-readable zone</b> to capture it automatically. I mapped both and argued for the second: <b>MRZ pre-validation</b>, to collapse the steps and take decisions off the user's plate.</p>
+    <p class="body">An NFC read can't happen until the app has the document's key data. There are only two ways to get it: make the user <b>type it</b> (more steps, more errors) or <b>scan the machine-readable zone</b> to capture it automatically. I mapped both and argued for the second: <b>MRZ pre-validation</b>, to collapse the steps and take decisions off the user's plate.</p>
 
     <div style="margin-top:22px;width:100vw;margin-left:calc(50% - 50vw);background:#d4f5e0;padding:0;">
       <img src="fig02-nfc-flow.png" alt="End-to-end NFC ID verification flow diagram" style="width:100%;display:block;">
@@ -231,11 +231,11 @@
     <div class="two">
       <div>
         <h3 class="sub">One Pattern, Three Documents</h3>
-        <p class="body">Passport, ID card and driving licence each got their own positioning guidance, scan sequence, and success / error states — unified under a single, consistent pattern so the flow felt like one product, not three.</p>
+        <p class="body">Passport, ID card and driving licence each got their own positioning guidance, scan sequence, and success / error states, unified under a single, consistent pattern so the flow felt like one product, not three.</p>
       </div>
       <div>
         <h3 class="sub">Instruction as a Design Discipline</h3>
-        <p class="body">Because users didn't understand the MRZ or chip placement, instruction became a craft in its own right. I designed and illustrated animated guidance showing exactly how to position the phone against each document type — the hand-holding ReadID never offered.</p>
+        <p class="body">Because users didn't understand the MRZ or chip placement, instruction became a craft in its own right. I designed and illustrated animated guidance showing exactly how to position the phone against each document type, the hand-holding ReadID never offered.</p>
       </div>
     </div>
   </section>
@@ -243,12 +243,12 @@
   <!-- PIVOT -->
   <section>
     <div class="sechead"><span class="dash"></span><h2>The <em>Pivot</em></h2></div>
-    <p class="body">I advocated for MRZ pre-validation from the start. But technical difficulty and limited capacity led senior stakeholders to overrule it for Phase 1 — the directive was to replicate the ReadID steps as faithfully as possible and de-risk the launch. That meant a longer flow and a heavy dependence on instruction.</p>
+    <p class="body">I advocated for MRZ pre-validation from the start. But technical difficulty and limited capacity led senior stakeholders to overrule it for Phase 1: the directive was to replicate the ReadID steps as faithfully as possible and de-risk the launch. That meant a longer flow and a heavy dependence on instruction.</p>
 
     <div class="pull">I held a deprioritised idea in reserve — <b>MRZ pre-validation</b> — until the constraints that killed it finally lifted.</div>
 
-    <p class="body">Replicating ReadID surfaced exactly the friction I'd predicted: without pre-validation, users were left to understand the MRZ and scanning on their own, so the whole flow leaned on instructional animation to carry them through. The pipeline was constrained too — engineering pushed back hard on Lottie, so I built everything in Figma, screen-recorded to MP4, and compressed the files through HandBrake to keep them shippable. And it was all iPhone-first.</p>
-    <p class="body soft">Then in Phase 2, stakeholders asked to cut screens and steps — which led straight back to the MRZ pre-validation flow I'd originally proposed. I'm now reverse-engineering toward it. Engineering also adopted Lottie at last, letting me replace the heavy MP4 workaround with lighter, per-device animations instead of one iPhone-centric set.</p>
+    <p class="body">Replicating ReadID surfaced exactly the friction I'd predicted: without pre-validation, users were left to understand the MRZ and scanning on their own, so the whole flow leaned on instructional animation to carry them through. The pipeline was constrained too. Engineering pushed back hard on Lottie, so I built everything in Figma, screen-recorded to MP4, and compressed the files through HandBrake to keep them shippable. And it was all iPhone-first.</p>
+    <p class="body soft">Then in Phase 2, stakeholders asked to cut screens and steps, which led straight back to the MRZ pre-validation flow I'd originally proposed. I'm now reverse-engineering toward it. Engineering also adopted Lottie at last, letting me replace the heavy MP4 workaround with lighter, per-device animations instead of one iPhone-centric set.</p>
 
     <div class="phase">
       <div class="tag">Phase 1 · 2024</div>
@@ -263,7 +263,7 @@
     <div class="phase" style="margin-top:22px;">
       <div class="tag">Phase 2 · 2026 →</div>
       <h4>Fewer steps, my way</h4>
-      <p>The org circles back to MRZ pre-validation. Screens and user decisions cut, Lottie adopted at last, and animations rebuilt per device — a cleaner, more scalable foundation.</p>
+      <p>The org circles back to MRZ pre-validation. Screens and user decisions cut, Lottie adopted at last, and animations rebuilt per device: a cleaner, more scalable foundation.</p>
     </div>
 
     <div style="margin-top:22px;">
@@ -276,20 +276,20 @@
     <div class="sechead"><span class="dash"></span><h2>The <em>Execution</em></h2></div>
 
     <h3 class="sub">The Final Flow</h3>
-    <p class="body">A complete, in-house NFC verification flow for passport, ID card and driving licence — instructional animation for phone positioning, the scan sequence, and clear success / error handling — live on both iOS and Android. I owned every layer, from illustration through to production UI.</p>
+    <p class="body">A complete, in-house NFC verification flow for passport, ID card and driving licence (instructional animation for phone positioning, the scan sequence, and clear success / error handling), live on both iOS and Android. I owned every layer, from illustration through to production UI.</p>
 
     <h3 class="sub">Built on the Design System</h3>
     <p class="body">I built the flow within the Digidentity design system, keeping the three document journeys and both platforms visually consistent and fully localised across eight languages.</p>
 
     <h3 class="sub">Animation Craft</h3>
-    <p class="body soft">Phase 1 was a study in working within constraints — Figma → MP4 → HandBrake when Lottie wasn't on the table. Phase 2 moves to Lottie with device-specific guidance: a cleaner, more scalable foundation.</p>
+    <p class="body soft">Phase 1 was a study in working within constraints: Figma → MP4 → HandBrake when Lottie wasn't on the table. Phase 2 moves to Lottie with device-specific guidance: a cleaner, more scalable foundation.</p>
 
     <h3 class="sub">Accessibility</h3>
     <p class="body soft">Instructional clarity for non-technical users sat at the centre, alongside colour contrast, tap-target sizing, and full localisation so the guidance reads naturally in every supported language.</p>
 
     <div class="imgplate">
       <div class="circle" style="background:#4a7d96;"></div>
-      <div class="cnt"><div class="fig">FIG. 04 — Add image</div><div class="desc">High-res final screens across the three document flows — a short scan clip or prototype lands hardest here.</div></div>
+      <div class="cnt"><div class="fig">FIG. 04 — Add image</div><div class="desc">High-res final screens across the three document flows. A short scan clip or prototype lands hardest here.</div></div>
     </div>
   </section>
 
@@ -298,11 +298,11 @@
     <div class="sechead"><span class="dash"></span><h2>The <em>Conclusion</em></h2></div>
 
     <h3 class="sub">Results</h3>
-    <p class="body">Phase 1 shipped: Digidentity now runs its own NFC verification instead of ReadID, owning the experience and removing the third-party dependency — across three document types, two platforms, and eight languages. The redesigned experience cut UI-related errors by <b>80%</b> and abandonment by <b>25%</b>.</p>
-    <p class="body">I track NFC verification health through a live analytics dashboard (Evidence Studio), monitoring session outcomes and failure taxonomy across 210,000+ sessions over the past year. This data-driven view lets me distinguish user-facing UX friction from underlying technical failure modes — informing where design intervention can help versus where the fix sits outside the interface.</p>
+    <p class="body">Phase 1 shipped: Digidentity now runs its own NFC verification instead of ReadID, owning the experience and removing the third-party dependency, across three document types, two platforms, and eight languages. The redesigned experience cut UI-related errors by <b>80%</b> and abandonment by <b>25%</b>.</p>
+    <p class="body">I track NFC verification health through a live analytics dashboard (Evidence Studio), monitoring session outcomes and failure taxonomy across 210,000+ sessions over the past year. This data-driven view lets me distinguish user-facing UX friction from underlying technical failure modes, informing where design intervention can help versus where the fix sits outside the interface.</p>
 
     <h3 class="sub">Reflections</h3>
-    <p class="body">With more capacity up front, MRZ pre-validation would have shipped in Phase 1 and saved a redesign loop — and earlier Lottie adoption would have spared the MP4 / HandBrake workaround. The phased reality taught me something I value now: keep a good idea documented and ready, because the constraints that kill it today often lift tomorrow. Post-launch data also showed that strong UX can't fix every platform constraint — upload-size handling and document/country eligibility still caused some scans to fail regardless of instructions. That finding was translated directly into next-iteration technical priorities: file-size validation, clearer upload feedback, and better handling of restricted document cases.</p>
+    <p class="body">With more capacity up front, MRZ pre-validation would have shipped in Phase 1 and saved a redesign loop, and earlier Lottie adoption would have spared the MP4 / HandBrake workaround. The phased reality taught me something I value now: keep a good idea documented and ready, because the constraints that kill it today often lift tomorrow. Post-launch data also showed that strong UX can't fix every platform constraint: upload-size handling and document/country eligibility still caused some scans to fail regardless of instructions. That finding was translated directly into next-iteration technical priorities: file-size validation, clearer upload feedback, and better handling of restricted document cases.</p>
 
     <h3 class="sub">Collaborators</h3>
     <div class="collab-tags">

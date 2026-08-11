@@ -175,7 +175,7 @@
     <div class="kicker"><span class="dash"></span><span class="label">CASE STUDY · DIGITAL IDENTITY</span></div>
     <h1 class="case">Giving users back control of their <em>digital identity</em></h1>
     <p class="lead">I redesigned Digidentity's account recovery — the flow people hit at their most vulnerable moment with the product — from a fragmented, web-only experience full of dead ends into a self-serve native mobile journey that works across 8 languages.</p>
-    <p style="font-size:13.5px;line-height:1.5;color:var(--ink-faint);margin-top:14px;max-width:62ch;">Context — Digidentity is an eIDAS Qualified Trust Service Provider on the EU Trusted List, whose platform has created 25M+ verified identities across 180+ nationalities.</p>
+    <p style="font-size:13.5px;line-height:1.5;color:var(--ink-faint);margin-top:14px;max-width:62ch;">Context: Digidentity is an eIDAS Qualified Trust Service Provider on the EU Trusted List, whose platform has created 25M+ verified identities across 180+ nationalities.</p>
 
     <div class="metagrid">
       <div class="cell"><div class="k">Role</div><div class="v">Lead Product Designer<br><span style="font-weight:400;color:var(--ink-soft);font-size:12px;">Sole designer</span></div></div>
@@ -194,11 +194,11 @@
     <div class="sechead"><span class="dash"></span><h2>The <em>Discovery</em></h2></div>
 
     <h3 class="sub">The Problem</h3>
-    <p class="body">Users who lost their device or got locked out faced a recovery experience that was web-only, fragmented, and full of dead ends — pushing most of them to the service desk. For a product handling legally binding credentials like eHerkenning and qualified signatures, a broken recovery flow doesn't just frustrate users; it erodes trust in the entire platform.</p>
+    <p class="body">Users who lost their device or got locked out faced a recovery experience that was web-only, fragmented, and full of dead ends, pushing most of them to the service desk. For a product handling legally binding credentials like eHerkenning and qualified signatures, a broken recovery flow doesn't just frustrate users; it erodes trust in the entire platform.</p>
     <p class="body soft">The result: recovery was neither self-serve nor scalable. The service desk had become the de facto recovery mechanism.</p>
 
     <div class="callout">
-      <div class="ct">The opportunity — How might we…</div>
+      <div class="ct">The opportunity: How might we…</div>
       <ul>
         <li>let users recover entirely within the mobile app, without bouncing to a web platform mid-flow?</li>
         <li>merge "recovery" and "transfer" when users don't understand or care about the distinction?</li>
@@ -212,10 +212,10 @@
 
     <h3 class="sub">Constraints I Designed Within</h3>
     <div class="rows">
-      <div class="row"><span class="n">01</span><span class="t">Users with multiple smart cards at the highest assurance level must re-upload evidence and re-create authenticators — a non-negotiable security requirement.</span></div>
+      <div class="row"><span class="n">01</span><span class="t">Users with multiple smart cards at the highest assurance level must re-upload evidence and re-create authenticators, a non-negotiable security requirement.</span></div>
       <div class="row"><span class="n">02</span><span class="t">Certain failure states must route to the service desk by design. That's a security control, not a bug to fix.</span></div>
       <div class="row"><span class="n">03</span><span class="t">PIN attempt counts are deliberately never disclosed to users.</span></div>
-      <div class="row"><span class="n">04</span><span class="t">All copy has to work across 8 languages — meaning short, modular, and translation-safe.</span></div>
+      <div class="row"><span class="n">04</span><span class="t">All copy has to work across 8 languages: short, modular, and translation-safe.</span></div>
     </div>
   </section>
 
@@ -252,7 +252,7 @@
     </div>
 
     <h3 class="sub">A Phased Approach</h3>
-    <p class="body soft">Rather than make users wait months for a big-bang release, I sequenced the work to match development capacity — delivering an immediate improvement while the right long-term solution was built properly.</p>
+    <p class="body soft">Rather than make users wait months for a big-bang release, I sequenced the work to match development capacity, delivering an immediate improvement while the right long-term solution was built properly.</p>
     <div class="two">
       <div class="phase">
         <span class="tag">Phase 01 · Early 2025</span>
@@ -281,9 +281,9 @@
   <!-- PIVOT -->
   <section>
     <div class="sechead"><span class="dash"></span><h2>The <em>Pivot</em></h2></div>
-    <p class="body">The hardest part wasn't the visible flow — it was the rules underneath it. The distinction between when biometric verification was required versus when an ID-document upload was sufficient only became clear after several rounds of iteration with the security team.</p>
+    <p class="body">The hardest part wasn't the visible flow: it was the rules underneath it. The distinction between when biometric verification was required versus when an ID-document upload was sufficient only became clear after several rounds of iteration with the security team.</p>
 
-    <div class="pull">That single clarification reshaped the whole solution — it's what split recovery into <b>three distinct happy paths</b>.</div>
+    <div class="pull">That single clarification reshaped the whole solution: it's what split recovery into <b>three distinct happy paths</b>.</div>
 
     <p class="body soft">Once I understood the assurance rules properly, the design stopped trying to force one universal flow and instead routed each user down the correct path for their credential level. The lesson I carry forward: in regulated products, pin down the compliance logic <em>before</em> designing the screens, not during.</p>
 
@@ -297,16 +297,16 @@
     <div class="sechead"><span class="dash"></span><h2>The <em>Execution</em></h2></div>
 
     <h3 class="sub">The Final Flow</h3>
-    <p class="body">A fully native recovery experience covering three happy paths plus the corner cases that matter most: <b>invitation + recovery</b>, <b>sign/login + recovery</b> (handled inline via push notification, returning users to their original task), and <b>suspected fraud</b> — where the user sees a clear "unusual activity" explanation and is guided through identity verification and a new PIN, with no dead ends.</p>
+    <p class="body">A fully native recovery experience covering three happy paths plus the corner cases that matter most: <b>invitation + recovery</b>, <b>sign/login + recovery</b> (handled inline via push notification, returning users to their original task), and <b>suspected fraud</b>, where the user sees a clear "unusual activity" explanation and is guided through identity verification and a new PIN, with no dead ends.</p>
 
     <div style="margin-top:28px;display:flex;flex-wrap:wrap;justify-content:center;gap:28px;">
       <div style="display:flex;flex-direction:column;align-items:center;gap:12px;flex:0 1 300px;">
         <video src="recovery-selfie-route.mp4" autoplay muted loop playsinline controls style="width:100%;max-width:300px;border-radius:18px;display:block;"></video>
-        <p style="font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink-soft);text-align:center;max-width:34ch;">When profile picture available (except smartcard Lvl 4) — selfie route</p>
+        <p style="font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink-soft);text-align:center;max-width:34ch;">When profile picture available (except smartcard Lvl 4): selfie route</p>
       </div>
       <div style="display:flex;flex-direction:column;align-items:center;gap:12px;flex:0 1 300px;">
         <video src="recovery-document-route.mp4" autoplay muted loop playsinline controls style="width:100%;max-width:300px;border-radius:18px;display:block;"></video>
-        <p style="font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink-soft);text-align:center;max-width:34ch;">Profile picture available (Smart 4) or profile picture unavailable — document upload required</p>
+        <p style="font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink-soft);text-align:center;max-width:34ch;">Profile picture available (Smart 4) or profile picture unavailable: document upload required</p>
       </div>
     </div>
 
@@ -316,7 +316,7 @@
     </div>
 
     <h3 class="sub">Safety Nets</h3>
-    <p class="body soft">Users who attempt recovery too many times are redirected to the service desk with a clear message — an intentional escalation, not a dead end. Failure states were redesigned to explain what happened and offer a next step, rather than showing an error icon and stopping.</p>
+    <p class="body soft">Users who attempt recovery too many times are redirected to the service desk with a clear message: an intentional escalation, not a dead end. Failure states were redesigned to explain what happened and offer a next step, rather than showing an error icon and stopping.</p>
 
     <div style="margin-top:22px;">
       <div style="font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;">FIG. 05 — Recovery status: product active vs. unable to activate</div>
@@ -324,7 +324,7 @@
     </div>
 
     <h3 class="sub">Design System &amp; Accessibility</h3>
-    <p class="body">Built on Digidentity's native component library for consistency across the app — the recovery screens share the same visual language as the rest of the product. Every screen has a clear hierarchy so users always know what's happening, why, and what to do next, and all copy was written short and modular to localise cleanly across 8 languages.</p>
+    <p class="body">Built on Digidentity's native component library for consistency across the app: the recovery screens share the same visual language as the rest of the product. Every screen has a clear hierarchy so users always know what's happening, why, and what to do next, and all copy was written short and modular to localise cleanly across 8 languages.</p>
   </section>
 
   <!-- CONCLUSION -->
@@ -332,13 +332,13 @@
     <div class="sechead"><span class="dash"></span><h2>The <em>Conclusion</em></h2></div>
 
     <h3 class="sub">Results</h3>
-    <p class="body">Before this project, recovery had no self-serve path at all — every case went through the service desk. The phased rollout changed that in two steps: stabilising the web flow first lifted self-serve success to <b>40%</b>, limited because most users are mobile-first and the fix hadn't reached them yet. Moving to a fully native mobile flow then pushed it to <b>99%</b> — both figures confirmed directly by the service desk team. Recovery now resolves independently for the vast majority of users, across iOS and Android.</p>
+    <p class="body">Before this project, recovery had no self-serve path at all: every case went through the service desk. The phased rollout changed that in two steps: stabilising the web flow first lifted self-serve success to <b>40%</b>, limited because most users are mobile-first and the fix hadn't reached them yet. Moving to a fully native mobile flow then pushed it to <b>99%</b>, both figures confirmed directly by the service desk team. Recovery now resolves independently for the vast majority of users, across iOS and Android.</p>
 
     <h3 class="sub">Reflections</h3>
-    <p class="body">I'd involve engineering earlier in the mobile phase — some technical constraints surfaced late. And I'd lock the smart-card assurance and authorisation requirements with the security team up front; getting that clarity earlier would have saved significant rework and reached the right solution faster.</p>
+    <p class="body">I'd involve engineering earlier in the mobile phase: some technical constraints surfaced late. And I'd lock the smart-card assurance and authorisation requirements with the security team up front; getting that clarity earlier would have saved significant rework and reached the right solution faster.</p>
 
     <h3 class="sub">Collaborators</h3>
-    <p class="body soft">A cross-functional effort across the team — I credit each partner by role:</p>
+    <p class="body soft">A cross-functional effort across the team. I credit each partner by role:</p>
     <div class="collab-tags">
       <span class="tag">PM · prioritisation &amp; phasing</span>
       <span class="tag">Engineering · feasibility &amp; rollout</span>

@@ -168,8 +168,8 @@
   <header class="chero" id="main" tabindex="-1">
     <div class="kicker"><span class="dash"></span><span class="label">CASE STUDY · DIGITAL IDENTITY</span></div>
     <h1 class="case">One account, <em>one PIN</em></h1>
-    <p class="lead">I consolidated a confusing multi-PIN, multi-smart-card system into a single PIN per account for 300K+ users — and rebranded the product's core terminology to remove technical jargon people never understood. The goal was one clean mental model: one email, one account, one PIN.</p>
-    <p style="font-size:13.5px;line-height:1.5;color:var(--ink-faint);margin-top:14px;max-width:62ch;">Context — Digidentity is an eIDAS Qualified Trust Service Provider on the EU Trusted List, whose platform has created 25M+ verified identities across 180+ nationalities.</p>
+    <p class="lead">I consolidated a confusing multi-PIN, multi-smart-card system into a single PIN per account for 300K+ users, and rebranded the product's core terminology to remove technical jargon people never understood. The goal was one clean mental model: one email, one account, one PIN.</p>
+    <p style="font-size:13.5px;line-height:1.5;color:var(--ink-faint);margin-top:14px;max-width:62ch;">Context: Digidentity is an eIDAS Qualified Trust Service Provider on the EU Trusted List, whose platform has created 25M+ verified identities across 180+ nationalities.</p>
 
     <div class="metagrid">
       <div class="cell"><div class="k">Role</div><div class="v">Lead Product Designer<br><span style="font-weight:400;color:var(--ink-soft);font-size:12px;">sole designer</span></div></div>
@@ -188,11 +188,11 @@
     <div class="sechead"><span class="dash"></span><h2>The <em>Discovery</em></h2></div>
 
     <h3 class="sub">The Problem</h3>
-    <p class="body">Digidentity's wallet let users accumulate a separate PIN for every smart card — even when those credentials were tied to the same email. The result was a confusing system where one person could end up juggling several PINs, and a login built around "smart card," a technical concept most users didn't understand or need.</p>
+    <p class="body">Digidentity's wallet let users accumulate a separate PIN for every smart card, even when those credentials were tied to the same email. The result was a confusing system where one person could end up juggling several PINs, and a login built around "smart card," a technical concept most users didn't understand or need.</p>
     <p class="body soft">For a product people use to prove who they are, that mismatch between the system's model and the user's mental model was a quiet but constant source of confusion and support tickets.</p>
 
     <div class="callout">
-      <div class="ct">The opportunity — How might we…</div>
+      <div class="ct">The opportunity: How might we…</div>
       <ul>
         <li>give each user a single PIN per account without breaking the underlying security model?</li>
         <li>remove "smart card" jargon so the product matches how people actually think about their identity?</li>
@@ -201,12 +201,12 @@
     </div>
 
     <h3 class="sub">Who I Designed For</h3>
-    <p class="body">300K+ existing Digidentity wallet users on iOS and Android — individuals and business users who hold one or more credentials. Many didn't even realise they had multiple PINs; they just knew logging in sometimes felt inconsistent.</p>
+    <p class="body">300K+ existing Digidentity wallet users on iOS and Android, individuals and business users who hold one or more credentials. Many didn't even realise they had multiple PINs; they just knew logging in sometimes felt inconsistent.</p>
 
     <h3 class="sub">Constraints I Designed Within</h3>
     <div class="rows">
-      <div class="row"><span class="n">01</span><span class="t">PIN storage and smart-card sync carried real technical requirements — the single PIN had to hold up against the existing security architecture.</span></div>
-      <div class="row"><span class="n">02</span><span class="t">Certain recovery states must block to the service desk — a security requirement, not a gap to design away.</span></div>
+      <div class="row"><span class="n">01</span><span class="t">PIN storage and smart-card sync carried real technical requirements: the single PIN had to hold up against the existing security architecture.</span></div>
+      <div class="row"><span class="n">02</span><span class="t">Certain recovery states must block to the service desk: a security requirement, not a gap to design away.</span></div>
       <div class="row"><span class="n">03</span><span class="t">Migration had to happen for 300K+ live users with no disruptive forced reset, and all copy had to localise cleanly.</span></div>
     </div>
   </section>
@@ -223,17 +223,17 @@
     </div>
 
     <h3 class="sub">Designing the Migration</h3>
-    <p class="body soft">The migration was triggered by credential renewal, so users moved to a single PIN as a natural part of something they already do — no jarring forced reset. I designed both the happy and unhappy paths, including the tricky edge case where a PIN could diverge during recovery.</p>
+    <p class="body soft">The migration was triggered by credential renewal, so users moved to a single PIN as a natural part of something they already do: no jarring forced reset. I designed both the happy and unhappy paths, including the tricky edge case where a PIN could diverge during recovery.</p>
   </section>
 
   <!-- PIVOT -->
   <section>
     <div class="sechead"><span class="dash"></span><h2>The <em>Pivot</em></h2></div>
-    <p class="body">The brief looked like a relabelling job: "smart card" was confusing, so find a friendlier word. Early drafts treated it that way — swap the term, ship it.</p>
+    <p class="body">The brief looked like a relabelling job: "smart card" was confusing, so find a friendlier word. Early drafts treated it that way: swap the term, ship it.</p>
 
-    <div class="pull">The fix wasn't a better word for "smart card" — it was removing a <b>concept</b> users never needed to see.</div>
+    <div class="pull">The fix wasn't a better word for "smart card": it was removing a <b>concept</b> users never needed to see.</div>
 
-    <p class="body">The real problem wasn't the word; it was the idea. Users didn't understand "smart card" and didn't need to. So instead of renaming it, I removed it from the login screen entirely and let the product speak in the model people already hold: one email = one account = one PIN. "Certificate" language now surfaces only where a legal or security requirement genuinely demands it — for example, upgrading to a higher assurance level like Level 4 eHerkenning.</p>
+    <p class="body">The real problem wasn't the word; it was the idea. Users didn't understand "smart card" and didn't need to. So instead of renaming it, I removed it from the login screen entirely and let the product speak in the model people already hold: one email = one account = one PIN. "Certificate" language now surfaces only where a legal or security requirement genuinely demands it, for example, upgrading to a higher assurance level like Level 4 eHerkenning.</p>
 
     <div style="margin-top:22px;">
       <img src="fig03-single-pin.png" alt="Evolution of the login screen — 2021 (labelled 'Advanced smart card'), 2025 (name only), 2026 (account card with name and email, smart card language fully removed)" style="width:100%;border-radius:10px;display:block;">
@@ -249,10 +249,10 @@
     <div class="sechead"><span class="dash"></span><h2>The <em>Execution</em></h2></div>
 
     <h3 class="sub">The Migration Flow</h3>
-    <p class="body">On renewal, users migrate to a single PIN seamlessly. The happy path is calm and legible — <b>log in → account updating → account active → wallet</b>. The unhappy path went through a real revision post-launch: the first version offered a "try again" button on failure, but retrying just re-ran the same failed process. The shipped version instead lets users continue into the wallet with the affected product marked <b>"incomplete,"</b> and finish the migration later from there — no dead end, and no button promising a fix that wasn't happening.</p>
+    <p class="body">On renewal, users migrate to a single PIN seamlessly. The happy path is calm and legible: <b>log in → account updating → account active → wallet</b>. The unhappy path went through a real revision post-launch: the first version offered a "try again" button on failure, but retrying just re-ran the same failed process. The shipped version instead lets users continue into the wallet with the affected product marked <b>"incomplete,"</b> and finish the migration later from there. No dead end, and no button promising a fix that wasn't happening.</p>
 
     <h3 class="sub">The Rebrand, In Practice</h3>
-    <p class="body soft">The word "smart card" disappears from every user-facing surface, replaced by "account." Underneath, the architecture doesn't change — each product is still tied to its own certificate (technically, a Level of Assurance certificate), and each certificate still holds its own PIN. What changes is what the user has to manage: instead of setting and remembering a separate PIN per smart card, they're guided to set the same PIN across every certificate they hold, so someone with three smart cards ends up with one PIN in practice, even though the backend still stores three. Anyone with genuinely separate accounts keeps a separate PIN per account — the consolidation happens within an account, not across them.</p>
+    <p class="body soft">The word "smart card" disappears from every user-facing surface, replaced by "account." Underneath, the architecture doesn't change: each product is still tied to its own certificate (technically, a Level of Assurance certificate), and each certificate still holds its own PIN. What changes is what the user has to manage: instead of setting and remembering a separate PIN per smart card, they're guided to set the same PIN across every certificate they hold, so someone with three smart cards ends up with one PIN in practice, even though the backend still stores three. Anyone with genuinely separate accounts keeps a separate PIN per account: the consolidation happens within an account, not across them.</p>
 
     <div style="margin-top:22px;">
       <img src="fig04-single-pin.png" alt="The shipped migration screens — happy path and unhappy-path retry/service-desk fallback" style="width:100%;border-radius:10px;display:block;">
@@ -271,7 +271,7 @@
     <p class="body">A single PIN per account for 300K+ users, and a login that finally matches how people actually think about their identity — one email, one account, one PIN — with the technical scaffolding tucked safely out of sight.</p>
 
     <h3 class="sub">Reflections</h3>
-    <p class="body">The unhappy path didn't work the way I first designed it. My initial version gave users a "try again" button when migration failed, based on early conversations with engineering — but once it rolled out in batches, "try again" turned out to do nothing: it just re-ran the same failed process. Of the first 100 accounts migrated, 5 called customer support before we caught it. I redesigned the failure state so users could continue into the wallet with the affected product marked "incomplete" and finish migration later — introducing a new incomplete-status model that wasn't in the original scope. The same gap put me in real friction with our Security &amp; Compliance lead: my PO, tech lead, and I hadn't fully understood where certification logic actually lived in the architecture, and the upgrade sequencing had to be reworked because of it — friction that was fair, since we'd underestimated it going in. A multi-pseudonym / multi-device edge case can still cause PINs to diverge; solving it fully needs backend work in a future iteration. And "certificate," while clearer than "smart card," is still a compromise — ideally users would never need to see it at all.</p>
+    <p class="body">The unhappy path didn't work the way I first designed it. My initial version gave users a "try again" button when migration failed, based on early conversations with engineering, but once it rolled out in batches, "try again" turned out to do nothing: it just re-ran the same failed process. Of the first 100 accounts migrated, 5 called customer support before we caught it. I redesigned the failure state so users could continue into the wallet with the affected product marked "incomplete" and finish migration later, introducing a new incomplete-status model that wasn't in the original scope. The same gap put me in real friction with our Security &amp; Compliance lead: my PO, tech lead, and I hadn't fully understood where certification logic actually lived in the architecture, and the upgrade sequencing had to be reworked because of it. The friction was fair, since we'd underestimated it going in. A multi-pseudonym / multi-device edge case can still cause PINs to diverge; solving it fully needs backend work in a future iteration. And "certificate," while clearer than "smart card," is still a compromise: ideally users would never need to see it at all.</p>
 
     <h3 class="sub">Collaborators</h3>
     <div class="collab-tags">
