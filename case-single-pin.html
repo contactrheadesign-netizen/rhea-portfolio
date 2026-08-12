@@ -205,7 +205,7 @@
     </div>
 
     <div class="hplate">
-      <img src="hero-single-pin.png" alt="Single PIN consolidation — before and after screens" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+      <img loading="lazy" decoding="async" src="hero-single-pin.png" alt="Single PIN consolidation — before and after screens" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
     </div>
   </section>
 
@@ -245,7 +245,7 @@
     <p class="body">I started by inventorying the full landscape: seven distinct user states across new and existing users — single account with one card, multiple accounts each with one card, one account with multiple cards, and so on — and mapped single-PIN eligibility for each. A scenario matrix made the old vs. new behaviour explicit for every case.</p>
 
     <div style="margin-top:22px;">
-      <img src="fig02-single-pin.png" alt="The eligibility matrix / scenario map across the seven user states, old vs. new" style="width:100%;border-radius:10px;display:block;">
+      <img loading="lazy" decoding="async" src="fig02-single-pin.png" alt="The eligibility matrix / scenario map across the seven user states, old vs. new" style="width:100%;border-radius:10px;display:block;">
     </div>
 
     <h3 class="sub">Designing the Migration</h3>
@@ -262,11 +262,11 @@
     <p class="body">The real problem wasn't the word; it was the idea. Users didn't understand "smart card" and didn't need to. So instead of renaming it, I removed it from the login screen entirely and let the product speak in the model people already hold: one email = one account = one PIN. "Certificate" language now surfaces only where a legal or security requirement genuinely demands it, for example, upgrading to a higher assurance level like Level 4 eHerkenning.</p>
 
     <div style="margin-top:22px;">
-      <img src="fig03-single-pin.png" alt="Evolution of the login screen — 2021 (labelled 'Advanced smart card'), 2025 (name only), 2026 (account card with name and email, smart card language fully removed)" style="width:100%;border-radius:10px;display:block;">
+      <img loading="lazy" decoding="async" src="fig03-single-pin.png" alt="Evolution of the login screen — 2021 (labelled 'Advanced smart card'), 2025 (name only), 2026 (account card with name and email, smart card language fully removed)" style="width:100%;border-radius:10px;display:block;">
     </div>
 
     <div style="margin-top:22px;">
-      <img src="certificate-creation.gif" alt="Certificate creation animation" style="width:100%;border-radius:10px;display:block;">
+      <img loading="lazy" decoding="async" src="certificate-creation.gif" alt="Certificate creation animation" style="width:100%;border-radius:10px;display:block;">
     </div>
   </section>
 
@@ -281,11 +281,11 @@
     <p class="body soft">The word "smart card" disappears from every user-facing surface, replaced by "account." Underneath, the architecture doesn't change: each product is still tied to its own certificate (technically, a Level of Assurance certificate), and each certificate still holds its own PIN. What changes is what the user has to manage: instead of setting and remembering a separate PIN per smart card, they're guided to set the same PIN across every certificate they hold, so someone with three smart cards ends up with one PIN in practice, even though the backend still stores three. Anyone with genuinely separate accounts keeps a separate PIN per account: the consolidation happens within an account, not across them.</p>
 
     <div style="margin-top:22px;">
-      <img src="fig04-single-pin.png" alt="The shipped migration screens — happy path and unhappy-path retry/service-desk fallback" style="width:100%;border-radius:10px;display:block;">
+      <img loading="lazy" decoding="async" src="fig04-single-pin.png" alt="The shipped migration screens — happy path and unhappy-path retry/service-desk fallback" style="width:100%;border-radius:10px;display:block;">
     </div>
 
     <div style="margin-top:22px;">
-      <img src="fig05-single-pin.png" alt="Migration flow screens — detailed view" style="width:100%;border-radius:10px;display:block;">
+      <img loading="lazy" decoding="async" src="fig05-single-pin.png" alt="Migration flow screens — detailed view" style="width:100%;border-radius:10px;display:block;">
     </div>
   </section>
 
