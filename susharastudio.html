@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sushara Studio — Illustration &amp; Brand Work</title>
+<meta name="description" content="Sushara Studio — illustration, brand, motion and product design work by Rhea Sushara, including FutureBens, Qwwweero, Discord, PVH, JUIZS, KLEAR and more.">
+<link rel="canonical" href="https://rheasushara.com/susharastudio.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rhea Sushara">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://rheasushara.com/susharastudio.html">
+<meta property="og:title" content="Sushara Studio — Illustration &amp; Brand Work">
+<meta property="og:description" content="Illustration, brand, motion and product design work by Rhea Sushara.">
+<meta property="og:image" content="https://rheasushara.com/og-index.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sushara Studio — Illustration &amp; Brand Work">
+<meta name="twitter:description" content="Illustration, brand, motion and product design work by Rhea Sushara.">
+<meta name="twitter:image" content="https://rheasushara.com/og-index.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=IBM+Plex+Mono:wght@400;500;600&family=Rye&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#e9e4d7; --paper-2:#efebe0; --ink:#1c1b17;
+    --ink-soft:rgba(28,27,23,.78); --ink-faint:rgba(28,27,23,.75);
+    --coral:#bb0a1e; --ochre:#c9952b;
+    --vellum:rgba(255,253,247,.46); --vellum-strong:rgba(255,253,247,.64);
+    --hairline:rgba(28,27,23,.16); --highlight:rgba(255,255,255,.85); --blur:14px;
+    --serif:"Fraunces",serif; --grotesque:"Archivo",sans-serif; --mono:"IBM Plex Mono",monospace;
+    --step-1:12px;--step-2:13px;--step-3:16px;--step-4:20px;--step-5:25px;--step-6:39px;--step-7:61px;--step-8:76px;
+    --ease-out:cubic-bezier(0.23,1,0.32,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  b{font-weight:800;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--grotesque);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden;}
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.06;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  .wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 34px;}
+  .label{font-family:var(--grotesque);font-size:var(--step-1);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);}
+  .num{font-family:var(--mono);font-size:var(--step-1);color:var(--coral);letter-spacing:.08em;}
+
+  .topbar{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:12px 0;border-bottom:1px solid var(--hairline);}
+  .topbar .label{display:flex;gap:18px;}
+  .live{display:inline-flex;align-items:center;gap:6px;color:var(--coral);}
+  .live::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--coral);box-shadow:0 0 8px var(--coral);}
+
+  nav{position:sticky;top:14px;z-index:50;margin-top:20px;display:flex;align-items:center;gap:22px;padding:11px 12px 11px 20px;border-radius:999px;
+    background:var(--vellum);backdrop-filter:blur(var(--blur)) saturate(1.3);-webkit-backdrop-filter:blur(var(--blur)) saturate(1.3);
+    border:1px solid var(--highlight);box-shadow:0 1px 0 var(--hairline),0 14px 30px -18px rgba(28,27,23,.4),inset 0 1px 0 rgba(255,255,255,.9);}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:var(--step-3);letter-spacing:-.01em;text-decoration:none;color:var(--ink);}
+  .brand .mark{width:26px;height:26px;border-radius:7px;background:var(--coral);color:#fff5ef;display:grid;place-items:center;font-family:var(--grotesque);font-weight:900;font-size:var(--step-3);}
+  nav .spacer{flex:1;}
+  .btn{font-family:var(--grotesque);font-weight:600;font-size:var(--step-2);cursor:pointer;border-radius:999px;padding:11px 18px;display:inline-flex;align-items:center;gap:8px;transition:transform .2s,box-shadow .2s,background .2s;text-decoration:none;}
+  .btn-coral{background:var(--coral);color:#fff5ef;border:none;box-shadow:0 8px 22px -8px rgba(187,10,30,.7);}
+  .btn-coral:hover{transform:translateY(-2px);box-shadow:0 14px 30px -8px rgba(187,10,30,.8);}
+
+  .skip-link{position:fixed;left:8px;top:8px;z-index:200;display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;border-radius:8px;background:#1c1b17;color:#f3f0e7;font-family:var(--mono);font-weight:600;font-size:var(--step-2);letter-spacing:.04em;text-decoration:none;transform:translateY(-200%);transition:transform .16s ease;}
+  .skip-link:focus{transform:translateY(0);}
+  :focus-visible{outline:2px solid var(--coral);outline-offset:3px;border-radius:4px;}
+
+  /* hero */
+  .hero{padding:54px 0 30px;}
+  .kicker{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+  .kicker .dash{width:26px;height:1px;background:var(--coral);}
+  h1{font-weight:900;font-size:clamp(var(--step-6),6vw,var(--step-8));line-height:.98;letter-spacing:-.025em;}
+  h1 .it{font-family:var(--serif);font-weight:500;font-style:italic;letter-spacing:-.01em;}
+  h1 .it.coral{color:var(--coral);}
+  h1 .dot{color:var(--coral);}
+  .lead{color:var(--ink-soft);font-size:var(--step-3);line-height:1.55;max-width:60ch;margin-top:24px;}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+  .tag{font-family:var(--grotesque);font-size:var(--step-1);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);padding:5px 11px;border-radius:999px;border:1px solid var(--hairline);background:var(--paper-2);}
+
+  .domains{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);padding:14px 0;margin-top:30px;overflow:hidden;}
+  .domains .track{display:flex;gap:34px;white-space:nowrap;font-family:var(--grotesque);font-size:var(--step-1);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);animation:scroll 34s linear infinite;}
+  .domains .track span{display:inline-flex;gap:34px;}
+  .domains .track b{color:var(--coral);font-weight:400;}
+  @keyframes scroll{to{transform:translateX(-50%);}}
+
+  /* project section */
+  .proj{padding:64px 0;border-top:1px solid var(--hairline);}
+  .proj-head{display:grid;grid-template-columns:120px 1fr;gap:24px;margin-bottom:34px;}
+  .ph-left{display:flex;flex-direction:column;gap:10px;padding-top:6px;}
+  .kind{font-family:var(--grotesque);font-size:var(--step-1);letter-spacing:.1em;text-transform:uppercase;color:var(--ochre);font-weight:800;}
+  .ph-title{font-weight:900;font-size:clamp(var(--step-5),4vw,var(--step-7));line-height:.98;letter-spacing:-.025em;}
+  .ph-title .dot{color:var(--coral);}
+  .ph-sub{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(var(--step-4),2.4vw,var(--step-5));color:var(--ink);margin-top:8px;}
+  .ph-meta{font-family:var(--mono);font-size:var(--step-2);color:var(--ink-soft);margin-top:14px;letter-spacing:.01em;}
+  .ph-meta .ph-client{color:var(--coral);}
+  .ph-meta .sep{margin:0 8px;color:var(--ink-faint);}
+  .ph-desc{color:var(--ink-soft);font-size:var(--step-3);line-height:1.6;max-width:70ch;margin-top:16px;}
+  .ph-count{font-family:var(--grotesque);font-size:var(--step-1);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-top:16px;}
+
+  /* masonry grid */
+  .grid{column-count:3;column-gap:18px;}
+  @media (max-width:900px){.grid{column-count:2;}}
+  @media (max-width:560px){.grid{column-count:1;}}
+  .tile{break-inside:avoid;margin:0 0 18px;border-radius:14px;overflow:hidden;background:var(--paper-2);border:1px solid var(--hairline);position:relative;box-shadow:0 14px 30px -22px rgba(28,27,23,.5);}
+  .tile .media{display:block;width:100%;height:auto;}
+  .tile img.media{transition:transform .5s var(--ease-out);}
+  .tile:hover img.media{transform:scale(1.04);}
+  .tile-v .cap{position:absolute;top:10px;left:10px;z-index:2;font-family:var(--grotesque);font-size:var(--step-1);letter-spacing:.08em;text-transform:uppercase;font-weight:800;color:#fff5ef;background:var(--coral);padding:3px 9px;border-radius:999px;box-shadow:0 6px 16px -6px rgba(187,10,30,.7);}
+  .tile-v .media{background:#161510;}
+
+  /* footer */
+  .foot{display:flex;justify-content:space-between;align-items:center;padding:40px 0 56px;border-top:1px solid var(--hairline);gap:12px;flex-wrap:wrap;}
+  .foot .label{font-size:var(--step-1);}
+  .backline{padding:48px 0 0;text-align:center;}
+  .backline a{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(var(--step-4),3vw,var(--step-5));color:var(--coral);text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:transform .2s,text-shadow .2s;}
+  .backline a:hover{transform:translateY(-2px);text-shadow:0 14px 30px rgba(187,10,30,.4);}
+
+  @media (max-width:680px){
+    .topbar{flex-wrap:wrap;gap:6px 14px;}
+    .topbar > .label:nth-child(2){display:none;}
+    .proj-head{grid-template-columns:1fr;gap:12px;}
+    .ph-left{flex-direction:row;align-items:center;gap:14px;}
+  }
+  @media (max-width:520px){
+    .wrap{padding:0 20px;}
+    .proj{padding:48px 0;}
+  }
+
+  /* reduced-motion reveal (from case studies) */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .45s var(--ease-out),transform .45s var(--ease-out);}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){
+    .domains .track{animation:none;}
+    .tile:hover img.media{transform:none;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="label"><span>SUSHARA / STUDIO</span><span style="color:var(--coral)">ILLUSTRATION · BRAND · MOTION</span></div>
+    <div class="label live">AMSTERDAM · NL</div>
+  </div>
+
+  <header>
+  <nav aria-label="Main">
+    <a class="brand" href="index.html"><span class="mark">R</span>Rhea Sushara</a>
+    <div class="spacer"></div>
+    <a class="btn btn-coral" href="index.html">&larr; Portfolio</a>
+  </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+  <section class="hero">
+    <div class="kicker"><span class="dash"></span><span class="label">Sushara Studio</span></div>
+    <h1>Illustration, brand<br>&amp; <span class="it coral">motion work</span><span class="dot">.</span></h1>
+    <p class="lead">A gallery of studio and side work — from illustration, branding and art direction to self-directed product and UX explorations. Nine projects, gathered from my earlier Wix portfolio and rebuilt here.</p>
+    <div class="hero-meta">
+      <span class="tag">Illustration</span><span class="tag">Branding</span><span class="tag">Motion</span>
+      <span class="tag">Art Direction</span><span class="tag">Product / UX</span>
+    </div>
+  </section>
+
+  <div class="domains" aria-hidden="true">
+    <div class="track">
+      <span>FutureBens <b>·</b> Qwwweero <b>·</b> Discord <b>·</b> PVH <b>·</b> Logo Design <b>·</b> JUIZS <b>·</b> KLEAR <b>·</b> Feed Your Senses <b>·</b> Lamb to the Slaughter <b>·</b>&nbsp;</span>
+      <span aria-hidden="true">FutureBens <b>·</b> Qwwweero <b>·</b> Discord <b>·</b> PVH <b>·</b> Logo Design <b>·</b> JUIZS <b>·</b> KLEAR <b>·</b> Feed Your Senses <b>·</b> Lamb to the Slaughter <b>·</b>&nbsp;</span>
+    </div>
+  </div>
+
+  <section class="proj" id="futurebens" aria-labelledby="futurebens-h">
+    <div class="proj-head">
+      <div class="ph-left">
+        <span class="num">01</span>
+        <span class="kind">Product Design</span>
+      </div>
+      <div class="ph-main">
+        <h2 id="futurebens-h" class="ph-title">FutureBens<span class="dot">.</span></h2>
+        <p class="ph-sub">Building an ESG platform</p>
+        <p class="ph-meta"><span class="ph-client">FutureBens · Berlin B-Corp start-up</span><span class="sep">/</span>3 UX/UI designers · Research, IxD, Visual · 68 hrs · Desktop</p>
+        <p class="ph-desc">A B-Corp employee marketplace evolving into a full ESG platform. The challenge: make sustainability content visible and interactive enough to drive engagement. Competitor analysis, a 50-person survey, interviews, card sorting and journey mapping fed into the IA, user flows and a high-fidelity UI.</p>
+        <p class="ph-count">18 pieces</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-01.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-02.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-03.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-04.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-05.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-06.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-07.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-08.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-09.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-10.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-11.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-12.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-13.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-14.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-15.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-16.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-17.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-18.webp" alt="FutureBens — Building an ESG platform"></figure>
+    </div>
+  </section>
+
+  <section class="proj" id="qwwweero" aria-labelledby="qwwweero-h">
+    <div class="proj-head">
+      <div class="ph-left">
+        <span class="num">02</span>
+        <span class="kind">Product Design</span>
+      </div>
+      <div class="ph-main">
+        <h2 id="qwwweero-h" class="ph-title">Qwwweero<span class="dot">.</span></h2>
+        <p class="ph-sub">An inclusive wellness app for the queer community</p>
+        <p class="ph-meta"><span class="ph-client">The Daily Health Conference</span><span class="sep">/</span>Javier Quiroga & Rhea Sushara · 64 hrs · iOS</p>
+        <p class="ph-desc">Rethinking how people adopt a health-improving routine, with users kept in control of their own data (GDPR). Research surfaced inclusivity as the core need, leading to a wellness app built for the queer community — empathy maps, personas, concept testing and a high-fidelity iOS UI. The clips are the animated screen demos.</p>
+        <p class="ph-count">41 pieces · 8 motion</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/qwwweero-v01.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/qwwweero-v02.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/qwwweero-v03.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/qwwweero-v04.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/qwwweero-v05.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/qwwweero-v06.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/qwwweero-v07.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/qwwweero-v08.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-01.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-02.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-03.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-04.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-05.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-06.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-07.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-08.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-09.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-10.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-11.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-12.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-13.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-14.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-15.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-16.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-17.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-18.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-19.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-20.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-21.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-22.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-23.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-24.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-25.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-26.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-27.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-28.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-29.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-30.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-31.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-32.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-33.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure>
+    </div>
+  </section>
+
+  <section class="proj" id="discord" aria-labelledby="discord-h">
+    <div class="proj-head">
+      <div class="ph-left">
+        <span class="num">03</span>
+        <span class="kind">Product Design</span>
+      </div>
+      <div class="ph-main">
+        <h2 id="discord-h" class="ph-title">Discord<span class="dot">.</span></h2>
+        <p class="ph-sub">UI redesign — “Acid Drip”</p>
+        <p class="ph-meta"><span class="ph-client">Self-directed UI challenge</span><span class="sep">/</span>Curtis R & Rhea Sushara · 30 hrs · iOS</p>
+        <p class="ph-desc">Clone Discord's screens, then redesign the look and feel without losing the product's purpose. A heuristic audit exposed a busy, gaming-skewed interface; a comparative analysis (Slack, Skype, MS Teams) and a mood-board informed a new style tile, animation and high-fidelity redesign.</p>
+        <p class="ph-count">17 pieces · 1 motion</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/discord-v01.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-01.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-02.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-03.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-04.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-05.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-06.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-07.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-08.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-09.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-10.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-11.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-12.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-13.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-14.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-15.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-16.webp" alt="Discord — UI redesign — “Acid Drip”"></figure>
+    </div>
+  </section>
+
+  <section class="proj" id="pvh-omnichannel" aria-labelledby="pvh-omnichannel-h">
+    <div class="proj-head">
+      <div class="ph-left">
+        <span class="num">04</span>
+        <span class="kind">Motion</span>
+      </div>
+      <div class="ph-main">
+        <h2 id="pvh-omnichannel-h" class="ph-title">PVH — Omnichannel<span class="dot">.</span></h2>
+        <p class="ph-sub">Motion &amp; animation</p>
+        <p class="ph-meta"><span class="ph-client">PVH · Calvin Klein / Tommy Hilfiger</span><span class="sep">/</span>Animation</p>
+        <p class="ph-desc">Video and animation for PVH-omnichannel, an Instagram-like internal platform for PVH store staff worldwide. Eight looping motion pieces.</p>
+        <p class="ph-count">9 pieces · 8 motion</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/pvh-omnichannel-v01.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/pvh-omnichannel-v02.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/pvh-omnichannel-v03.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/pvh-omnichannel-v04.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/pvh-omnichannel-v05.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/pvh-omnichannel-v06.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/pvh-omnichannel-v07.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/pvh-omnichannel-v08.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/pvh-omnichannel-01.webp" alt="PVH — Omnichannel — Motion &amp; animation"></figure>
+    </div>
+  </section>
+
+  <section class="proj" id="logo-design" aria-labelledby="logo-design-h">
+    <div class="proj-head">
+      <div class="ph-left">
+        <span class="num">05</span>
+        <span class="kind">Branding</span>
+      </div>
+      <div class="ph-main">
+        <h2 id="logo-design-h" class="ph-title">Logo Design<span class="dot">.</span></h2>
+        <p class="ph-sub">Branding &amp; identity</p>
+        <p class="ph-meta"><span class="ph-client">Various / personal</span><span class="sep">/</span>Branding</p>
+        <p class="ph-desc">A set of logo and identity explorations.</p>
+        <p class="ph-count">6 pieces</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/logo-design-01.webp" alt="Logo Design — Branding &amp; identity"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/logo-design-02.webp" alt="Logo Design — Branding &amp; identity"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/logo-design-03.webp" alt="Logo Design — Branding &amp; identity"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/logo-design-04.webp" alt="Logo Design — Branding &amp; identity"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/logo-design-05.webp" alt="Logo Design — Branding &amp; identity"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/logo-design-06.webp" alt="Logo Design — Branding &amp; identity"></figure>
+    </div>
+  </section>
+
+  <section class="proj" id="juizs" aria-labelledby="juizs-h">
+    <div class="proj-head">
+      <div class="ph-left">
+        <span class="num">06</span>
+        <span class="kind">Illustration</span>
+      </div>
+      <div class="ph-main">
+        <h2 id="juizs-h" class="ph-title">JUIZS<span class="dot">.</span></h2>
+        <p class="ph-sub">Illustration</p>
+        <p class="ph-meta"><span class="ph-client">Juizs · cold-pressed juice brand</span><span class="sep">/</span>Illustration</p>
+        <p class="ph-desc">Cold-pressed juices and smoothies delivered fresh to your door. Illustrated all of the assets used across the brand's website and Instagram, including one animated piece.</p>
+        <p class="ph-count">10 pieces · 1 motion</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/juizs-v01.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/juizs-01.webp" alt="JUIZS — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/juizs-02.webp" alt="JUIZS — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/juizs-03.webp" alt="JUIZS — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/juizs-04.webp" alt="JUIZS — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/juizs-05.webp" alt="JUIZS — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/juizs-06.webp" alt="JUIZS — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/juizs-07.webp" alt="JUIZS — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/juizs-08.webp" alt="JUIZS — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/juizs-09.webp" alt="JUIZS — Illustration"></figure>
+    </div>
+  </section>
+
+  <section class="proj" id="klear" aria-labelledby="klear-h">
+    <div class="proj-head">
+      <div class="ph-left">
+        <span class="num">07</span>
+        <span class="kind">Illustration</span>
+      </div>
+      <div class="ph-main">
+        <h2 id="klear-h" class="ph-title">KLEAR<span class="dot">.</span></h2>
+        <p class="ph-sub">Illustration &amp; motion</p>
+        <p class="ph-meta"><span class="ph-client">KLEAR Amsterdam</span><span class="sep">/</span>Illustration · Motion</p>
+        <p class="ph-desc">A party-event company throwing nights at Paradiso and during ADE. Illustrated three of their featured DJs of the month, plus GIFs and a short moving image set to music.</p>
+        <p class="ph-count">6 pieces · 1 motion</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/klear-v01.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/klear-01.webp" alt="KLEAR — Illustration &amp; motion"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/klear-02.webp" alt="KLEAR — Illustration &amp; motion"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/klear-03.webp" alt="KLEAR — Illustration &amp; motion"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/klear-04.webp" alt="KLEAR — Illustration &amp; motion"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/klear-05.webp" alt="KLEAR — Illustration &amp; motion"></figure>
+    </div>
+  </section>
+
+  <section class="proj" id="feed-your-senses" aria-labelledby="feed-your-senses-h">
+    <div class="proj-head">
+      <div class="ph-left">
+        <span class="num">08</span>
+        <span class="kind">Art Direction</span>
+      </div>
+      <div class="ph-main">
+        <h2 id="feed-your-senses-h" class="ph-title">Feed Your Senses<span class="dot">.</span></h2>
+        <p class="ph-sub">Art direction</p>
+        <p class="ph-meta"><span class="ph-client">Marqt · with Jorinde Bax</span><span class="sep">/</span>Art direction</p>
+        <p class="ph-desc">Visuals and an app concept for shopping a Dutch supermarket through the five senses — touch, feel, see, hear and taste. A simple concept made visually intriguing.</p>
+        <p class="ph-count">3 pieces</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/feed-your-senses-01.webp" alt="Feed Your Senses — Art direction"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/feed-your-senses-02.webp" alt="Feed Your Senses — Art direction"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/feed-your-senses-03.webp" alt="Feed Your Senses — Art direction"></figure>
+    </div>
+  </section>
+
+  <section class="proj" id="lamb-to-the-slaughter" aria-labelledby="lamb-to-the-slaughter-h">
+    <div class="proj-head">
+      <div class="ph-left">
+        <span class="num">09</span>
+        <span class="kind">Illustration</span>
+      </div>
+      <div class="ph-main">
+        <h2 id="lamb-to-the-slaughter-h" class="ph-title">Lamb to the Slaughter<span class="dot">.</span></h2>
+        <p class="ph-sub">Illustration</p>
+        <p class="ph-meta"><span class="ph-client">Editorial / personal</span><span class="sep">/</span>Illustration · Mixed media</p>
+        <p class="ph-desc">An illustrated interpretation of Roald Dahl's dark short story, aimed at readers 18+. Mixed media — vector drawings, photography and stitching — with a retro palette across the cover and four inside illustrations.</p>
+        <p class="ph-count">14 pieces</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-01.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-02.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-03.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-04.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-05.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-06.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-07.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-08.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-09.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-10.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-11.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-12.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-13.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-14.webp" alt="Lamb to the Slaughter — Illustration"></figure>
+    </div>
+  </section>
+
+  <div class="backline">
+    <a href="index.html">Back to the main portfolio <span aria-hidden="true">&rarr;</span></a>
+  </div>
+  </main>
+
+  <footer>
+  <div class="foot">
+    <span class="label">↳ AMSTERDAM · 52.37° N · 4.89° E</span>
+    <span class="label">RHEA SUSHARA · SUSHARA STUDIO 2026</span>
+  </div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // scroll reveal — mirrors the case-study pattern: reduced-motion leaves content visible, no motion
+  if(!REDUCED){
+    var all=[].slice.call(document.querySelectorAll('.tile'));
+    all.forEach(function(el){el.classList.add('reveal');});
+    if(!('IntersectionObserver' in window)){all.forEach(function(el){el.classList.add('in');});}
+    else{
+      var io=new IntersectionObserver(function(es){
+        es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+      },{rootMargin:'0px 0px -8% 0px',threshold:.1});
+      all.forEach(function(el){io.observe(el);});
+    }
+  }
+  // videos: autoplay in view only when motion is allowed; otherwise show controls, no autoplay
+  var vids=[].slice.call(document.querySelectorAll('video.media'));
+  if(REDUCED){
+    vids.forEach(function(v){v.setAttribute('controls','');});
+  } else if('IntersectionObserver' in window){
+    var vo=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        var v=e.target;
+        if(e.isIntersecting){ v.play().catch(function(){}); }
+        else{ v.pause(); }
+      });
+    },{threshold:.25});
+    vids.forEach(function(v){vo.observe(v);});
+  } else {
+    vids.forEach(function(v){v.setAttribute('autoplay','');});
+  }
+})();
+</script>
+</body>
+</html>
