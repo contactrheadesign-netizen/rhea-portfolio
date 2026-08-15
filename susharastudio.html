@@ -124,6 +124,58 @@
     .proj{padding:48px 0;}
   }
 
+  /* ===== project index (Miranda-style row list) ===== */
+  .index{padding:34px 0 8px;}
+  .index-group{margin-bottom:44px;}
+  .index-group__label{display:flex;align-items:baseline;gap:14px;margin-bottom:6px;padding-bottom:10px;border-bottom:1px solid var(--hairline);}
+  .index-group__label .t{font-family:var(--grotesque);font-weight:800;font-size:var(--step-1);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);}
+  .index-group__label .c{font-family:var(--mono);font-size:var(--step-1);color:var(--coral);letter-spacing:.08em;}
+
+  .idx-row{position:relative;display:block;
+    width:100%;text-align:left;background:none;border:none;cursor:pointer;
+    padding:clamp(20px,2.6vw,32px) 6px;border-bottom:1px solid var(--hairline);color:var(--ink);isolation:isolate;}
+  .idx-row .idx-top{display:flex;align-items:baseline;gap:16px;position:relative;z-index:2;}
+  .idx-row .idx-chev{margin-left:auto;align-self:center;display:inline-block;font-size:var(--step-5);transition:transform .35s var(--ease-out);color:var(--coral);}
+  .idx-row[aria-expanded="true"] .idx-chev{transform:rotate(90deg);}
+  .idx-row .idx-num{font-family:var(--mono);font-size:var(--step-2);color:var(--coral);letter-spacing:.08em;flex:none;padding-top:.4em;}
+  .idx-row .idx-title{font-family:var(--serif);font-weight:500;font-size:clamp(var(--step-6),6vw,var(--step-8));line-height:.98;letter-spacing:-.025em;
+    transition:transform .5s var(--ease-out),color .35s var(--ease-out);will-change:transform;}
+  .idx-row .idx-title .dot{color:var(--coral);}
+  .idx-row .idx-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin-top:12px;padding-left:calc(var(--step-2) + 16px);
+    font-family:var(--mono);font-size:var(--step-2);color:var(--ink-soft);letter-spacing:.04em;position:relative;z-index:2;}
+  .idx-row .idx-kind{color:var(--ochre);text-transform:uppercase;letter-spacing:.1em;font-weight:800;}
+  .idx-row .idx-sub{font-family:var(--serif);font-style:italic;color:var(--ink);}
+
+  /* hover-reveal preview plate */
+  .idx-row .idx-prev{position:absolute;top:50%;right:clamp(40px,10vw,140px);width:clamp(160px,17vw,240px);aspect-ratio:4/3;
+    transform:translate(18px,-50%) scale(.94);border-radius:12px;overflow:hidden;opacity:0;pointer-events:none;z-index:1;
+    box-shadow:0 22px 50px -14px rgba(28,27,23,.5);transition:opacity .4s var(--ease-out),transform .5s var(--ease-out);}
+  .idx-row .idx-prev img{width:100%;height:100%;object-fit:cover;display:block;}
+
+  @media (hover:hover){
+    .idx-row:hover .idx-title{transform:translateX(16px);color:var(--coral);}
+    .idx-row:hover .idx-prev{opacity:1;transform:translate(0,-50%) scale(1);}
+    .index-group:has(.idx-row:hover) .idx-row:not(:hover){opacity:.4;}
+    .index-group .idx-row{transition:opacity .35s var(--ease-out);}
+  }
+  .idx-row:focus-visible{outline:2px solid var(--coral);outline-offset:-2px;border-radius:8px;}
+
+  /* collapsible project bodies: open inline directly beneath their index row */
+  .proj[data-collapsible]{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--ease-out);
+    border-top:none;padding:0;overflow:hidden;}
+  .proj[data-collapsible] > .proj-inner{min-height:0;overflow:hidden;
+    opacity:0;transition:opacity .4s var(--ease-out) .05s;}
+  .proj[data-collapsible].open{grid-template-rows:1fr;padding:40px 0 24px;border-bottom:1px solid var(--hairline);}
+  .proj[data-collapsible].open > .proj-inner{opacity:1;}
+  .proj .proj-back{font-family:var(--mono);font-size:var(--step-1);letter-spacing:.08em;text-transform:uppercase;color:var(--coral);
+    background:none;border:none;cursor:pointer;padding:0;margin-bottom:20px;display:inline-flex;align-items:center;gap:8px;}
+  @media (max-width:680px){
+    .idx-row{grid-template-columns:1fr;gap:8px;}
+    .idx-row .idx-num{position:absolute;top:22px;right:6px;}
+    .idx-row .idx-meta{order:3;}
+    .idx-row .idx-prev{display:none;}
+  }
+
   /* reduced-motion reveal (from case studies) */
   .reveal{opacity:0;transform:translateY(14px);transition:opacity .45s var(--ease-out),transform .45s var(--ease-out);}
   .reveal.in{opacity:1;transform:none;}
@@ -131,6 +183,9 @@
     .domains .track{animation:none;}
     .tile:hover img.media{transform:none;}
     html{scroll-behavior:auto;}
+    .idx-row:hover .idx-title,.idx-row:hover .idx-sub{transform:none;}
+    .idx-row:hover .idx-prev{opacity:0;}
+    .index-group:has(.idx-row:hover) .idx-row:not(:hover){opacity:1;}
   }
 </style>
 </head>
@@ -156,7 +211,7 @@
   <section class="hero">
     <div class="kicker"><span class="dash"></span><span class="label">Sushara Studio</span></div>
     <h1>Illustration, brand<br>&amp; <span class="it coral">motion work</span><span class="dot">.</span></h1>
-    <p class="lead">A gallery of studio and side work — from illustration, branding and art direction to self-directed product and UX explorations. Nine projects, gathered from my earlier Wix portfolio and rebuilt here.</p>
+    <p class="lead">Selected client work in illustration, branding, motion and art direction — alongside self-directed product and UX explorations. Pick a project from the index to open it.</p>
     <div class="hero-meta">
       <span class="tag">Illustration</span><span class="tag">Branding</span><span class="tag">Motion</span>
       <span class="tag">Art Direction</span><span class="tag">Product / UX</span>
@@ -170,65 +225,17 @@
     </div>
   </div>
 
-  <section class="proj" id="futurebens" aria-labelledby="futurebens-h">
-    <div class="proj-head">
-      <div class="ph-left">
-        <span class="num">01</span>
-        <span class="kind">Product Design</span>
-      </div>
-      <div class="ph-main">
-        <h2 id="futurebens-h" class="ph-title">FutureBens<span class="dot">.</span></h2>
-        <p class="ph-sub">Building an ESG platform</p>
-        <p class="ph-meta"><span class="ph-client">FutureBens · Berlin B-Corp start-up</span><span class="sep">/</span>3 UX/UI designers · Research, IxD, Visual · 68 hrs · Desktop</p>
-        <p class="ph-desc">A B-Corp employee marketplace evolving into a full ESG platform. The challenge: make sustainability content visible and interactive enough to drive engagement. Competitor analysis, a 50-person survey, interviews, card sorting and journey mapping fed into the IA, user flows and a high-fidelity UI.</p>
-        <p class="ph-count">18 pieces</p>
-      </div>
-    </div>
-    <div class="grid">
-      <figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-01.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-02.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-03.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-04.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-05.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-06.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-07.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-08.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-09.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-10.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-11.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-12.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-13.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-14.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-15.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-16.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-17.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-18.webp" alt="FutureBens — Building an ESG platform"></figure>
-    </div>
-  </section>
+  <div class="index wrap" aria-label="Project index">
+    <div class="index-group">
+      <div class="index-group__label"><span class="t">Selected Work</span><span class="c">05</span></div>
 
-  <section class="proj" id="qwwweero" aria-labelledby="qwwweero-h">
-    <div class="proj-head">
-      <div class="ph-left">
-        <span class="num">02</span>
-        <span class="kind">Product Design</span>
-      </div>
-      <div class="ph-main">
-        <h2 id="qwwweero-h" class="ph-title">Qwwweero<span class="dot">.</span></h2>
-        <p class="ph-sub">An inclusive wellness app for the queer community</p>
-        <p class="ph-meta"><span class="ph-client">The Daily Health Conference</span><span class="sep">/</span>Javier Quiroga & Rhea Sushara · 64 hrs · iOS</p>
-        <p class="ph-desc">Rethinking how people adopt a health-improving routine, with users kept in control of their own data (GDPR). Research surfaced inclusivity as the core need, leading to a wellness app built for the queer community — empathy maps, personas, concept testing and a high-fidelity iOS UI. The clips are the animated screen demos.</p>
-        <p class="ph-count">41 pieces · 8 motion</p>
-      </div>
-    </div>
-    <div class="grid">
-      <figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/qwwweero-v01.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/qwwweero-v02.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/qwwweero-v03.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/qwwweero-v04.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/qwwweero-v05.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/qwwweero-v06.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/qwwweero-v07.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/qwwweero-v08.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-01.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-02.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-03.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-04.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-05.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-06.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-07.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-08.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-09.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-10.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-11.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-12.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-13.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-14.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-15.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-16.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-17.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-18.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-19.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-20.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-21.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-22.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-23.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-24.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-25.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-26.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-27.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-28.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-29.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-30.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-31.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-32.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-33.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure>
-    </div>
-  </section>
-
-  <section class="proj" id="discord" aria-labelledby="discord-h">
-    <div class="proj-head">
-      <div class="ph-left">
-        <span class="num">03</span>
-        <span class="kind">Product Design</span>
-      </div>
-      <div class="ph-main">
-        <h2 id="discord-h" class="ph-title">Discord<span class="dot">.</span></h2>
-        <p class="ph-sub">UI redesign — “Acid Drip”</p>
-        <p class="ph-meta"><span class="ph-client">Self-directed UI challenge</span><span class="sep">/</span>Curtis R & Rhea Sushara · 30 hrs · iOS</p>
-        <p class="ph-desc">Clone Discord's screens, then redesign the look and feel without losing the product's purpose. A heuristic audit exposed a busy, gaming-skewed interface; a comparative analysis (Slack, Skype, MS Teams) and a mood-board informed a new style tile, animation and high-fidelity redesign.</p>
-        <p class="ph-count">17 pieces · 1 motion</p>
-      </div>
-    </div>
-    <div class="grid">
-      <figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/discord-v01.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-01.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-02.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-03.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-04.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-05.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-06.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-07.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-08.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-09.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-10.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-11.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-12.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-13.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-14.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-15.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-16.webp" alt="Discord — UI redesign — “Acid Drip”"></figure>
-    </div>
-  </section>
-
-  <section class="proj" id="pvh-omnichannel" aria-labelledby="pvh-omnichannel-h">
-    <div class="proj-head">
+      <button class="idx-row reveal" aria-expanded="false" aria-controls="pvh-omnichannel" data-target="pvh-omnichannel">
+        <span class="idx-top"><span class="idx-num">01</span><span class="idx-title">PVH — Omnichannel<span class="dot">.</span></span><span class="idx-chev">›</span></span>
+        <span class="idx-meta"><span class="idx-kind">Motion</span><span class="idx-sub">Motion &amp; animation</span><span>Calvin Klein / Tommy Hilfiger</span></span>
+        <span class="idx-prev" aria-hidden="true"><img loading="lazy" src="studio/pvh-omnichannel-01.webp" alt=""></span>
+      </button>
+<section class="proj" data-collapsible id="pvh-omnichannel" aria-labelledby="pvh-omnichannel-h"><div class="proj-inner">
+    <button class="proj-back" data-close="pvh-omnichannel">‹ Back to index</button><div class="proj-head">
       <div class="ph-left">
         <span class="num">04</span>
         <span class="kind">Motion</span>
@@ -244,29 +251,15 @@
     <div class="grid">
       <figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/pvh-omnichannel-v01.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/pvh-omnichannel-v02.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/pvh-omnichannel-v03.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/pvh-omnichannel-v04.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/pvh-omnichannel-v05.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/pvh-omnichannel-v06.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/pvh-omnichannel-v07.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/pvh-omnichannel-v08.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/pvh-omnichannel-01.webp" alt="PVH — Omnichannel — Motion &amp; animation"></figure>
     </div>
-  </section>
+  </div></section>
 
-  <section class="proj" id="logo-design" aria-labelledby="logo-design-h">
-    <div class="proj-head">
-      <div class="ph-left">
-        <span class="num">05</span>
-        <span class="kind">Branding</span>
-      </div>
-      <div class="ph-main">
-        <h2 id="logo-design-h" class="ph-title">Logo Design<span class="dot">.</span></h2>
-        <p class="ph-sub">Branding &amp; identity</p>
-        <p class="ph-meta"><span class="ph-client">Various / personal</span><span class="sep">/</span>Branding</p>
-        <p class="ph-desc">A set of logo and identity explorations.</p>
-        <p class="ph-count">6 pieces</p>
-      </div>
-    </div>
-    <div class="grid">
-      <figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/logo-design-01.webp" alt="Logo Design — Branding &amp; identity"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/logo-design-02.webp" alt="Logo Design — Branding &amp; identity"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/logo-design-03.webp" alt="Logo Design — Branding &amp; identity"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/logo-design-04.webp" alt="Logo Design — Branding &amp; identity"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/logo-design-05.webp" alt="Logo Design — Branding &amp; identity"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/logo-design-06.webp" alt="Logo Design — Branding &amp; identity"></figure>
-    </div>
-  </section>
-
-  <section class="proj" id="juizs" aria-labelledby="juizs-h">
-    <div class="proj-head">
+      <button class="idx-row reveal" aria-expanded="false" aria-controls="juizs" data-target="juizs">
+        <span class="idx-top"><span class="idx-num">02</span><span class="idx-title">JUIZS<span class="dot">.</span></span><span class="idx-chev">›</span></span>
+        <span class="idx-meta"><span class="idx-kind">Illustration</span><span class="idx-sub">Illustration</span><span>Cold-pressed juice brand</span></span>
+        <span class="idx-prev" aria-hidden="true"><img loading="lazy" src="studio/juizs-01.webp" alt=""></span>
+      </button>
+<section class="proj" data-collapsible id="juizs" aria-labelledby="juizs-h"><div class="proj-inner">
+    <button class="proj-back" data-close="juizs">‹ Back to index</button><div class="proj-head">
       <div class="ph-left">
         <span class="num">06</span>
         <span class="kind">Illustration</span>
@@ -282,29 +275,39 @@
     <div class="grid">
       <figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/juizs-v01.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/juizs-01.webp" alt="JUIZS — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/juizs-02.webp" alt="JUIZS — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/juizs-03.webp" alt="JUIZS — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/juizs-04.webp" alt="JUIZS — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/juizs-05.webp" alt="JUIZS — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/juizs-06.webp" alt="JUIZS — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/juizs-07.webp" alt="JUIZS — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/juizs-08.webp" alt="JUIZS — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/juizs-09.webp" alt="JUIZS — Illustration"></figure>
     </div>
-  </section>
+  </div></section>
 
-  <section class="proj" id="klear" aria-labelledby="klear-h">
-    <div class="proj-head">
+      <button class="idx-row reveal" aria-expanded="false" aria-controls="logo-design" data-target="logo-design">
+        <span class="idx-top"><span class="idx-num">03</span><span class="idx-title">Logo Design &amp; Identity<span class="dot">.</span></span><span class="idx-chev">›</span></span>
+        <span class="idx-meta"><span class="idx-kind">Branding</span><span class="idx-sub">Branding</span><span>Various / personal</span></span>
+        <span class="idx-prev" aria-hidden="true"><img loading="lazy" src="studio/logo-design-01.webp" alt=""></span>
+      </button>
+<section class="proj" data-collapsible id="logo-design" aria-labelledby="logo-design-h"><div class="proj-inner">
+    <button class="proj-back" data-close="logo-design">‹ Back to index</button><div class="proj-head">
       <div class="ph-left">
-        <span class="num">07</span>
-        <span class="kind">Illustration</span>
+        <span class="num">05</span>
+        <span class="kind">Branding</span>
       </div>
       <div class="ph-main">
-        <h2 id="klear-h" class="ph-title">KLEAR<span class="dot">.</span></h2>
-        <p class="ph-sub">Illustration &amp; motion</p>
-        <p class="ph-meta"><span class="ph-client">KLEAR Amsterdam</span><span class="sep">/</span>Illustration · Motion</p>
-        <p class="ph-desc">A party-event company throwing nights at Paradiso and during ADE. Illustrated three of their featured DJs of the month, plus GIFs and a short moving image set to music.</p>
-        <p class="ph-count">6 pieces · 1 motion</p>
+        <h2 id="logo-design-h" class="ph-title">Logo Design<span class="dot">.</span></h2>
+        <p class="ph-sub">Branding &amp; identity</p>
+        <p class="ph-meta"><span class="ph-client">Various / personal</span><span class="sep">/</span>Branding</p>
+        <p class="ph-desc">A set of logo and identity explorations.</p>
+        <p class="ph-count">6 pieces</p>
       </div>
     </div>
     <div class="grid">
-      <figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/klear-v01.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/klear-01.webp" alt="KLEAR — Illustration &amp; motion"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/klear-02.webp" alt="KLEAR — Illustration &amp; motion"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/klear-03.webp" alt="KLEAR — Illustration &amp; motion"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/klear-04.webp" alt="KLEAR — Illustration &amp; motion"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/klear-05.webp" alt="KLEAR — Illustration &amp; motion"></figure>
+      <figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/logo-design-01.webp" alt="Logo Design — Branding &amp; identity"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/logo-design-02.webp" alt="Logo Design — Branding &amp; identity"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/logo-design-03.webp" alt="Logo Design — Branding &amp; identity"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/logo-design-04.webp" alt="Logo Design — Branding &amp; identity"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/logo-design-05.webp" alt="Logo Design — Branding &amp; identity"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/logo-design-06.webp" alt="Logo Design — Branding &amp; identity"></figure>
     </div>
-  </section>
+  </div></section>
 
-  <section class="proj" id="feed-your-senses" aria-labelledby="feed-your-senses-h">
-    <div class="proj-head">
+      <button class="idx-row reveal" aria-expanded="false" aria-controls="feed-your-senses" data-target="feed-your-senses">
+        <span class="idx-top"><span class="idx-num">04</span><span class="idx-title">Feed Your Senses<span class="dot">.</span></span><span class="idx-chev">›</span></span>
+        <span class="idx-meta"><span class="idx-kind">Art Direction</span><span class="idx-sub">Art direction</span><span>Marqt · with Jorinde Bax</span></span>
+        <span class="idx-prev" aria-hidden="true"><img loading="lazy" src="studio/feed-your-senses-01.webp" alt=""></span>
+      </button>
+<section class="proj" data-collapsible id="feed-your-senses" aria-labelledby="feed-your-senses-h"><div class="proj-inner">
+    <button class="proj-back" data-close="feed-your-senses">‹ Back to index</button><div class="proj-head">
       <div class="ph-left">
         <span class="num">08</span>
         <span class="kind">Art Direction</span>
@@ -320,10 +323,115 @@
     <div class="grid">
       <figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/feed-your-senses-01.webp" alt="Feed Your Senses — Art direction"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/feed-your-senses-02.webp" alt="Feed Your Senses — Art direction"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/feed-your-senses-03.webp" alt="Feed Your Senses — Art direction"></figure>
     </div>
-  </section>
+  </div></section>
 
-  <section class="proj" id="lamb-to-the-slaughter" aria-labelledby="lamb-to-the-slaughter-h">
-    <div class="proj-head">
+      <button class="idx-row reveal" aria-expanded="false" aria-controls="klear" data-target="klear">
+        <span class="idx-top"><span class="idx-num">05</span><span class="idx-title">KLEAR<span class="dot">.</span></span><span class="idx-chev">›</span></span>
+        <span class="idx-meta"><span class="idx-kind">Illustration</span><span class="idx-sub">Illustration &amp; motion</span><span>KLEAR Amsterdam</span></span>
+        <span class="idx-prev" aria-hidden="true"><img loading="lazy" src="studio/klear-01.webp" alt=""></span>
+      </button>
+<section class="proj" data-collapsible id="klear" aria-labelledby="klear-h"><div class="proj-inner">
+    <button class="proj-back" data-close="klear">‹ Back to index</button><div class="proj-head">
+      <div class="ph-left">
+        <span class="num">07</span>
+        <span class="kind">Illustration</span>
+      </div>
+      <div class="ph-main">
+        <h2 id="klear-h" class="ph-title">KLEAR<span class="dot">.</span></h2>
+        <p class="ph-sub">Illustration &amp; motion</p>
+        <p class="ph-meta"><span class="ph-client">KLEAR Amsterdam</span><span class="sep">/</span>Illustration · Motion</p>
+        <p class="ph-desc">A party-event company throwing nights at Paradiso and during ADE. Illustrated three of their featured DJs of the month, plus GIFs and a short moving image set to music.</p>
+        <p class="ph-count">6 pieces · 1 motion</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/klear-v01.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/klear-01.webp" alt="KLEAR — Illustration &amp; motion"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/klear-02.webp" alt="KLEAR — Illustration &amp; motion"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/klear-03.webp" alt="KLEAR — Illustration &amp; motion"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/klear-04.webp" alt="KLEAR — Illustration &amp; motion"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/klear-05.webp" alt="KLEAR — Illustration &amp; motion"></figure>
+    </div>
+  </div></section>
+    </div>
+
+    <div class="index-group">
+      <div class="index-group__label"><span class="t">Self-Directed</span><span class="c">04</span></div>
+
+      <button class="idx-row reveal" aria-expanded="false" aria-controls="futurebens" data-target="futurebens">
+        <span class="idx-top"><span class="idx-num">06</span><span class="idx-title">FutureBens<span class="dot">.</span></span><span class="idx-chev">›</span></span>
+        <span class="idx-meta"><span class="idx-kind">Product Design</span><span class="idx-sub">Building an ESG platform</span><span>Berlin B-Corp start-up</span></span>
+        <span class="idx-prev" aria-hidden="true"><img loading="lazy" src="studio/futurebens-01.webp" alt=""></span>
+      </button>
+<section class="proj" data-collapsible id="futurebens" aria-labelledby="futurebens-h"><div class="proj-inner">
+    <button class="proj-back" data-close="futurebens">‹ Back to index</button><div class="proj-head">
+      <div class="ph-left">
+        <span class="num">01</span>
+        <span class="kind">Product Design</span>
+      </div>
+      <div class="ph-main">
+        <h2 id="futurebens-h" class="ph-title">FutureBens<span class="dot">.</span></h2>
+        <p class="ph-sub">Building an ESG platform</p>
+        <p class="ph-meta"><span class="ph-client">FutureBens · Berlin B-Corp start-up</span><span class="sep">/</span>3 UX/UI designers · Research, IxD, Visual · 68 hrs · Desktop</p>
+        <p class="ph-desc">A B-Corp employee marketplace evolving into a full ESG platform. The challenge: make sustainability content visible and interactive enough to drive engagement. Competitor analysis, a 50-person survey, interviews, card sorting and journey mapping fed into the IA, user flows and a high-fidelity UI.</p>
+        <p class="ph-count">18 pieces</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-01.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-02.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-03.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-04.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-05.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-06.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-07.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-08.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-09.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-10.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-11.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-12.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-13.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-14.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-15.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-16.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-17.webp" alt="FutureBens — Building an ESG platform"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-18.webp" alt="FutureBens — Building an ESG platform"></figure>
+    </div>
+  </div></section>
+
+      <button class="idx-row reveal" aria-expanded="false" aria-controls="qwwweero" data-target="qwwweero">
+        <span class="idx-top"><span class="idx-num">07</span><span class="idx-title">Qwwweero<span class="dot">.</span></span><span class="idx-chev">›</span></span>
+        <span class="idx-meta"><span class="idx-kind">Product Design</span><span class="idx-sub">An inclusive wellness app for the queer community</span><span>The Daily Health Conference</span></span>
+        <span class="idx-prev" aria-hidden="true"><img loading="lazy" src="studio/qwwweero-01.webp" alt=""></span>
+      </button>
+<section class="proj" data-collapsible id="qwwweero" aria-labelledby="qwwweero-h"><div class="proj-inner">
+    <button class="proj-back" data-close="qwwweero">‹ Back to index</button><div class="proj-head">
+      <div class="ph-left">
+        <span class="num">02</span>
+        <span class="kind">Product Design</span>
+      </div>
+      <div class="ph-main">
+        <h2 id="qwwweero-h" class="ph-title">Qwwweero<span class="dot">.</span></h2>
+        <p class="ph-sub">An inclusive wellness app for the queer community</p>
+        <p class="ph-meta"><span class="ph-client">The Daily Health Conference</span><span class="sep">/</span>Javier Quiroga & Rhea Sushara · 64 hrs · iOS</p>
+        <p class="ph-desc">Rethinking how people adopt a health-improving routine, with users kept in control of their own data (GDPR). Research surfaced inclusivity as the core need, leading to a wellness app built for the queer community — empathy maps, personas, concept testing and a high-fidelity iOS UI. The clips are the animated screen demos.</p>
+        <p class="ph-count">41 pieces · 8 motion</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/qwwweero-v01.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/qwwweero-v02.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/qwwweero-v03.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/qwwweero-v04.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/qwwweero-v05.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/qwwweero-v06.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/qwwweero-v07.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/qwwweero-v08.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-01.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-02.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-03.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-04.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-05.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-06.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-07.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-08.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-09.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-10.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-11.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-12.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-13.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-14.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-15.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-16.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-17.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-18.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-19.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-20.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-21.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-22.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-23.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-24.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-25.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-26.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-27.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-28.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-29.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-30.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-31.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-32.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/qwwweero-33.webp" alt="Qwwweero — An inclusive wellness app for the queer community"></figure>
+    </div>
+  </div></section>
+
+      <button class="idx-row reveal" aria-expanded="false" aria-controls="discord" data-target="discord">
+        <span class="idx-top"><span class="idx-num">08</span><span class="idx-title">Discord<span class="dot">.</span></span><span class="idx-chev">›</span></span>
+        <span class="idx-meta"><span class="idx-kind">Product Design</span><span class="idx-sub">UI redesign — “Acid Drip”</span><span>Self-directed UI challenge</span></span>
+        <span class="idx-prev" aria-hidden="true"><img loading="lazy" src="studio/discord-01.webp" alt=""></span>
+      </button>
+<section class="proj" data-collapsible id="discord" aria-labelledby="discord-h"><div class="proj-inner">
+    <button class="proj-back" data-close="discord">‹ Back to index</button><div class="proj-head">
+      <div class="ph-left">
+        <span class="num">03</span>
+        <span class="kind">Product Design</span>
+      </div>
+      <div class="ph-main">
+        <h2 id="discord-h" class="ph-title">Discord<span class="dot">.</span></h2>
+        <p class="ph-sub">UI redesign — “Acid Drip”</p>
+        <p class="ph-meta"><span class="ph-client">Self-directed UI challenge</span><span class="sep">/</span>Curtis R & Rhea Sushara · 30 hrs · iOS</p>
+        <p class="ph-desc">Clone Discord's screens, then redesign the look and feel without losing the product's purpose. A heuristic audit exposed a busy, gaming-skewed interface; a comparative analysis (Slack, Skype, MS Teams) and a mood-board informed a new style tile, animation and high-fidelity redesign.</p>
+        <p class="ph-count">17 pieces · 1 motion</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure class="tile tile-v"><video class="media" muted loop playsinline preload="metadata"><source src="studio/discord-v01.mp4" type="video/mp4"></video><figcaption class="cap">Motion</figcaption></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-01.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-02.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-03.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-04.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-05.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-06.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-07.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-08.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-09.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-10.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-11.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-12.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-13.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-14.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-15.webp" alt="Discord — UI redesign — “Acid Drip”"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/discord-16.webp" alt="Discord — UI redesign — “Acid Drip”"></figure>
+    </div>
+  </div></section>
+
+      <button class="idx-row reveal" aria-expanded="false" aria-controls="lamb-to-the-slaughter" data-target="lamb-to-the-slaughter">
+        <span class="idx-top"><span class="idx-num">09</span><span class="idx-title">Lamb to the Slaughter<span class="dot">.</span></span><span class="idx-chev">›</span></span>
+        <span class="idx-meta"><span class="idx-kind">Illustration</span><span class="idx-sub">Illustration · Mixed media</span><span>Editorial / personal</span></span>
+        <span class="idx-prev" aria-hidden="true"><img loading="lazy" src="studio/lamb-to-the-slaughter-01.webp" alt=""></span>
+      </button>
+<section class="proj" data-collapsible id="lamb-to-the-slaughter" aria-labelledby="lamb-to-the-slaughter-h"><div class="proj-inner">
+    <button class="proj-back" data-close="lamb-to-the-slaughter">‹ Back to index</button><div class="proj-head">
       <div class="ph-left">
         <span class="num">09</span>
         <span class="kind">Illustration</span>
@@ -339,7 +447,27 @@
     <div class="grid">
       <figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-01.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-02.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-03.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-04.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-05.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-06.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-07.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-08.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-09.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-10.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-11.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-12.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-13.webp" alt="Lamb to the Slaughter — Illustration"></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/lamb-to-the-slaughter-14.webp" alt="Lamb to the Slaughter — Illustration"></figure>
     </div>
-  </section>
+  </div></section>
+    </div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   <div class="backline">
     <a href="index.html">Back to the main portfolio <span aria-hidden="true">&rarr;</span></a>
@@ -385,6 +513,67 @@
     vids.forEach(function(v){vo.observe(v);});
   } else {
     vids.forEach(function(v){v.setAttribute('autoplay','');});
+  }
+
+  // ===== project index: accordion — open one project inline beneath its row =====
+  var rows=[].slice.call(document.querySelectorAll('.idx-row'));
+  var openId=null;
+  function setRow(id, expanded){
+    rows.forEach(function(r){ if(r.getAttribute('data-target')===id){ r.setAttribute('aria-expanded', expanded?'true':'false'); } });
+  }
+  function closeProj(id){
+    var sec=document.getElementById(id); if(!sec) return;
+    sec.classList.remove('open'); setRow(id,false);
+    if(openId===id) openId=null;
+  }
+  function openProj(id, keepInView){
+    if(openId && openId!==id){ closeProj(openId); }      // accordion: close the last
+    var sec=document.getElementById(id); if(!sec) return;
+    sec.classList.add('open'); setRow(id,true); openId=id;
+    // force-load images that were lazy inside this (previously collapsed) panel
+    [].slice.call(sec.querySelectorAll('img[loading="lazy"]')).forEach(function(img){
+      img.loading='eager';
+      if(img.dataset.src){ img.src=img.dataset.src; }
+    });
+    // reveal any not-yet-revealed tiles inside this project
+    [].slice.call(sec.querySelectorAll('.tile.reveal:not(.in)')).forEach(function(t,i){
+      if(REDUCED){ t.classList.add('in'); }
+      else{ setTimeout(function(){ t.classList.add('in'); }, 80 + i*40); }
+    });
+    if(keepInView){
+      var row=document.querySelector('.idx-row[data-target="'+id+'"]');
+      if(row){
+        var top=row.getBoundingClientRect().top+window.pageYOffset-90;
+        window.scrollTo({top:top, behavior: REDUCED?'auto':'smooth'});
+      }
+    }
+  }
+  rows.forEach(function(r){
+    r.addEventListener('click', function(){
+      var id=r.getAttribute('data-target');
+      var sec=document.getElementById(id);
+      if(sec && sec.classList.contains('open')){ closeProj(id); }
+      else{ openProj(id, true); }
+    });
+  });
+  [].slice.call(document.querySelectorAll('.proj-back')).forEach(function(b){
+    b.addEventListener('click', function(){
+      var id=b.getAttribute('data-close');
+      closeProj(id);
+      var row=document.querySelector('.idx-row[data-target="'+id+'"]');
+      if(row){ var top=row.getBoundingClientRect().top+window.pageYOffset-90;
+        window.scrollTo({top:top, behavior:REDUCED?'auto':'smooth'}); row.focus(); }
+    });
+  });
+  if(location.hash){ openProj(location.hash.slice(1), true); }
+
+  if(!REDUCED && 'IntersectionObserver' in window){
+    var ro=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target); } });
+    },{threshold:.15});
+    rows.forEach(function(r){ ro.observe(r); });
+  } else {
+    rows.forEach(function(r){ r.classList.add('in'); });
   }
 })();
 </script>
