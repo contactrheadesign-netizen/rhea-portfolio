@@ -42,7 +42,7 @@
   body{font-family:var(--grotesque);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden;}
   body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.06;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
-  .wrap{position:relative;z-index:1;max-width:none;margin:0 auto;padding:0 48px;}
+  .wrap{position:relative;z-index:1;max-width:1440px;margin:0 auto;padding:0 48px;}
 
   .label{font-family:var(--grotesque);font-size:var(--step-1);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);}
   .num{font-family:var(--mono);font-size:var(--step-1);color:var(--coral);letter-spacing:.08em;}
@@ -87,11 +87,11 @@
   .hero{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;padding:54px 0 36px;align-items:start;}
   .kicker{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
   .kicker .dash{width:26px;height:1px;background:var(--coral);}
-  h1{font-weight:900;font-size:clamp(var(--step-6),6vw,var(--step-8));line-height:.96;letter-spacing:-.025em;}
+  h1{font-weight:900;font-size:clamp(var(--step-6),6vw,var(--step-8));line-height:.96;letter-spacing:-.025em;text-wrap:balance;}
   h1 .it{font-family:var(--serif);font-weight:500;font-style:italic;letter-spacing:-.01em;}
   h1 .it.coral{color:var(--coral);}
   h1 .dot{color:var(--coral);}
-  .lead{color:var(--ink-soft);font-size:var(--step-3);line-height:1.55;max-width:42ch;margin-top:26px;}
+  .lead{color:var(--ink-soft);font-size:var(--step-3);line-height:1.55;max-width:42ch;margin-top:26px;text-wrap:pretty;}
   .actions{display:flex;gap:12px;margin-top:30px;}
   .badges{display:flex;gap:30px;margin-top:42px;padding-top:22px;border-top:1px solid var(--hairline);}
   .badge{display:flex;align-items:center;gap:11px;}
@@ -135,7 +135,7 @@
 
   /* selected work — full-bleed ash-black band */
   .work-dark{position:relative;width:100vw;margin-left:calc(50% - 50vw);background:#161510;color:#f2efe6;padding:72px 0 78px;margin-top:10px;}
-  .wd-inner{max-width:none;margin:0 auto;padding:0 48px;}
+  .wd-inner{max-width:1440px;margin:0 auto;padding:0 48px;}
   .wd-bar{display:flex;justify-content:space-between;align-items:center;gap:18px;padding-bottom:20px;border-bottom:1px solid rgba(242,239,230,.15);}
   .wd-bar .label{color:rgba(242,239,230,.5);}
   .wd-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin:42px 0 36px;}
@@ -220,6 +220,7 @@
   @media (max-width:520px){
     .wrap{padding:0 24px;}
     .wd-inner{padding:0 24px;}
+    .topbar .label span:nth-child(n+2){display:none;}
     section{padding:48px 0;}
     .hero{padding-top:32px !important;}
     h1{font-size:clamp(var(--step-5),10vw,var(--step-6));}
@@ -242,6 +243,14 @@
   .coda-link:hover{transform:translateY(-2px);text-shadow:0 14px 30px rgba(187,10,30,.4);}
   .wd-card.reveal{transition:opacity .45s var(--ease-out),transform .45s var(--ease-out);opacity:0;transform:translateY(14px);}
   .wd-card.reveal.in{opacity:1;transform:none;}
+
+  /* respect reduced-motion: stop the looping CSS animations (canvas is already gated in JS) */
+  @media (prefers-reduced-motion:reduce){
+    .gridfx .glayer{animation:none;}
+    .domains .track{animation:none;}
+    html{scroll-behavior:auto;}
+    .wd-card.reveal{opacity:1;transform:none;transition:none;}
+  }
 </style>
 </head>
 <body>
@@ -286,7 +295,7 @@
     </div>
     <div class="hero-copy">
       <div class="kicker"><span class="dash"></span><span class="label">SENIOR PRODUCT DESIGNER</span></div>
-      <h1>I design products<br>people can use<br><span class="it coral">without being told how</span><span class="dot">.</span></h1>
+      <h1>I design products people can use<br><span class="it coral">without being told&nbsp;how</span><span class="dot">.</span></h1>
       <p class="lead">I'm Rhea — a senior product designer, and the sole designer across iOS, Android and web for a regulated platform used by 25M+ people across 180+ nationalities. I take security-heavy systems — verification, recovery, authentication — and make them usable without a manual, in 8 languages.</p>
       <div class="actions">
         <a href="#work" class="btn btn-coral">View selected work →</a>
