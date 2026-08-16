@@ -79,7 +79,7 @@
   .phandle{font-family:var(--grotesque);font-size:var(--step-1);color:var(--soft);margin-top:12px;position:relative;z-index:2;}
   .pquote{position:relative;z-index:2;margin:24px 0 26px;padding-left:18px;border-left:2px solid var(--coral);font-family:var(--serif);font-style:italic;font-weight:400;font-size:var(--step-4);line-height:1.45;color:var(--ink);max-width:34ch;}
   .pstats{position:relative;z-index:2;display:flex;gap:46px;padding-top:22px;border-top:1px solid var(--hair);}
-  .pstat .big{font-family:var(--mono);font-weight:600;font-size:var(--step-6);letter-spacing:-.01em;}
+  .pstat .big{font-family:var(--mono);font-weight:600;font-size:clamp(var(--step-5),7vw,var(--step-6));letter-spacing:-.01em;}
   .pstat .big.coral{color:var(--coral);}
   .pstat .cap{font-family:var(--grotesque);font-size:var(--step-1);letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-top:4px;}
   .plinks{position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;}
@@ -151,7 +151,8 @@
     .wrap{padding:0 20px;}
     section{padding:42px 0;}
     .profile{padding:24px;}
-    .pstats{gap:30px;}
+    .pstats{gap:18px;}
+    .pstat .cap{font-size:11px;letter-spacing:.06em;}
     .xp-head{grid-template-columns:28px 1fr 78px;}
     .xp-row{grid-template-columns:28px 1fr 78px;}
     .pname{font-size:var(--step-6);}
