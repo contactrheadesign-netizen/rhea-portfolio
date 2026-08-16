@@ -83,9 +83,7 @@
 
   /* project section */
   .proj{padding:64px 0;border-top:1px solid var(--hairline);}
-  .proj-head{display:grid;grid-template-columns:120px 1fr;gap:24px;margin-bottom:34px;}
-  .ph-left{display:flex;flex-direction:column;gap:10px;padding-top:6px;}
-  .kind{font-family:var(--grotesque);font-size:var(--step-1);letter-spacing:.1em;text-transform:uppercase;color:var(--ochre);font-weight:800;}
+  .proj-head{margin-bottom:34px;}
   .ph-title{font-weight:900;font-size:clamp(var(--step-5),4vw,var(--step-7));line-height:.98;letter-spacing:-.025em;}
   .ph-title .dot{color:var(--coral);}
   .ph-sub{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(var(--step-4),2.4vw,var(--step-5));color:var(--ink);margin-top:8px;}
@@ -116,8 +114,6 @@
   @media (max-width:680px){
     .topbar{flex-wrap:wrap;gap:6px 14px;}
     .topbar > .label:nth-child(2){display:none;}
-    .proj-head{grid-template-columns:1fr;gap:12px;}
-    .ph-left{flex-direction:row;align-items:center;gap:14px;}
   }
   @media (max-width:520px){
     .wrap{padding:0 20px;}
@@ -170,8 +166,6 @@
   .proj[data-collapsible].open{grid-template-rows:1fr;padding:40px 0 24px;border-bottom:1px solid var(--hairline);}
   .proj[data-collapsible].open > .proj-inner{opacity:1;}
   @media (max-width:680px){
-    .idx-row{grid-template-columns:1fr;gap:8px;}
-    .idx-row .idx-num{position:absolute;top:22px;right:6px;}
     .idx-row .idx-meta{order:3;}
     .idx-row .idx-prev{display:none;}
   }
@@ -242,9 +236,6 @@
         <span class="idx-meta"><span class="idx-kind">Motion</span><span class="idx-sub">Motion &amp; animation</span><span>Calvin Klein / Tommy Hilfiger</span></span>
       </button>
 <section class="proj" data-collapsible id="pvh-omnichannel" aria-labelledby="pvh-omnichannel-h"><div class="proj-inner"><div class="proj-head">
-      <div class="ph-left">
-        <span class="kind">Motion</span>
-      </div>
       <div class="ph-main">
         <h2 id="pvh-omnichannel-h" class="ph-title">PVH — Omnichannel<span class="dot">.</span></h2>
         <p class="ph-sub">Motion &amp; animation</p>
@@ -266,9 +257,6 @@
         <span class="idx-prev" aria-hidden="true"><img loading="lazy" src="studio/juizs-02.webp" alt=""></span>
       </button>
 <section class="proj" data-collapsible id="juizs" aria-labelledby="juizs-h"><div class="proj-inner"><div class="proj-head">
-      <div class="ph-left">
-        <span class="kind">Illustration</span>
-      </div>
       <div class="ph-main">
         <h2 id="juizs-h" class="ph-title">JUIZS<span class="dot">.</span></h2>
         <p class="ph-sub">Illustration</p>
@@ -291,9 +279,6 @@
         <span class="idx-prev" aria-hidden="true"><img loading="lazy" src="studio/logo-design-01.webp" alt=""></span>
       </button>
 <section class="proj" data-collapsible id="logo-design" aria-labelledby="logo-design-h"><div class="proj-inner"><div class="proj-head">
-      <div class="ph-left">
-        <span class="kind">Branding</span>
-      </div>
       <div class="ph-main">
         <h2 id="logo-design-h" class="ph-title">Logo Design<span class="dot">.</span></h2>
         <p class="ph-sub">Branding &amp; identity</p>
@@ -313,9 +298,6 @@
         <span class="idx-prev" aria-hidden="true"><img loading="lazy" src="studio/feed-your-senses-01.webp" alt=""></span>
       </button>
 <section class="proj" data-collapsible id="feed-your-senses" aria-labelledby="feed-your-senses-h"><div class="proj-inner"><div class="proj-head">
-      <div class="ph-left">
-        <span class="kind">Art Direction</span>
-      </div>
       <div class="ph-main">
         <h2 id="feed-your-senses-h" class="ph-title">Feed Your Senses<span class="dot">.</span></h2>
         <p class="ph-sub">Art direction</p>
@@ -337,9 +319,6 @@
         <span class="idx-prev" aria-hidden="true"><img loading="lazy" src="studio/klear-02.webp" alt=""></span>
       </button>
 <section class="proj" data-collapsible id="klear" aria-labelledby="klear-h"><div class="proj-inner"><div class="proj-head">
-      <div class="ph-left">
-        <span class="kind">Illustration</span>
-      </div>
       <div class="ph-main">
         <h2 id="klear-h" class="ph-title">KLEAR<span class="dot">.</span></h2>
         <p class="ph-sub">Illustration &amp; motion</p>
@@ -365,9 +344,6 @@
         <span class="idx-prev" aria-hidden="true"><img loading="lazy" src="studio/futurebens-01.webp" alt=""></span>
       </button>
 <section class="proj" data-collapsible id="futurebens" aria-labelledby="futurebens-h"><div class="proj-inner"><div class="proj-head">
-      <div class="ph-left">
-        <span class="kind">Product Design</span>
-      </div>
       <div class="ph-main">
         <h2 id="futurebens-h" class="ph-title">FutureBens<span class="dot">.</span></h2>
         <p class="ph-sub">Building an ESG platform</p>
@@ -443,9 +419,6 @@
         <span class="idx-prev" aria-hidden="true"><img loading="lazy" src="studio/qwwweero-01.webp" alt=""></span>
       </button>
 <section class="proj" data-collapsible id="qwwweero" aria-labelledby="qwwweero-h"><div class="proj-inner"><div class="proj-head">
-      <div class="ph-left">
-        <span class="kind">Product Design</span>
-      </div>
       <div class="ph-main">
         <h2 id="qwwweero-h" class="ph-title">Qwwweero<span class="dot">.</span></h2>
         <p class="ph-sub">An inclusive wellness app for the queer community</p>
@@ -550,9 +523,6 @@
         <span class="idx-prev" aria-hidden="true"><img loading="lazy" src="studio/discord-01.webp" alt=""></span>
       </button>
 <section class="proj" data-collapsible id="discord" aria-labelledby="discord-h"><div class="proj-inner"><div class="proj-head">
-      <div class="ph-left">
-        <span class="kind">Product Design</span>
-      </div>
       <div class="ph-main">
         <h2 id="discord-h" class="ph-title">Discord<span class="dot">.</span></h2>
         <p class="ph-sub">UI redesign — “Acid Drip”</p>
@@ -596,9 +566,6 @@
         <span class="idx-prev" aria-hidden="true"><img loading="lazy" src="studio/lamb-to-the-slaughter-02.webp" alt=""></span>
       </button>
 <section class="proj" data-collapsible id="lamb-to-the-slaughter" aria-labelledby="lamb-to-the-slaughter-h"><div class="proj-inner"><div class="proj-head">
-      <div class="ph-left">
-        <span class="kind">Illustration</span>
-      </div>
       <div class="ph-main">
         <h2 id="lamb-to-the-slaughter-h" class="ph-title">Lamb to the Slaughter<span class="dot">.</span></h2>
         <p class="ph-sub">Illustration</p>
