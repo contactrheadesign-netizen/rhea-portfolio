@@ -137,11 +137,13 @@
   .idx-row .idx-top{display:flex;align-items:baseline;gap:16px;position:relative;z-index:2;}
   .idx-row .idx-chev{margin-left:auto;align-self:center;display:inline-block;font-size:var(--step-5);transition:transform .35s var(--ease-out);color:var(--coral);}
   .idx-row[aria-expanded="true"] .idx-chev{transform:rotate(90deg);}
+  /* when a project is open, drop the row's separator so row + panel read as one unit */
+  .idx-row[aria-expanded="true"]{border-bottom-color:transparent;}
   .idx-row .idx-num{font-family:var(--mono);font-size:var(--step-2);color:var(--coral);letter-spacing:.08em;flex:none;padding-top:.4em;}
   .idx-row .idx-title{font-family:var(--serif);font-weight:500;font-size:clamp(var(--step-6),6vw,var(--step-8));line-height:.98;letter-spacing:-.025em;
     transition:transform .5s var(--ease-out),color .35s var(--ease-out);will-change:transform;}
   .idx-row .idx-title .dot{color:var(--coral);}
-  .idx-row .idx-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin-top:12px;padding-left:calc(var(--step-2) + 16px);
+  .idx-row .idx-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin-top:12px;
     font-family:var(--mono);font-size:var(--step-2);color:var(--ink-soft);letter-spacing:.04em;position:relative;z-index:2;}
   .idx-row .idx-kind{color:var(--ochre);text-transform:uppercase;letter-spacing:.1em;font-weight:800;}
   .idx-row .idx-sub{font-family:var(--serif);font-style:italic;color:var(--ink);}
@@ -238,7 +240,7 @@
       <div class="index-group__label"><span class="t">Selected Work</span><span class="c">05</span></div>
 
       <button class="idx-row reveal" aria-expanded="false" aria-controls="pvh-omnichannel" data-target="pvh-omnichannel">
-        <span class="idx-top"><span class="idx-num">01</span><span class="idx-title">PVH — Omnichannel<span class="dot">.</span></span><span class="idx-chev">›</span></span>
+        <span class="idx-top"><span class="idx-title">PVH — Omnichannel<span class="dot">.</span></span><span class="idx-chev">›</span></span>
         <span class="idx-meta"><span class="idx-kind">Motion</span><span class="idx-sub">Motion &amp; animation</span><span>Calvin Klein / Tommy Hilfiger</span></span>
       </button>
 <section class="proj" data-collapsible id="pvh-omnichannel" aria-labelledby="pvh-omnichannel-h"><div class="proj-inner">
@@ -262,7 +264,7 @@
   </div></section>
 
       <button class="idx-row reveal" aria-expanded="false" aria-controls="juizs" data-target="juizs">
-        <span class="idx-top"><span class="idx-num">02</span><span class="idx-title">JUIZS<span class="dot">.</span></span><span class="idx-chev">›</span></span>
+        <span class="idx-top"><span class="idx-title">JUIZS<span class="dot">.</span></span><span class="idx-chev">›</span></span>
         <span class="idx-meta"><span class="idx-kind">Illustration</span><span class="idx-sub">Illustration</span><span>Cold-pressed juice brand</span></span>
         <span class="idx-prev" aria-hidden="true"><img loading="lazy" src="studio/juizs-02.webp" alt=""></span>
       </button>
@@ -288,7 +290,7 @@
   </div></section>
 
       <button class="idx-row reveal" aria-expanded="false" aria-controls="logo-design" data-target="logo-design">
-        <span class="idx-top"><span class="idx-num">03</span><span class="idx-title">Logo Design &amp; Identity<span class="dot">.</span></span><span class="idx-chev">›</span></span>
+        <span class="idx-top"><span class="idx-title">Logo Design &amp; Identity<span class="dot">.</span></span><span class="idx-chev">›</span></span>
         <span class="idx-meta"><span class="idx-kind">Branding</span><span class="idx-sub">Branding</span><span>Various / personal</span></span>
         <span class="idx-prev" aria-hidden="true"><img loading="lazy" src="studio/logo-design-01.webp" alt=""></span>
       </button>
@@ -311,7 +313,7 @@
   </div></section>
 
       <button class="idx-row reveal" aria-expanded="false" aria-controls="feed-your-senses" data-target="feed-your-senses">
-        <span class="idx-top"><span class="idx-num">04</span><span class="idx-title">Feed Your Senses<span class="dot">.</span></span><span class="idx-chev">›</span></span>
+        <span class="idx-top"><span class="idx-title">Feed Your Senses<span class="dot">.</span></span><span class="idx-chev">›</span></span>
         <span class="idx-meta"><span class="idx-kind">Art Direction</span><span class="idx-sub">Art direction</span><span>Marqt · with Jorinde Bax</span></span>
         <span class="idx-prev" aria-hidden="true"><img loading="lazy" src="studio/feed-your-senses-01.webp" alt=""></span>
       </button>
@@ -336,7 +338,7 @@
   </div></section>
 
       <button class="idx-row reveal" aria-expanded="false" aria-controls="klear" data-target="klear">
-        <span class="idx-top"><span class="idx-num">05</span><span class="idx-title">KLEAR<span class="dot">.</span></span><span class="idx-chev">›</span></span>
+        <span class="idx-top"><span class="idx-title">KLEAR<span class="dot">.</span></span><span class="idx-chev">›</span></span>
         <span class="idx-meta"><span class="idx-kind">Illustration</span><span class="idx-sub">Illustration &amp; motion</span><span>KLEAR Amsterdam</span></span>
         <span class="idx-prev" aria-hidden="true"><img loading="lazy" src="studio/klear-02.webp" alt=""></span>
       </button>
@@ -365,7 +367,7 @@
       <div class="index-group__label"><span class="t">Self-Directed</span><span class="c">04</span></div>
 
       <button class="idx-row reveal" aria-expanded="false" aria-controls="futurebens" data-target="futurebens">
-        <span class="idx-top"><span class="idx-num">06</span><span class="idx-title">FutureBens<span class="dot">.</span></span><span class="idx-chev">›</span></span>
+        <span class="idx-top"><span class="idx-title">FutureBens<span class="dot">.</span></span><span class="idx-chev">›</span></span>
         <span class="idx-meta"><span class="idx-kind">Product Design</span><span class="idx-sub">Building an ESG platform</span><span>Berlin B-Corp start-up</span></span>
         <span class="idx-prev" aria-hidden="true"><img loading="lazy" src="studio/futurebens-01.webp" alt=""></span>
       </button>
@@ -444,7 +446,7 @@
   </div></section>
 
       <button class="idx-row reveal" aria-expanded="false" aria-controls="qwwweero" data-target="qwwweero">
-        <span class="idx-top"><span class="idx-num">07</span><span class="idx-title">Qwwweero<span class="dot">.</span></span><span class="idx-chev">›</span></span>
+        <span class="idx-top"><span class="idx-title">Qwwweero<span class="dot">.</span></span><span class="idx-chev">›</span></span>
         <span class="idx-meta"><span class="idx-kind">Product Design</span><span class="idx-sub">An inclusive wellness app for the queer community</span><span>Self-directed</span></span>
         <span class="idx-prev" aria-hidden="true"><img loading="lazy" src="studio/qwwweero-01.webp" alt=""></span>
       </button>
@@ -552,7 +554,7 @@
   </div></section>
 
       <button class="idx-row reveal" aria-expanded="false" aria-controls="discord" data-target="discord">
-        <span class="idx-top"><span class="idx-num">08</span><span class="idx-title">Discord<span class="dot">.</span></span><span class="idx-chev">›</span></span>
+        <span class="idx-top"><span class="idx-title">Discord<span class="dot">.</span></span><span class="idx-chev">›</span></span>
         <span class="idx-meta"><span class="idx-kind">Product Design</span><span class="idx-sub">UI redesign — “Acid Drip”</span><span>Self-directed UI challenge</span></span>
         <span class="idx-prev" aria-hidden="true"><img loading="lazy" src="studio/discord-01.webp" alt=""></span>
       </button>
@@ -599,7 +601,7 @@
   </div></section>
 
       <button class="idx-row reveal" aria-expanded="false" aria-controls="lamb-to-the-slaughter" data-target="lamb-to-the-slaughter">
-        <span class="idx-top"><span class="idx-num">09</span><span class="idx-title">Lamb to the Slaughter<span class="dot">.</span></span><span class="idx-chev">›</span></span>
+        <span class="idx-top"><span class="idx-title">Lamb to the Slaughter<span class="dot">.</span></span><span class="idx-chev">›</span></span>
         <span class="idx-meta"><span class="idx-kind">Illustration</span><span class="idx-sub">Illustration · Mixed media</span><span>Editorial / personal</span></span>
         <span class="idx-prev" aria-hidden="true"><img loading="lazy" src="studio/lamb-to-the-slaughter-02.webp" alt=""></span>
       </button>
