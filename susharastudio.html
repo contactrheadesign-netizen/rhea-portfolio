@@ -634,13 +634,22 @@
   if(REDUCED){
     vids.forEach(function(v){v.setAttribute('controls','');});
   } else if('IntersectionObserver' in window){
-    var vo=new IntersectionObserver(function(es){
-      es.forEach(function(e){
-        var v=e.target;
-        if(e.isIntersecting){ v.play().catch(function(){}); }
-        else{ v.pause(); }
+    // cap concurrent playback to the 2 most-visible clips (avoids 8 videos
+    // playing at once when a video-heavy project like Qwwweero is open)
+    var MAX_PLAYING=2, ratios=new Map();
+    function applyPlayback(){
+      var visible=vids.filter(function(v){return (ratios.get(v)||0)>0.25;})
+                      .sort(function(a,b){return (ratios.get(b)||0)-(ratios.get(a)||0);});
+      var playSet=visible.slice(0,MAX_PLAYING);
+      vids.forEach(function(v){
+        if(playSet.indexOf(v)>-1){ if(v.paused) v.play().catch(function(){}); }
+        else if(!v.paused){ v.pause(); }
       });
-    },{threshold:.25});
+    }
+    var vo=new IntersectionObserver(function(es){
+      es.forEach(function(e){ ratios.set(e.target, e.isIntersecting?e.intersectionRatio:0); });
+      applyPlayback();
+    },{threshold:[0,0.25,0.5,0.75,1]});
     vids.forEach(function(v){vo.observe(v);});
   } else {
     vids.forEach(function(v){v.setAttribute('autoplay','');});
