@@ -106,7 +106,7 @@
   /* hero — infinite grid effect (light theme) */
   .hero{position:relative;}
   .hero-copy{position:relative;z-index:2;}
-  .gridfx{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+  .gridfx{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100vw;z-index:0;overflow:hidden;pointer-events:none;}
   .gridfx .glayer{position:absolute;inset:-60px;
     background-image:linear-gradient(to right,var(--ink) 1px,transparent 1px),linear-gradient(to bottom,var(--ink) 1px,transparent 1px);
     background-size:42px 42px;animation:gridscroll 7s linear infinite;}
@@ -440,7 +440,7 @@
 <script>
   const heroEl=document.querySelector('.hero');
   const reveal=document.querySelector('.gridfx .reveal');
-  if(heroEl&&reveal){heroEl.addEventListener('pointermove',e=>{const r=heroEl.getBoundingClientRect();
+  if(heroEl&&reveal){heroEl.addEventListener('pointermove',e=>{const r=reveal.getBoundingClientRect();
     reveal.style.setProperty('--gx',(e.clientX-r.left)+'px');
     reveal.style.setProperty('--gy',(e.clientY-r.top)+'px');});}
 </script>
