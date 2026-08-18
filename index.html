@@ -106,7 +106,7 @@
   /* hero — infinite grid effect (light theme) */
   .hero{position:relative;}
   .hero-copy{position:relative;z-index:2;}
-  .gridfx{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100vw;z-index:0;overflow:hidden;pointer-events:none;}
+  .gridfx{position:absolute;top:38px;left:50%;transform:translateX(-50%);width:100vw;height:min(74vh,620px);z-index:-1;overflow:hidden;pointer-events:none;}
   .gridfx .glayer{position:absolute;inset:-60px;
     background-image:linear-gradient(to right,var(--ink) 1px,transparent 1px),linear-gradient(to bottom,var(--ink) 1px,transparent 1px);
     background-size:42px 42px;animation:gridscroll 7s linear infinite;}
@@ -254,6 +254,13 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <div class="wrap">
 
+  <div class="gridfx" aria-hidden="true">
+    <div class="glayer base"></div>
+    <div class="glayer reveal"></div>
+    <div class="orb coral"></div>
+    <div class="orb ochre"></div>
+  </div>
+
   <div class="topbar">
     <div class="label"><span>SUSHARA / 2026</span><span style="color:var(--coral)">PRODUCT DESIGN</span><span>PORTFOLIO</span></div>
     <div class="label live">AMSTERDAM · NL</div>
@@ -284,12 +291,6 @@
 
   <!-- HERO -->
   <section class="hero" style="padding-top:54px;">
-    <div class="gridfx" aria-hidden="true">
-      <div class="glayer base"></div>
-      <div class="glayer reveal"></div>
-      <div class="orb coral"></div>
-      <div class="orb ochre"></div>
-    </div>
     <div class="hero-copy">
       <div class="kicker"><span class="dash"></span><span class="label">SENIOR PRODUCT DESIGNER</span></div>
       <h1>I design products people can use<br><span class="it coral">without being told&nbsp;how</span><span class="dot">.</span></h1>
@@ -443,6 +444,23 @@
   if(heroEl&&reveal){heroEl.addEventListener('pointermove',e=>{const r=reveal.getBoundingClientRect();
     reveal.style.setProperty('--gx',(e.clientX-r.left)+'px');
     reveal.style.setProperty('--gy',(e.clientY-r.top)+'px');});}
+
+  // size the hero grid: from just below the topbar down to the bottom of the hero
+  (function(){
+    var wrap=document.querySelector('.wrap'), grid=document.querySelector('.gridfx'),
+        tb=document.querySelector('.topbar'), hero=document.querySelector('.hero');
+    if(!wrap||!grid||!hero) return;
+    function size(){
+      var wt=wrap.getBoundingClientRect().top;
+      var top=(tb?tb.getBoundingClientRect().bottom:wt)-wt;
+      grid.style.top=top+'px';
+      grid.style.height=(hero.getBoundingClientRect().bottom-wt-top)+'px';
+    }
+    size();
+    window.addEventListener('resize',size);
+    window.addEventListener('load',size);
+    if(document.fonts&&document.fonts.ready){document.fonts.ready.then(size);}
+  })();
 </script>
 
 
