@@ -84,15 +84,16 @@
   .sechead .num{margin-left:auto;}
 
   /* hero */
-  .hero{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;padding:54px 0 36px;align-items:start;}
+  .hero{padding:60px 0 52px;}
   .kicker{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
   .kicker .dash{width:26px;height:1px;background:var(--coral);}
   h1{font-weight:900;font-size:clamp(var(--step-6),6vw,var(--step-8));line-height:.96;letter-spacing:-.025em;text-wrap:balance;}
   h1 .it{font-family:var(--serif);font-weight:500;font-style:italic;letter-spacing:-.01em;}
   h1 .it.coral{color:var(--coral);}
   h1 .dot{color:var(--coral);}
-  .lead{color:var(--ink-soft);font-size:var(--step-3);line-height:1.55;max-width:42ch;margin-top:26px;text-wrap:pretty;}
-  .actions{display:flex;align-items:center;gap:18px;margin-top:30px;}
+  .lead{color:var(--ink-soft);font-size:var(--step-3);line-height:1.55;max-width:46ch;margin-top:0;text-wrap:pretty;}
+  .actions{display:flex;align-items:center;gap:18px;margin-top:0;flex:none;}
+  .hero-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:32px 56px;margin-top:36px;flex-wrap:wrap;}
   .link-tert{display:inline-flex;align-items:center;font-family:var(--grotesque);font-weight:600;font-size:var(--step-2);color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;text-decoration-color:var(--hairline);padding:11px 4px;transition:color .2s,text-decoration-color .2s,transform .1s;}
   .link-tert:hover{color:var(--coral);text-decoration-color:var(--coral);}
   .link-tert:active{transform:translateY(1px);}
@@ -102,16 +103,9 @@
   .badge .bt{font-size:var(--step-1);font-weight:800;letter-spacing:.04em;}
   .badge .bs{font-family:var(--grotesque);font-size:var(--step-1);color:var(--ink-faint);text-transform:uppercase;letter-spacing:.1em;}
 
-  /* plate (hero art) */
-  .plate{position:relative;aspect-ratio:4/2.9;border:none;border-radius:0;overflow:visible;background:transparent;margin-top:-42px;}
-  .plate::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
-    mask-image:radial-gradient(ellipse 80% 75% at 50% 50%,black 40%,transparent 100%);
-    -webkit-mask-image:radial-gradient(ellipse 80% 75% at 50% 50%,black 40%,transparent 100%);}
-  .plate::after{content:"";position:absolute;inset:0;z-index:5;pointer-events:none;background:none;}
-
   /* hero — infinite grid effect (light theme) */
   .hero{position:relative;}
-  .hero-copy,.hero .plate{position:relative;z-index:2;}
+  .hero-copy{position:relative;z-index:2;}
   .gridfx{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
   .gridfx .glayer{position:absolute;inset:-60px;
     background-image:linear-gradient(to right,var(--ink) 1px,transparent 1px),linear-gradient(to bottom,var(--ink) 1px,transparent 1px);
@@ -299,14 +293,13 @@
     <div class="hero-copy">
       <div class="kicker"><span class="dash"></span><span class="label">SENIOR PRODUCT DESIGNER</span></div>
       <h1>I design products people can use<br><span class="it coral">without being told&nbsp;how</span><span class="dot">.</span></h1>
-      <p class="lead">I'm Rhea — a senior product designer, and the sole designer across iOS, Android and web for a regulated platform used by 25M+ people across 180+ nationalities. I take security-heavy systems — verification, recovery, authentication — and make them usable without a manual, in 8 languages.</p>
-      <div class="actions">
-        <a href="#work" class="btn btn-coral">View selected work →</a>
-        <a href="#contact" class="link-tert">Get in touch</a>
+      <div class="hero-foot">
+        <p class="lead">I'm Rhea — a senior product designer, and the sole designer across iOS, Android and web for a regulated platform used by 25M+ people across 180+ nationalities. I take security-heavy systems — verification, recovery, authentication — and make them usable without a manual, in 8 languages.</p>
+        <div class="actions">
+          <a href="#work" class="btn btn-coral">View selected work →</a>
+          <a href="#contact" class="link-tert">Get in touch</a>
+        </div>
       </div>
-    </div>
-    <div class="plate" id="plate">
-      <canvas id="cvHero" style="position:absolute;inset:0;width:100%;height:100%;z-index:1;mask-image:radial-gradient(ellipse 85% 80% at 50% 50%,black 35%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 85% 80% at 50% 50%,black 35%,transparent 100%);"></canvas>
     </div>
   </section>
 
@@ -400,6 +393,7 @@
     <div class="about">
       <div>
         <p class="philosophy">I work at the intersection of <b>trust</b> and usability, turning complex problems into experiences that feel clear, effortless, and genuinely usable for everyone.</p>
+        <p>With a large appetite for learning, I find the interplay of design, psychology and technology extremely intriguing.</p>
       </div>
       <div>
         <p>As the sole designer on complex, regulated products, I lead through collaboration, working directly with PMs, engineers, security and compliance, the service desk, and QA to make the right trade-offs between hard constraints and the user experience.</p>
@@ -444,11 +438,6 @@
 </div>
 
 <script>
-  const plate=document.getElementById('plate');
-  if(plate){plate.addEventListener('pointermove',e=>{const r=plate.getBoundingClientRect();
-    plate.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
-    plate.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');});}
-
   const heroEl=document.querySelector('.hero');
   const reveal=document.querySelector('.gridfx .reveal');
   if(heroEl&&reveal){heroEl.addEventListener('pointermove',e=>{const r=heroEl.getBoundingClientRect();
@@ -456,100 +445,7 @@
     reveal.style.setProperty('--gy',(e.clientY-r.top)+'px');});}
 </script>
 
-<script>
-(function(){
-"use strict";
-var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-var INK='28,27,23', ACC='187,10,30';
-function clamp(v,a,b){return v<a?a:(v>b?b:v);}
-function lerp(a,b,t){return a+(b-a)*t;}
-function seg(t,a,b){return clamp((t-a)/(b-a),0,1);}
-function eInOut(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;}
-function eOutExpo(t){return t>=1?1:1-Math.pow(2,-9*t);}
-function mul(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
-function ink(a){return 'rgba('+INK+','+a+')';}
-function acc(a){return 'rgba('+ACC+','+a+')';}
 
-var CFG={density:165,dot:2.30,contrast:.34,period:5,hold:.62,snap:.18,accentPct:4};
-
-var H={
-  cv:null,ctx:null,w:0,h:0,dpr:1,pts:[],clock:0,playing:!REDUCED,rows:0,cols:0,
-  init:function(cv){this.cv=cv;this.ctx=cv.getContext('2d');this.resize();},
-  resize:function(){
-    var r=this.cv.getBoundingClientRect();
-    this.dpr=Math.min(window.devicePixelRatio||1,2);
-    this.w=Math.max(80,Math.round(r.width));this.h=Math.max(80,Math.round(r.height));
-    this.cv.width=Math.round(this.w*this.dpr);this.cv.height=Math.round(this.h*this.dpr);
-    this.ctx.setTransform(this.dpr,0,0,this.dpr,0,0);
-    this.rebuild();
-  },
-  rebuild:function(){
-    var c=CFG,w=this.w,h=this.h,n=Math.round(c.density);
-    var ratio=w/h,rows=Math.max(3,Math.round(Math.sqrt(n/ratio))),cols=Math.max(3,Math.round(n/rows));
-    var mx=w*0.11,my=h*0.08,gw=w-mx*2,gh=h-my*2;
-    var rnd=mul(7),p=[];
-    for(var r=0;r<rows;r++)for(var k=0;k<cols;k++){
-      p.push({
-        tx:mx+(cols>1?k/(cols-1):.5)*gw,ty:my+(rows>1?r/(rows-1):.5)*gh,
-        cx:rnd()*w,cy:rnd()*h,
-        amp:8+rnd()*30,sp:.22+rnd()*.5,ph:rnd()*6.2832,
-        rank:(k/cols)*.72+(r/rows)*.28,
-        hot:rnd()*100<c.accentPct
-      });
-    }
-    this.pts=p;this.rows=rows;this.cols=cols;
-  },
-  scrollDisperse:0,
-  draw:function(t,T){
-    var c=CFG,ctx=this.ctx,w=this.w,h=this.h;
-    ctx.clearRect(0,0,w,h);
-    var cStart=1-c.hold-c.snap-0.16;
-    var cEnd=cStart+c.snap;
-    var hEnd=cEnd+c.hold;
-    var a=(t<hEnd)?1:1-eInOut(seg(t,hEnd,1));
-    var sd=this.scrollDisperse;
-    for(var i=0;i<this.pts.length;i++){
-      var p=this.pts[i];
-      var k;
-      if(t<hEnd)k=eOutExpo(seg(t,cStart+p.rank*c.snap*0.55,cEnd+p.rank*c.snap*0.55));
-      else k=a;
-      k=k*(1-sd);
-      var wx=p.cx+Math.cos(T*p.sp+p.ph)*p.amp*(1+sd*1.5);
-      var wy=p.cy+Math.sin(T*p.sp*1.31+p.ph*1.7)*p.amp*.7*(1+sd*1.5);
-      var x=lerp(wx,p.tx,k),y=lerp(wy,p.ty,k);
-      var alpha=1-sd*0.6;
-      ctx.beginPath();ctx.arc(x,y,lerp(c.dot*.72,c.dot,k),0,6.2832);
-      if(p.hot&&k>.5)ctx.fillStyle=acc(lerp(0,c.contrast*2.1,(k-.5)*2)*alpha);
-      else ctx.fillStyle=ink(lerp(c.contrast*.34,c.contrast,k)*alpha);
-      ctx.fill();
-    }
-  }
-};
-
-var cv=document.getElementById('cvHero');
-if(cv){
-  H.init(cv);
-  if(REDUCED){H.clock=CFG.period*0.62;}
-  var last=null;
-  function frame(ts){
-    if(last===null)last=ts;
-    var dt=Math.min((ts-last)/1000,0.05);last=ts;
-    if(H.playing)H.clock+=dt;
-    H.draw((H.clock%CFG.period)/CFG.period,H.clock);
-    requestAnimationFrame(frame);
-  }
-  requestAnimationFrame(frame);
-  var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){H.resize();},180);});
-  var plate=document.getElementById('plate');
-  window.addEventListener('scroll',function(){
-    var r=plate.getBoundingClientRect();
-    var plateH=r.height;
-    var scrolled=Math.max(0,-r.top);
-    H.scrollDisperse=clamp(scrolled/(plateH*0.5),0,1);
-  },{passive:true});
-}
-})();
-</script>
 <script>
 (function(){
 "use strict";
