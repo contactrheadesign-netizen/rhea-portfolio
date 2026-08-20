@@ -173,6 +173,9 @@
   .about .philosophy{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(var(--step-4),2.8vw,var(--step-5));line-height:1.32;letter-spacing:-.01em;}
   .about .philosophy b{font-style:normal;font-family:var(--grotesque);font-weight:800;color:var(--coral);}
   .about p{color:var(--ink-soft);font-size:var(--step-3);line-height:1.6;margin-top:18px;}
+  .about-lead{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(var(--step-5),3.2vw,var(--step-6));line-height:1.24;letter-spacing:-.015em;color:var(--ink);max-width:30ch;margin:0 0 44px;padding:4px 0 6px 24px;border-left:3px solid var(--coral);}
+  .about-lead b{font-style:normal;font-family:var(--grotesque);font-weight:800;color:var(--coral);}
+  @media (max-width:520px){.about-lead{margin-bottom:32px;padding-left:18px;}}
   .collab{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px;}
   .strengths{margin-top:40px;padding-top:30px;border-top:1px solid var(--hairline);}
   .strengths .lbl{font-family:var(--grotesque);font-size:var(--step-1);letter-spacing:.1em;text-transform:uppercase;color:var(--coral);display:block;margin-bottom:20px;}
@@ -419,10 +422,10 @@
   <!-- ABOUT / HOW I WORK -->
   <section id="about">
     <div class="sechead"><span class="dash"></span><h2>How I <em>Work</em></h2></div>
+    <p class="about-lead">With a large appetite for learning, I find the interplay of <b>design, psychology and technology</b> extremely intriguing.</p>
     <div class="about">
       <div>
         <p class="philosophy">I work at the intersection of <b>trust</b> and usability, turning complex problems into experiences that feel clear, effortless, and genuinely usable for everyone.</p>
-        <p>With a large appetite for learning, I find the interplay of design, psychology and technology extremely intriguing.</p>
       </div>
       <div>
         <p>As the sole designer on complex, regulated products, I lead through collaboration, working directly with PMs, engineers, security and compliance, the service desk, and QA to make the right trade-offs between hard constraints and the user experience.</p>
