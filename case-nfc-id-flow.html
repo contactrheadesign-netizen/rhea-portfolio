@@ -72,6 +72,18 @@
   .metagrid .k{font-family:var(--grotesque);font-size:var(--step-1);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);}
   .metagrid .v{font-size:var(--step-2);font-weight:800;margin-top:6px;line-height:1.3;font-variant-numeric:tabular-nums;}
 
+  /* result bar — the headline outcome, scannable in 10 seconds */
+  .resultbar{display:flex;align-items:flex-start;gap:16px;margin-top:16px;padding:18px 22px;border-radius:14px;
+    background:var(--vellum-strong);border:1px solid var(--highlight);
+    backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);
+    box-shadow:0 14px 34px -22px rgba(28,27,23,.45),inset 0 1px 0 rgba(255,255,255,.9);}
+  .resultbar .rk{font-family:var(--mono);font-size:var(--step-1);letter-spacing:.14em;text-transform:uppercase;color:var(--coral);flex:none;padding-top:3px;white-space:nowrap;}
+  .resultbar .rk::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--coral);box-shadow:0 0 8px var(--coral);margin-right:9px;vertical-align:middle;}
+  .resultbar .rv{font-size:var(--step-3);font-weight:600;line-height:1.42;color:var(--ink);}
+  .resultbar .rv b{color:var(--coral);font-weight:800;}
+  .resultbar .rv .src{font-weight:500;color:var(--ink-faint);}
+  @media(max-width:520px){.resultbar{flex-direction:column;gap:9px;padding:16px 18px;}}
+
   /* big hero plate */
   .hplate{position:relative;margin-top:34px;border:1px solid var(--hairline);border-radius:8px;overflow:hidden;aspect-ratio:16/7;background:var(--paper-2);}
   .hplate .circle{position:absolute;width:36%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 40% 34%,#8fb6c9,#4a7d96 62%,#2f5a70);top:18%;left:8%;}
@@ -210,6 +222,11 @@
       <div class="cell"><div class="k">Impact</div><div class="v" style="color:var(--coral);">Third-party SDK → owned flow</div></div>
     </div>
 
+    <div class="resultbar">
+      <span class="rk">Result</span>
+      <div class="rv">Verification brought fully in-house across passport, ID and licence — <b>−80%</b> UI-related errors and <b>−25%</b> abandonment, tracked across <b>210K+</b> live sessions. <span class="src">Monitored on a live analytics dashboard.</span></div>
+    </div>
+
     <div class="hplate">
       <img loading="lazy" decoding="async" src="hero-nfc.webp" alt="NFC ID scanning flow — passport, ID card and driving licence" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
     </div>
@@ -264,6 +281,17 @@
         <p class="body">Because users didn't understand the MRZ or chip placement, instruction became a craft in its own right. I designed and illustrated animated guidance showing exactly how to position the phone against each document type, the hand-holding ReadID never offered.</p>
       </div>
     </div>
+
+    <h3 class="sub">Making It: Illustration, Components &amp; Motion</h3>
+    <p class="body">The guidance only works if it's built to scale, so I made it as a system, not a set of one-off screens. I <b>illustrated</b> every document — passport, ID card and driving licence — along with the hand-and-phone positioning scenes, all drawn in the Digidentity visual language so the instruction felt native to the product rather than stock.</p>
+    <p class="body">I then turned the flow's key moments into reusable <b>components</b>: the "Ready to scan" progress states, the scan-in-progress steps, and a shared success / error language — a calm teal for success, a clear red for failure — applied consistently across all three documents. Those same states became the <b>animation</b> frames: I storyboarded each scan sequence on this board, then produced the motion from it — Figma → MP4 → HandBrake in Phase 1, rebuilt in Lottie per device in Phase 2.</p>
+
+    <figure style="margin-top:22px;">
+      <div style="max-width:560px;margin:0 auto;border:1px solid var(--hairline);border-radius:12px;overflow:hidden;background:var(--paper-2);box-shadow:0 18px 40px -26px rgba(28,27,23,.5);">
+        <img loading="lazy" decoding="async" src="fig-nfc-2258.webp" alt="Working board: illustrated document assets, Ready-to-scan progress components, scan-sequence animation frames, and success and error states across passport, ID card and driving licence" style="width:100%;display:block;">
+      </div>
+      <figcaption class="label" style="display:block;text-align:center;margin-top:12px;">The build board — illustration, UI states and animation frames behind the instruction</figcaption>
+    </figure>
   </section>
 
   <!-- PIVOT -->
@@ -304,19 +332,21 @@
     <h3 class="sub">The Final Flow</h3>
     <p class="body">A complete, in-house NFC verification flow for passport, ID card and driving licence (instructional animation for phone positioning, the scan sequence, and clear success / error handling), live on both iOS and Android. I owned every layer, from illustration through to production UI.</p>
 
+    <h3 class="sub">Designed for Failure, Not Just Success</h3>
+    <p class="body">Scans fail for reasons a user can't see: a session times out, the chip won't read, a document isn't eligible in their country, or the device simply doesn't support NFC. I designed the full error and recovery set — system dialogs and full-screen states — so every dead end offered a way forward instead of a shrug: <b>take a photo instead</b>, <b>change document type</b>, or fix the setting that's blocking the scan. Each state names the problem in plain language and hands the user their next move, which is what keeps a failed attempt off the service desk.</p>
+
+    <figure style="margin-top:22px;">
+      <div style="border:1px solid var(--hairline);border-radius:12px;overflow:hidden;background:var(--paper-2);box-shadow:0 18px 40px -26px rgba(28,27,23,.5);">
+        <img loading="lazy" decoding="async" src="fig-nfc-errors.webp" alt="Error and recovery states: system dialogs (session expired, unable to read chip, no camera access, NFC not enabled, document mismatch) and full-screen not-eligible / not-accepted / not-supported / not-available screens, each offering a take-a-photo or change-document recovery path" style="width:100%;display:block;">
+      </div>
+      <figcaption class="label" style="display:block;text-align:center;margin-top:12px;">Every failure state gives the user a route forward — take a photo, change document, or fix the blocking setting</figcaption>
+    </figure>
+
     <h3 class="sub">Built on the Design System</h3>
     <p class="body">I built the flow within the Digidentity design system, keeping the three document journeys and both platforms visually consistent and fully localised across eight languages.</p>
 
     <h3 class="sub">Animation Craft</h3>
     <p class="body soft">Phase 1 was a study in working within constraints: Figma → MP4 → HandBrake when Lottie wasn't on the table. Phase 2 moves to Lottie with device-specific guidance: a cleaner, more scalable foundation.</p>
-
-    <h3 class="sub">Accessibility</h3>
-    <p class="body soft">Instructional clarity for non-technical users sat at the centre, alongside colour contrast, tap-target sizing, and full localisation so the guidance reads naturally in every supported language.</p>
-
-    <div class="imgplate">
-      <div class="circle" style="background:#4a7d96;"></div>
-      <div class="cnt"><div class="fig">Add image</div><div class="desc">High-res final screens across the three document flows. A short scan clip or prototype lands hardest here.</div></div>
-    </div>
   </section>
 
   <!-- CONCLUSION -->

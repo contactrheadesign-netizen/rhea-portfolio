@@ -4,22 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rhea Sushara — CV</title>
-<meta name="description" content="Rhea Sushara — senior product designer, 8+ years. Sole designer across iOS, Android and web for a regulated platform used by 25M+ people. Amsterdam.">
+<meta name="description" content="Rhea Sushara — senior product / UI-UX designer, 8+ years, regulated B2B platforms. Sole designer across iOS, Android and web at Digidentity, a digital-identity scheme with 25M+ verified identities. Amsterdam.">
 <link rel="canonical" href="https://rheasushara.com/cv.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rhea Sushara">
 <meta property="og:locale" content="en_GB">
 <meta property="og:url" content="https://rheasushara.com/cv.html">
 <meta property="og:title" content="Rhea Sushara — CV">
-<meta property="og:description" content="Rhea Sushara — senior product designer, 8+ years. Sole designer across iOS, Android and web for a regulated platform used by 25M+ people. Amsterdam.">
+<meta property="og:description" content="Rhea Sushara — senior product / UI-UX designer, 8+ years, regulated B2B platforms. Sole designer across iOS, Android and web at Digidentity, a digital-identity scheme with 25M+ verified identities. Amsterdam.">
 <meta property="og:image" content="https://rheasushara.com/og-cv.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Rhea Sushara CV — Senior Product Designer, 8+ years, Amsterdam.">
+<meta property="og:image:alt" content="Rhea Sushara CV — Senior Product / UI-UX Designer, 8+ years, Amsterdam.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Rhea Sushara — CV">
-<meta name="twitter:description" content="Rhea Sushara — senior product designer, 8+ years. Sole designer across iOS, Android and web for a regulated platform used by 25M+ people. Amsterdam.">
+<meta name="twitter:description" content="Rhea Sushara — senior product / UI-UX designer, 8+ years, regulated B2B platforms. Sole designer across iOS, Android and web at Digidentity, a digital-identity scheme with 25M+ verified identities. Amsterdam.">
 <meta name="twitter:image" content="https://rheasushara.com/og-cv.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -78,7 +78,7 @@
   .pname{font-family:"Rye",serif;font-weight:400;font-size:clamp(var(--step-5),4.2vw,var(--step-6));line-height:1.08;letter-spacing:0;position:relative;z-index:2;}
   .phandle{font-family:var(--grotesque);font-size:var(--step-1);color:var(--soft);margin-top:12px;position:relative;z-index:2;}
   .pquote{position:relative;z-index:2;margin:24px 0 26px;padding-left:18px;border-left:2px solid var(--coral);font-family:var(--serif);font-style:italic;font-weight:400;font-size:var(--step-4);line-height:1.45;color:var(--ink);max-width:34ch;}
-  .pstats{position:relative;z-index:2;display:flex;gap:46px;padding-top:22px;border-top:1px solid var(--hair);}
+  .pstats{position:relative;z-index:2;display:flex;gap:40px;padding-top:22px;border-top:1px solid var(--hair);}
   .pstat .big{font-family:var(--mono);font-weight:600;font-size:clamp(var(--step-5),7vw,var(--step-6));letter-spacing:-.01em;}
   .pstat .big.coral{color:var(--coral);}
   .pstat .cap{font-family:var(--grotesque);font-size:var(--step-1);letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-top:4px;}
@@ -161,6 +161,19 @@
   .skip-link{position:fixed;left:8px;top:8px;z-index:200;display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;border-radius:8px;background:#1c1b17;color:#f3f0e7;font-family:var(--mono);font-weight:600;font-size:var(--step-2);letter-spacing:.04em;text-decoration:none;border:1px solid rgba(243,240,231,.25);transform:translateY(-200%);transition:transform .16s ease;}
   .skip-link:focus{transform:translateY(0);}
   :focus-visible{outline:2px solid var(--coral);outline-offset:3px;border-radius:4px;}
+
+  /* print (Save as PDF) — keep the editorial dark look off paper */
+  @media print{
+    /* one continuous page — sized to the full content, dark bg bleeds to the edges */
+    @page{size:1080px 2820px;margin:0;}
+    html,body{background:#141310 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    body::before{display:none !important;}
+    nav,.skip-link{display:none !important;}
+    .wrap{max-width:1080px;padding:0 40px;}
+    section{padding:20px 0;}
+    .hero{padding-top:12px;}
+    .pglow,.pspec{display:none;}
+  }
 </style>
 </head>
 <body>
@@ -169,7 +182,7 @@
 
   <div class="topbar">
     <div class="label"><span>SUSHARA / CV</span><span>2026</span></div>
-    <div class="label">PRODUCT DESIGNER — <span style="color:var(--coral)">DIGITAL IDENTITY</span></div>
+    <div class="label">SENIOR PRODUCT / UI-UX DESIGN — <span style="color:var(--coral)">REGULATED B2B</span></div>
     <div class="label">AMSTERDAM · NL</div>
   </div>
 
@@ -190,21 +203,20 @@
       <div class="pglow" aria-hidden="true"></div>
       <div class="pspec" aria-hidden="true"></div>
       <div class="ptop">
-        <span class="pill">Product Designer</span>
+        <span class="pill">Senior Product / UI-UX Designer</span>
       </div>
       <div class="avatar">R</div>
       <h1 class="pname">Rhea Sushara</h1>
       <div class="pquote">The harder the constraints, the clearer the product should be.</div>
       <div class="pstats">
-        <div class="pstat"><div class="big coral">8+</div><div class="cap">Years designing</div></div>
-        <div class="pstat"><div class="big">300K+</div><div class="cap">Users shipped to</div></div>
+        <div class="pstat"><div class="big coral">8+</div><div class="cap">Years in design</div></div>
+        <div class="pstat"><div class="big">25M+</div><div class="cap">Verified identities</div></div>
         <div class="pstat"><div class="big">3</div><div class="cap">Platforms</div></div>
       </div>
       <div class="plinks">
         <a href="mailto:rheasusharaclare@gmail.com">Email</a>
         <a href="https://www.linkedin.com/in/rheasushara" target="_blank">LinkedIn ↗</a>
-        <a href="https://rheasushara.com" target="_blank">Portfolio ↗</a>
-        <a href="https://medium.com/@rheasushara" target="_blank">Blog ↗</a>
+        <a href="index.html" target="_blank">Portfolio ↗</a>
       </div>
     </div>
 
@@ -217,7 +229,7 @@
       </div>
       <a class="xp-row feat" href="index.html#work">
         <span class="rank">01</span>
-        <div><div class="xp-role">Product Designer</div><div class="xp-co">Digidentity · The Hague · <span class="now">Present</span></div></div>
+        <div><div class="xp-role">Product Designer</div><div class="xp-co">Digidentity · The Hague · <span class="now">Present</span></div><div class="xp-sub">Regulated B2B digital identity · iOS · Android · Web</div></div>
         <span class="xp-yr">2023 —</span>
       </a>
       <div class="xp-row">
@@ -225,29 +237,19 @@
         <div>
           <div class="xp-role">Product &amp; Digital Designer</div>
           <div class="xp-co">Sushara Studio · Independent practice</div>
-          <div class="xp-sub">UX / UI Designer, Pal · Amsterdam &nbsp;·&nbsp; Product Designer, FutureBens · ESG SaaS, Germany</div>
+          <div class="xp-sub">FutureBens (ESG SaaS, Germany) · Pal (Amsterdam) · brand &amp; web</div>
         </div>
         <span class="xp-yr">2018–23</span>
       </div>
       <div class="xp-row">
         <span class="rank">03</span>
-        <div><div class="xp-role">Social Media Designer</div><div class="xp-co">Jimmy Nelson Studio · Amsterdam</div></div>
+        <div><div class="xp-role">Designer</div><div class="xp-co">Jimmy Nelson Studio · Amsterdam</div></div>
         <span class="xp-yr">2021–22</span>
       </div>
       <div class="xp-row">
         <span class="rank">04</span>
-        <div><div class="xp-role">Graphic Designer, Calvin Klein</div><div class="xp-co">PVH Corp. · Amsterdam</div></div>
-        <span class="xp-yr">2021</span>
-      </div>
-      <div class="xp-row">
-        <span class="rank">05</span>
-        <div><div class="xp-role">Motion Graphic Designer</div><div class="xp-co">Social Blue · Hoorn</div></div>
-        <span class="xp-yr">2019–21</span>
-      </div>
-      <div class="xp-row">
-        <span class="rank">06</span>
-        <div><div class="xp-role">E-comm Image &amp; Video Quality Manager</div><div class="xp-co">Exposar · Amsterdam</div></div>
-        <span class="xp-yr">2017–19</span>
+        <div><div class="xp-role">Earlier: Visual &amp; Motion Design</div><div class="xp-co">Calvin Klein / PVH · Social Blue · Exposar</div></div>
+        <span class="xp-yr">2017–21</span>
       </div>
     </div>
   </section>
@@ -255,7 +257,7 @@
   <!-- SUMMARY -->
   <section style="border-top:none;">
     <div class="sechead"><span class="dash"></span><h2>The <em>summary</em></h2></div>
-    <p class="role sum" style="border:none;padding:0;font-size:var(--step-3);line-height:1.6;color:var(--ink);max-width:70ch;">A product designer with <b>8+ years</b> turning complex, regulated systems into experiences that feel effortless. At Digidentity I'm the sole designer across iOS, Android, and web, balancing security and compliance with UX everyday people can actually use, and owning the design system that ties it together. A background in illustration and motion gives me an edge in interaction design and storytelling: I care as much about how something feels as whether it works. I thrive in collaborative teams where design has genuine influence, and I'm <b style="color:var(--coral);font-weight:800;">drawn to products that earn people's trust and make a real difference in their lives</b>.</p>
+    <p class="role sum" style="border:none;padding:0;font-size:var(--step-3);line-height:1.6;color:var(--ink);max-width:74ch;">Senior product designer with <b>8+ years</b> in design and 5+ focused on product and UI/UX, shaping how people interact with complex, regulated B2B platforms. I currently define the design direction across iOS, Android, and web at Digidentity — a Qualified Trust Service Provider on the EU Trusted List, powering a digital-identity scheme with <b>25M+ verified identities</b> across 180+ nationalities, in 8 languages. I own the end-to-end product design function: strategy, research, interaction design, a cross-platform design system with design tokens, and accessibility (WCAG 2.1 AA). I validate direction through usability testing and rapid prototyping, work shoulder-to-shoulder with product, engineering, and compliance, and use AI tools for faster ideation and research synthesis. A foundation in illustration and motion gives me an edge in interaction detail and storytelling — <b style="color:var(--coral);font-weight:800;">I bring craft where it earns trust</b>.</p>
   </section>
 
   <!-- EXPERIENCE IN DEPTH -->
@@ -267,15 +269,7 @@
         <div class="rt">Product Designer · <span>Digidentity</span></div>
         <div class="rm">Feb 2023 – Present · The Hague</div>
       </div>
-      <ul>
-        <li>Digidentity is a Qualified Trust Service Provider on the EU Trusted List (eIDAS), whose platform has created 25M+ digital identities across 180+ nationalities for 250K+ corporate customers. I'm the sole designer for the products that run on it.</li>
-        <li>Sole product designer across native mobile (iOS &amp; Android) and web, owning end-to-end UX for identity verification, account recovery, and digital signature flows.</li>
-        <li>Led the account recovery redesign across 5 distinct user scenarios and 8 languages, improving accessibility and reducing user drop-off.</li>
-        <li>Consolidated a multi-PIN system into a single PIN per account for 300K+ users, while rebranding the product's core terminology.</li>
-        <li>Designed and maintained a scalable design system used across web and mobile, enabling faster engineering handoff and consistent UI.</li>
-        <li>Collaborated cross-functionally with security, compliance, engineering, and QA to ship features meeting eIDAS regulatory requirements without compromising usability.</li>
-        <li>Treated accessibility (WCAG 2.1 AA) and localisation as non-negotiable design constraints across every initiative.</li>
-      </ul>
+      <p class="sum">Sole design function for a regulated, B2B digital-identity platform used across iOS, Android, and web. Define design strategy and own the full product design lifecycle — from discovery and usability testing through to shipped, localised interfaces in 8 languages. Build and maintain a cross-platform design system with design-token workflows, partnering closely with engineering on reusable component libraries and developer handoff. Led the account-recovery redesign across 5 scenarios and consolidated a multi-PIN architecture into a single-PIN flow, both validated through usability testing — simplifying onboarding and reducing support escalations. Collaborate directly with product, engineering, and compliance to meet eIDAS requirements without compromising usability. Use AI tools (incl. Claude) to speed ideation and research synthesis.</p>
     </div>
 
     <div class="role">
@@ -283,32 +277,24 @@
         <div class="rt">Product &amp; Digital Designer · <span>Sushara Studio</span></div>
         <div class="rm">2018 – 2023 · Independent practice</div>
       </div>
-      <p class="sum">Ran an independent design practice spanning product and brand. Product engagements included UX/UI design for <b>Pal</b> (Amsterdam) and product design for <b>FutureBens</b> (ESG SaaS, Germany). Brand and web work covered rebranding and building a responsive site for Shiva Yoga Center using design-thinking methodology, brand identities and websites for startups (Remasterdam, Bao Khao, Voltron, Zorg Van Toen), and illustration and marketing collateral for clients including Puuro Earth and Juizs.</p>
+      <p class="sum">Ran an independent product-and-brand practice for early-stage companies — scoping problems, setting design direction, and shipping end-to-end. Clients included a B2B ESG SaaS platform (FutureBens, Germany), a social wellness app (Pal, Amsterdam), and wellness brands. Delivered product UI, responsive websites, brand identities, and marketing systems, often as the sole designer advising founders directly.</p>
     </div>
 
     <div class="role">
       <div class="rh">
-        <div class="rt">Social Media Designer · <span>Jimmy Nelson Studio</span></div>
+        <div class="rt">Designer · <span>Jimmy Nelson Studio</span></div>
         <div class="rm">2021 – 2022 · Amsterdam</div>
       </div>
-      <ul>
-        <li>Built social execution plans across Instagram, Facebook, and Pinterest: ads, posts, reels, and motion graphics.</li>
-        <li>Grew the studio's Instagram by 80% in under four months.</li>
-      </ul>
+      <p class="sum">Owned social content strategy across Instagram, Facebook, and Pinterest for the renowned photographer's studio. Grew Instagram 80% in under four months through systematic execution planning and visual storytelling.</p>
     </div>
 
     <div class="role">
       <div class="rh">
-        <div class="rt">E-comm Image &amp; Video Quality Manager · <span>Exposar</span></div>
-        <div class="rm">2017 – 2019 · Amsterdam</div>
+        <div class="rt">Earlier · <span>Visual &amp; Motion Design</span></div>
+        <div class="rm">2017 – 2021 · Amsterdam &amp; Hoorn</div>
       </div>
-      <ul>
-        <li>Built style guides, retouch guides, and templates for e-commerce brands (Oger, Catwalk Junkie, Vingino, Mr Marvis).</li>
-        <li>Trained and managed a team of 10 external retouchers remotely, handling client alignment across departments.</li>
-      </ul>
+      <p class="sum">Graphic designer at Calvin Klein / PVH Corp. Motion designer at Social Blue. At Exposar, built style guides and retouch systems and managed a remote team of 10 retouchers. Full history on <a href="https://www.linkedin.com/in/rheasushara" target="_blank" style="color:var(--coral);">LinkedIn</a>.</p>
     </div>
-
-    <p class="role sum" style="border:none;padding-top:18px;">Earlier roles in motion design (Social Blue · HelloFresh, Unicef, Greenpeace), brand (Calvin Klein / PVH), and graphic design (Cryptic Intel, The Bold Creative). Full history in the experience list above and on <a href="https://www.linkedin.com/in/rheasushara" target="_blank" style="color:var(--coral);">LinkedIn</a>.</p>
   </section>
 
   <!-- SKILLS -->
@@ -318,21 +304,23 @@
       <div class="block">
         <h3>Design</h3>
         <div class="chips">
-          <span class="chip">Product Design</span><span class="chip">Design Systems</span><span class="chip">Interaction Design</span>
-          <span class="chip">User-Centered Design</span><span class="chip">Prototyping</span><span class="chip">UX Research</span>
-          <span class="chip">Accessibility (WCAG 2.1 AA)</span><span class="chip">Localisation</span><span class="chip">Native Mobile (iOS / Android)</span>
-          <span class="chip">Web</span><span class="chip">Illustration &amp; Motion</span><span class="chip">Workshop Facilitation</span>
+          <span class="chip">Design Strategy</span><span class="chip">Product Design</span><span class="chip">Design Systems</span>
+          <span class="chip">Interaction Design</span><span class="chip">Usability Testing</span><span class="chip">UX Research</span>
+          <span class="chip">Prototyping</span><span class="chip">Accessibility (WCAG 2.1 AA)</span><span class="chip">Design-to-Dev Handoff</span>
+          <span class="chip">Component Libraries</span><span class="chip">Localisation</span><span class="chip">Native Mobile (iOS/Android)</span>
+          <span class="chip">Responsive Web</span><span class="chip">B2B SaaS</span><span class="chip">Cross-functional Collaboration</span>
+          <span class="chip">Workshop Facilitation</span><span class="chip">Stakeholder Management</span><span class="chip">Illustration &amp; Motion</span>
         </div>
       </div>
       <div class="block">
-        <h3>Tools <span style="color:var(--faint);">· confirm / adjust</span></h3>
+        <h3>Tools</h3>
         <div class="chips">
-          <span class="chip">Claude</span><span class="chip">Figma</span><span class="chip">Prototyping</span><span class="chip">Design Tokens</span><span class="chip">Storybook</span><span class="chip">Lottie</span>
-          <span class="chip">After Effects</span><span class="chip">Illustrator</span><span class="chip">Photoshop</span>
+          <span class="chip">Figma</span><span class="chip">Design Tokens</span><span class="chip">Prototyping</span><span class="chip">Lottie Animation</span>
+          <span class="chip">Claude</span><span class="chip">After Effects</span><span class="chip">Illustrator</span><span class="chip">Photoshop</span>
         </div>
         <h3 style="margin-top:22px;">Domains</h3>
         <div class="chips">
-          <span class="chip">Digital Identity</span><span class="chip">Regulated / eIDAS</span><span class="chip">Fintech-adjacent</span><span class="chip">Health &amp; Wellbeing (interest)</span>
+          <span class="chip">Digital Identity</span><span class="chip">B2B SaaS</span><span class="chip">AI</span><span class="chip">Fintech-adjacent</span><span class="chip">Health &amp; Wellbeing</span>
         </div>
       </div>
     </div>
@@ -346,15 +334,15 @@
         <h3>Education</h3>
         <div class="deflist">
           <div class="it"><div><div class="a">UX/UI Design Bootcamp</div><div class="sub">Ironhack</div></div><div class="b">2022</div></div>
-          <div class="it"><div><div class="a">BA (Hons) Illustration &amp; Design</div><div class="sub">Norwich University of the Arts</div></div><div class="b">2012–15</div></div>
+          <div class="it"><div><div class="a">BA (Hons) Illustration &amp; Design</div><div class="sub">Norwich University of the Arts</div></div><div class="b">2012–16</div></div>
           <div class="it"><div><div class="a">Diploma, Art &amp; Design (Foundation)</div><div class="sub">University of the Arts London</div></div><div class="b">2011–12</div></div>
         </div>
       </div>
       <div class="block">
         <h3>Certifications</h3>
         <div class="chips">
-          <span class="chip">UX Research for Agile Teams</span><span class="chip">UX Research: Card Sorting</span>
-          <span class="chip">UX/UI Full-Time Bootcamp</span><span class="chip">IELTS</span><span class="chip">Open Water Diver</span>
+          <span class="chip">AI for UX Design — Design Lab</span><span class="chip">UX Research for Agile Teams</span>
+          <span class="chip">UX Research: Card Sorting</span><span class="chip">UX/UI Full-Time Bootcamp</span>
         </div>
       </div>
     </div>
@@ -364,7 +352,7 @@
   <section>
     <div class="sechead"><span class="dash"></span><h2><em>Languages</em></h2></div>
     <div class="langrow">
-      <div class="lang"><span class="l">English</span><span class="lv">Professional</span></div>
+      <div class="lang"><span class="l">English</span><span class="lv">Fluent</span></div>
       <div class="lang"><span class="l">Hindi</span><span class="lv">Native / Bilingual</span></div>
       <div class="lang"><span class="l">Kannada</span><span class="lv">Native / Bilingual</span></div>
       <div class="lang"><span class="l">Tulu</span><span class="lv">Native / Bilingual</span></div>
@@ -375,7 +363,7 @@
 
   <footer>
   <div class="foot">
-    <span class="label">↳ AMSTERDAM · 52.37° N · OPEN TO SENIOR / LEAD ROLES</span>
+    <span class="label">↳ AMSTERDAM · 52.37° N · OPEN TO SENIOR PRODUCT / UI-UX ROLES · REMOTE-EU</span>
     <span class="label">RHEA SUSHARA · CV 2026</span>
   </div>
   </footer>
