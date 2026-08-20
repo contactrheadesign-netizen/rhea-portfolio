@@ -249,55 +249,6 @@
     .wd-card.reveal{opacity:1;transform:none;transition:none;}
   }
 
-  /* ===== DESIGN SYSTEM SECTION ===== */
-  .ds-lead{color:var(--ink-soft);font-size:var(--step-3);line-height:1.6;max-width:60ch;margin-top:-14px;margin-bottom:6px;}
-  .ds-gov{font-family:var(--mono);font-size:var(--step-1);letter-spacing:.04em;color:var(--ink-faint);margin-top:14px;}
-  .ds-gov b{color:var(--coral);font-weight:600;}
-  .ds-row{display:grid;gap:20px;margin-top:30px;}
-  .ds-foundations{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
-  .ds-panel{border:1px solid var(--hairline);border-radius:18px;background:var(--paper-2);padding:24px;position:relative;overflow:hidden;box-shadow:0 18px 44px -30px rgba(28,27,23,.5);}
-  .ds-panel .ds-k{font-family:var(--mono);font-size:var(--step-1);letter-spacing:.12em;text-transform:uppercase;color:var(--coral);display:flex;align-items:center;gap:10px;margin-bottom:18px;}
-  .ds-panel .ds-k .ds-i{width:7px;height:7px;border-radius:50%;background:var(--coral);box-shadow:0 0 8px var(--coral);flex:none;}
-  /* type scale */
-  .ds-type .trow{display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px solid var(--hairline);}
-  .ds-type .trow:last-child{border-bottom:none;padding-bottom:0;}
-  .ds-type .trow .sm-sample{font-weight:800;letter-spacing:-.02em;line-height:1;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-  .ds-type .trow .sm-serif{font-family:var(--serif);font-style:italic;font-weight:500;}
-  .ds-type .trow .tk{font-family:var(--mono);font-size:var(--step-1);color:var(--ink-faint);white-space:nowrap;flex:none;}
-  /* swatches */
-  .ds-sw{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
-  .ds-sw .s{border-radius:12px;overflow:hidden;border:1px solid var(--hairline);background:var(--paper);}
-  .ds-sw .s .chip{height:48px;}
-  .ds-sw .s .m{padding:8px 10px;}
-  .ds-sw .s .role{font-weight:800;font-size:var(--step-1);letter-spacing:.02em;display:block;}
-  .ds-sw .s .tok{font-family:var(--mono);font-size:10px;color:var(--ink-faint);letter-spacing:.01em;}
-  .ds-note{font-size:var(--step-1);color:var(--ink-faint);margin-top:12px;line-height:1.45;}
-  /* token rows (space / radius / motion) */
-  .ds-tok{display:grid;gap:16px;}
-  .ds-tok .grp .gl{font-family:var(--grotesque);font-weight:800;font-size:var(--step-1);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:9px;}
-  .ds-tok .steps{display:flex;align-items:flex-end;gap:7px;flex-wrap:wrap;}
-  .ds-tok .steps .st{height:10px;border-radius:99px;background:var(--coral);opacity:.9;}
-  .ds-tok .rads{display:flex;gap:9px;flex-wrap:wrap;}
-  .ds-tok .rads .rd{width:34px;height:34px;border:1.5px solid var(--coral);background:rgba(187,10,30,.06);}
-  .ds-tok .mrow{font-family:var(--mono);font-size:var(--step-1);color:var(--ink-soft);line-height:1.5;}
-  .ds-tok .mrow b{color:var(--ink);font-weight:600;}
-  /* component inventory */
-  .ds-comp{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
-  .ds-c{border:1px solid var(--hairline);border-radius:14px;background:var(--paper);padding:16px 17px;}
-  .ds-c .cn{font-weight:800;font-size:var(--step-3);letter-spacing:-.01em;}
-  .ds-c .cs{font-size:var(--step-1);color:var(--ink-soft);margin-top:6px;line-height:1.5;}
-  .ds-c .states{display:flex;gap:5px;margin-top:11px;flex-wrap:wrap;}
-  .ds-c .states span{font-family:var(--mono);font-size:10px;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-faint);border:1px solid var(--hairline);border-radius:99px;padding:3px 8px;}
-  /* reach */
-  .ds-reach{display:flex;flex-wrap:wrap;gap:12px;}
-  .ds-reach .r{display:flex;flex-direction:column;gap:4px;border:1px solid var(--hairline);border-radius:14px;background:var(--paper);padding:16px 18px;flex:1 1 128px;}
-  .ds-reach .r .big{font-weight:900;font-size:var(--step-5);letter-spacing:-.02em;line-height:1;}
-  .ds-reach .r .big em{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--coral);}
-  .ds-reach .r .sm{font-size:var(--step-1);color:var(--ink-soft);text-transform:uppercase;letter-spacing:.07em;line-height:1.35;}
-  @media (max-width:520px){
-    .ds-sw{grid-template-columns:repeat(2,1fr);}
-    .ds-panel{padding:20px;}
-  }
 </style>
 </head>
 <body>
@@ -321,7 +272,6 @@
     <div class="brand"><span class="mark">R</span>Rhea Sushara</div>
     <div class="links">
       <a href="#work">Work</a>
-      <a href="#system">System</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </div>
@@ -332,7 +282,6 @@
     <a href="cv.html" class="btn btn-coral">CV →</a>
     <div class="mob-menu" id="mobMenu">
       <a href="#work" onclick="this.parentElement.classList.remove('open')">Work</a>
-      <a href="#system" onclick="this.parentElement.classList.remove('open')">System</a>
       <a href="#about" onclick="this.parentElement.classList.remove('open')">About</a>
       <a href="#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
     </div>
@@ -428,105 +377,6 @@
         <span class="wd-dot"></span>
         <button class="wd-nav" onclick="document.getElementById('wdRow').scrollBy({left:-360,behavior:'smooth'})" aria-label="Previous">&larr;</button>
         <button class="wd-nav" onclick="document.getElementById('wdRow').scrollBy({left:360,behavior:'smooth'})" aria-label="Next">&rarr;</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- DESIGN SYSTEM -->
-  <section id="system">
-    <div class="sechead"><span class="dash"></span><h2>The design <em>system</em> I own<span class="dot" style="color:var(--coral)">.</span></h2></div>
-    <p class="ds-lead">One system behind all four case studies: the tokens, components and rules that keep identity verification, recovery, login and signing consistent — across three platforms, light and dark, and eight languages. I own it end to end, from the foundations to engineering handoff.</p>
-    <p class="ds-gov"><b>Single source of truth in Figma</b> — tokens → components → handoff specs, kept in sync across iOS, Android and web.</p>
-
-    <!-- Foundations -->
-    <div class="ds-row ds-foundations">
-      <div class="ds-panel ds-type">
-        <div class="ds-k"><span class="ds-i"></span>Type scale</div>
-        <div class="trow"><span class="sm-sample" style="font-size:var(--step-7);">Ag</span><span class="tk">Display · 61 / --step-7</span></div>
-        <div class="trow"><span class="sm-sample sm-serif" style="font-size:var(--step-6);">Trust</span><span class="tk">Heading · 39 / --step-6</span></div>
-        <div class="trow"><span class="sm-sample" style="font-size:var(--step-4);">Verify your identity</span><span class="tk">Title · 20 / --step-4</span></div>
-        <div class="trow"><span class="sm-sample" style="font-size:var(--step-3);font-weight:600;">Body copy that survives translation</span><span class="tk">Body · 16 / --step-3</span></div>
-        <div class="trow"><span class="sm-sample" style="font-size:var(--step-1);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);">Caption / label</span><span class="tk">Caption · 12 / --step-1</span></div>
-      </div>
-
-      <div class="ds-panel">
-        <div class="ds-k"><span class="ds-i"></span>Semantic colour roles</div>
-        <div class="ds-sw">
-          <div class="s"><div class="chip" style="background:#efebe0;"></div><div class="m"><span class="role">Surface</span><span class="tok">--surface</span></div></div>
-          <div class="s"><div class="chip" style="background:#1c1b17;"></div><div class="m"><span class="role">Ink</span><span class="tok">--ink</span></div></div>
-          <div class="s"><div class="chip" style="background:#bb0a1e;"></div><div class="m"><span class="role">Brand</span><span class="tok">--brand</span></div></div>
-          <div class="s"><div class="chip" style="background:#00a28f;"></div><div class="m"><span class="role">Success</span><span class="tok">--success</span></div></div>
-          <div class="s"><div class="chip" style="background:#5090a8;"></div><div class="m"><span class="role">Info</span><span class="tok">--info</span></div></div>
-          <div class="s"><div class="chip" style="background:#d64027;"></div><div class="m"><span class="role">Error</span><span class="tok">--error</span></div></div>
-        </div>
-        <p class="ds-note">Components bind to roles, not raw hex — a calm teal always means success, a clear red always means failure, on every screen and platform.</p>
-      </div>
-
-      <div class="ds-panel">
-        <div class="ds-k"><span class="ds-i"></span>Space · radius · motion</div>
-        <div class="ds-tok">
-          <div class="grp">
-            <div class="gl">Spacing · 4px base</div>
-            <div class="steps">
-              <span class="st" style="width:14px;"></span><span class="st" style="width:22px;"></span><span class="st" style="width:34px;"></span><span class="st" style="width:50px;"></span><span class="st" style="width:74px;"></span><span class="st" style="width:104px;"></span>
-            </div>
-          </div>
-          <div class="grp">
-            <div class="gl">Radius</div>
-            <div class="rads">
-              <span class="rd" style="border-radius:8px;"></span><span class="rd" style="border-radius:12px;"></span><span class="rd" style="border-radius:18px;"></span><span class="rd" style="border-radius:50%;"></span>
-            </div>
-          </div>
-          <div class="grp">
-            <div class="gl">Motion</div>
-            <div class="mrow"><b>ease-out</b> cubic-bezier(.23,1,.32,1)<br>200ms micro · 450ms transition · reduced-motion honoured</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Components -->
-    <div class="ds-row ds-comp">
-      <div class="ds-c">
-        <div class="cn">Account tile</div>
-        <div class="cs">Swipeable login card — name, company, email. Powers the switcher carousel.</div>
-        <div class="states"><span>Active</span><span>Selected</span><span>Blocked</span><span>Inactive</span></div>
-      </div>
-      <div class="ds-c">
-        <div class="cn">PIN pad</div>
-        <div class="cs">Secure numeric entry, shared across login and recovery.</div>
-        <div class="states"><span>Default</span><span>Error</span><span>Dark</span></div>
-      </div>
-      <div class="ds-c">
-        <div class="cn">NFC scan states</div>
-        <div class="cs">One pattern across passport, ID card and driving licence.</div>
-        <div class="states"><span>Ready</span><span>Scanning</span><span>Success</span><span>Error</span></div>
-      </div>
-      <div class="ds-c">
-        <div class="cn">Status &amp; feedback</div>
-        <div class="cs">One success / error language, reused everywhere a flow can pass or fail.</div>
-        <div class="states"><span>Success</span><span>Error</span><span>Pending</span></div>
-      </div>
-      <div class="ds-c">
-        <div class="cn">Recovery status</div>
-        <div class="cs">Product-level progress on the wallet, including the "incomplete" model.</div>
-        <div class="states"><span>Active</span><span>Incomplete</span><span>Service desk</span></div>
-      </div>
-      <div class="ds-c">
-        <div class="cn">Instructional animation</div>
-        <div class="cs">Illustrated Lottie guidance, rebuilt per device from shared frames.</div>
-        <div class="states"><span>Passport</span><span>ID</span><span>Licence</span></div>
-      </div>
-    </div>
-
-    <!-- Reach -->
-    <div class="ds-row">
-      <div class="ds-reach">
-        <div class="r"><span class="big">3</span><span class="sm">Platforms<br>iOS · Android · Web</span></div>
-        <div class="r"><span class="big"><em>↔</em></span><span class="sm">Responsive<br>phone → tablet</span></div>
-        <div class="r"><span class="big">2</span><span class="sm">Themes<br>Light · Dark</span></div>
-        <div class="r"><span class="big">8</span><span class="sm">Languages<br>translation-safe</span></div>
-        <div class="r"><span class="big">AA</span><span class="sm">Accessibility<br>WCAG 2.1</span></div>
       </div>
     </div>
   </section>
