@@ -1,37 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 886 1064" width="886" height="1064" role="img" aria-label="V7 Design System — placeholder thumbnail">
-  <defs>
-    <radialGradient id="coral" cx="38%" cy="32%" r="70%">
-      <stop offset="0%" stop-color="#f32a40"/>
-      <stop offset="60%" stop-color="#bb0a1e"/>
-      <stop offset="100%" stop-color="#820614"/>
-    </radialGradient>
-    <radialGradient id="ochre" cx="35%" cy="30%" r="70%">
-      <stop offset="0%" stop-color="#e2b75a"/>
-      <stop offset="100%" stop-color="#c9952b"/>
-    </radialGradient>
-  </defs>
-
-  <rect width="886" height="1064" fill="#efebe0"/>
-
-  <!-- token / atomic motif -->
-  <circle cx="300" cy="330" r="220" fill="url(#coral)"/>
-  <circle cx="560" cy="560" r="78" fill="url(#ochre)"/>
-
-  <!-- faint grid to echo the system theme -->
-  <g stroke="#1c1b17" stroke-opacity="0.10" stroke-width="1.5">
-    <line x1="0" y1="740" x2="886" y2="740"/>
-    <line x1="0" y1="812" x2="886" y2="812"/>
-    <line x1="0" y1="884" x2="886" y2="884"/>
-  </g>
+  <rect width="886" height="1064" fill="#c9952b"/>
 
   <!-- labels -->
-  <text x="64" y="712" font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="30" letter-spacing="4" fill="#bb0a1e">V7 · DESIGN SYSTEM</text>
-  <text x="64" y="792" font-family="Archivo, system-ui, sans-serif" font-weight="900" font-size="72" fill="#1c1b17">Three platforms,</text>
-  <text x="64" y="866" font-family="Archivo, system-ui, sans-serif" font-weight="900" font-size="72" fill="#1c1b17">one system</text>
+  <text x="64" y="150" font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="30" letter-spacing="4" fill="#1c1b17" fill-opacity="0.7">V7 · DESIGN SYSTEM</text>
+
+  <text x="60" y="530" font-family="Archivo, system-ui, sans-serif" font-weight="900" font-size="112" fill="#1c1b17">Three</text>
+  <text x="60" y="650" font-family="Archivo, system-ui, sans-serif" font-weight="900" font-size="112" fill="#1c1b17">platforms,</text>
+  <text x="60" y="770" font-family="Archivo, system-ui, sans-serif" font-weight="900" font-size="112" fill="#1c1b17">one system</text>
 
   <!-- placeholder tag -->
   <g>
-    <rect x="64" y="928" width="330" height="52" rx="26" fill="none" stroke="#1c1b17" stroke-opacity="0.4" stroke-dasharray="6 6"/>
-    <text x="88" y="962" font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="24" letter-spacing="3" fill="#1c1b17" fill-opacity="0.6">PLACEHOLDER · THUMB TBD</text>
+    <rect x="64" y="920" width="342" height="54" rx="27" fill="none" stroke="#1c1b17" stroke-opacity="0.45" stroke-dasharray="6 6"/>
+    <text x="90" y="955" font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="24" letter-spacing="3" fill="#1c1b17" fill-opacity="0.65">PLACEHOLDER · THUMB TBD</text>
   </g>
 </svg>
