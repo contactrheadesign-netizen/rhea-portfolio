@@ -212,6 +212,25 @@
   .ds-audit .flag{font-family:var(--mono);font-size:var(--step-1);color:var(--coral);background:rgba(187,10,30,.08);border:1px solid rgba(187,10,30,.25);border-radius:6px;padding:4px 9px;white-space:nowrap;flex:none;}
   .ds-audit .txt{font-size:var(--step-2);color:var(--ink);line-height:1.5;}
   @media(max-width:560px){.ds-vocab{grid-template-columns:1fr;} .ds-audit .a{flex-direction:column;gap:7px;}}
+  .ds-conflict{border:1px solid var(--hairline);border-radius:12px;overflow:hidden;}
+  .ds-conflict .c{display:grid;grid-template-columns:1.4fr auto auto;gap:14px;align-items:center;padding:13px 16px;border-bottom:1px solid var(--hairline);background:var(--paper-2);}
+  .ds-conflict .c:last-child{border-bottom:none;}
+  .ds-conflict .nm{font-size:var(--step-2);color:var(--ink);font-weight:600;}
+  .ds-conflict .nm small{display:block;font-weight:400;color:var(--ink-soft);font-family:var(--mono);font-size:var(--step-1);margin-top:3px;}
+  .ds-conflict .sw2{display:flex;gap:6px;align-items:center;font-family:var(--mono);font-size:11px;color:var(--ink-soft);}
+  .ds-conflict .dot{width:18px;height:18px;border-radius:5px;border:1px solid var(--hairline);}
+  .ds-conflict .pri{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:999px;white-space:nowrap;}
+  .ds-conflict .pri.hi{background:rgba(187,10,30,.1);color:var(--coral);}
+  .ds-conflict .pri.md{background:rgba(201,149,43,.16);color:#8a6410;}
+  .ds-conflict .pri.lo{background:rgba(28,27,23,.07);color:var(--ink-soft);}
+  .ds-layers{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline);border-radius:12px;overflow:hidden;}
+  .ds-layers > div{background:var(--paper-2);padding:16px 18px;}
+  .ds-layers .lh{font-family:var(--mono);font-size:var(--step-1);text-transform:uppercase;letter-spacing:.08em;color:var(--coral);margin-bottom:6px;}
+  .ds-layers .lt{font-family:var(--grotesque);font-weight:700;font-size:var(--step-3);color:var(--ink);margin-bottom:4px;}
+  .ds-layers .ld{font-size:var(--step-1);color:var(--ink-soft);line-height:1.5;}
+  .ds-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+  .ds-chips span{font-family:var(--mono);font-size:var(--step-1);border:1px solid var(--hairline);background:var(--paper-2);color:var(--ink);border-radius:999px;padding:5px 12px;}
+  @media(max-width:560px){.ds-conflict .c{grid-template-columns:1fr;gap:7px;} .ds-layers{grid-template-columns:1fr;}}
   .ds-drift{font-family:var(--mono);font-size:var(--step-2);background:var(--paper-2);border:1px solid var(--hairline);border-radius:12px;overflow:hidden;}
   .ds-drift .r{display:flex;align-items:center;justify-content:space-between;padding:11px 16px;border-bottom:1px solid var(--hairline);}
   .ds-drift .r:last-child{border-bottom:none;}
@@ -268,7 +287,7 @@
 
     <div class="resultbar">
       <span class="rk">Result</span>
-      <div class="rv">One design system now powers the <b>AuthBox</b> web auth experience and the <b>Self-Service Portal</b>, plus <b>iOS and Android</b>, from a single shared component library rather than parallel rebuilds. <span class="src">The AuthBox redesign migrated onto it incrementally, ticket by ticket, not big-bang.</span></div>
+      <div class="rv">One design system now powers the <b>AuthBox</b> web auth experience and the <b>Self-Service Portal</b>, plus <b>iOS and Android</b>, from a single shared component library rather than parallel rebuilds. A cross-platform token audit found <b>81% of colours already matched (34 of 42)</b> — the consolidation closes the last 19% and the deeper type and component drift. <span class="src">The AuthBox redesign migrated onto it incrementally, ticket by ticket, not big-bang.</span></div>
     </div>
 
     <div class="hplate">
@@ -300,6 +319,20 @@
     <div class="sechead"><span class="dash"></span><h2>Strategy &amp; <em>Logic</em></h2></div>
     <h3 class="sub">Atomic Structure as a Survival Strategy</h3>
     <p class="body">With one designer and three platforms, the only way to keep velocity without fragmentation was strict atomicity: every new component composes from shared primitives and tokens, so consistency is structural rather than manual. The Figma UI Kit is the single source of truth, define once, consume everywhere.</p>
+
+    <h3 class="sub">A Three-Layer Token Architecture</h3>
+    <p class="body soft">Tokens aren't a flat list of colours. I structured the canonical set in three layers, so a brand change happens in one place and cascades, while components never reference a raw value directly.</p>
+    <div class="ds-ex">
+      <div class="ds-layers">
+        <div><div class="lh">Layer 1</div><div class="lt">Primitive</div><div class="ld">Raw values — the literal palette, sizes and radii. Named by what they are (<span style="font-family:var(--mono)">green-500</span>, <span style="font-family:var(--mono)">space-16</span>).</div></div>
+        <div><div class="lh">Layer 2</div><div class="lt">Semantic</div><div class="ld">Roles that reference primitives — <span style="font-family:var(--mono)">action-primary</span>, <span style="font-family:var(--mono)">surface-page</span>. Components bind here, never to raw values.</div></div>
+        <div><div class="lh">Layer 3</div><div class="lt">Component</div><div class="ld">Per-component tokens where a component needs its own hook, mapped back to semantic roles.</div></div>
+      </div>
+      <p class="ds-note">Drafted in DTCG format (<span style="font-family:var(--mono)">tokens.json</span> v2.0) spanning eleven categories, not just colour:</p>
+      <div class="ds-chips">
+        <span>colour</span><span>spacing</span><span>radius</span><span>shadow</span><span>typography</span><span>motion</span><span>z-index</span><span>grid</span><span>focus</span><span>touch-target</span><span>opacity / blur</span>
+      </div>
+    </div>
 
     <div class="ds-ex">
       <div class="ds-exlabel">The atomic chain</div>
@@ -434,7 +467,36 @@
       <div class="a"><span class="flag">check authbox</span><span class="txt">Every mismatch was verified against the running product, not assumed from the file, so the reconciliation reflected what users actually saw.</span></div>
     </div>
 
-    <p class="body">The fix is the same as for colour, and it's why the token pipeline matters: one source generating both the Figma variables and the SCSS, with a single role vocabulary and a real token for every style — including the body text that never had one.</p>
+    <p class="body">The fix wasn't more components — it was a real source of truth. I ran a cross-platform token audit across the web (Gem SCSS) and mobile systems: <b>81% of colours already matched — 34 of 42 web colours mapped cleanly to a mobile equivalent</b>. That left a precise, nameable 19% to resolve, plus the type and component drift. From there I drafted a canonical token set (v2.0) in the three-layer structure, wrote an old→new migration map with deprecations for both platforms, and mapped 12 components to it — then scoped the whole thing as a developer initiative (TLP-97) to validate and implement against the three codebases.</p>
+
+    <h3 class="sub">Four conflicts that needed a design decision</h3>
+    <p class="body soft">The audit didn't just measure the gap — it isolated the exact points where web and mobile genuinely disagreed, each with a proposed resolution and a priority. These are the design-judgment calls, pulled out so they couldn't hide inside an engineering ticket.</p>
+    <div class="ds-ex">
+      <div class="ds-conflict" aria-label="Cross-platform colour conflicts">
+        <div class="c">
+          <div class="nm">Primary action colour<small>Documented as an intentional platform split — needs formal sign-off</small></div>
+          <div class="sw2"><span class="dot" style="background:#00C464"></span>web #00C464<span class="dot" style="background:#D8F85D;margin-left:8px"></span>mobile #D8F85D</div>
+          <div class="pri hi">High · blocks button</div>
+        </div>
+        <div class="c">
+          <div class="nm">Warning border<small>Proposed: #EF9722 everywhere, #DC8818 as a border-specific variant</small></div>
+          <div class="sw2"><span class="dot" style="background:#EF9722"></span>web #EF9722<span class="dot" style="background:#DC8818;margin-left:8px"></span>mobile #DC8818</div>
+          <div class="pri md">Medium</div>
+        </div>
+        <div class="c">
+          <div class="nm">Missing mobile success colours<small>#41B27D and #007840 exist on web but not mobile — add them</small></div>
+          <div class="sw2"><span class="dot" style="background:#41B27D"></span>#41B27D<span class="dot" style="background:#007840;margin-left:8px"></span>#007840</div>
+          <div class="pri md">Medium</div>
+        </div>
+        <div class="c">
+          <div class="nm">Black definition<small>Proposed: #212121 everywhere</small></div>
+          <div class="sw2"><span class="dot" style="background:#212121"></span>web #212121<span class="dot" style="background:#000000;margin-left:8px"></span>mobile #000000</div>
+          <div class="pri lo">Low</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="body">The type drift was the same story in a different layer — and the fix for both is one generated source, which is why the token pipeline matters: a single canonical set producing every platform's output, one role vocabulary, and a real token for every style, including the body text that never had one.</p>
 
     <div class="ds-ex">
       <div class="ds-exlabel">Target architecture: one source, generated three ways</div>
@@ -443,18 +505,21 @@
       <g font-family="Archivo, sans-serif">
         <rect x="34" y="100" width="232" height="82" rx="10" fill="#efebe0" stroke="#1c1b17" stroke-width="1.5"/>
         <text x="150" y="90" text-anchor="middle" font-size="12" fill="#bb0a1e" font-family="IBM Plex Mono, monospace">SOURCE OF TRUTH</text>
-        <text x="150" y="138" text-anchor="middle" font-size="18" font-weight="800" fill="#1c1b17">Figma Variables</text>
-        <text x="150" y="162" text-anchor="middle" font-size="12" fill="rgba(28,27,23,.6)" font-family="IBM Plex Mono, monospace">one origin</text>
+        <text x="150" y="134" text-anchor="middle" font-size="17" font-weight="800" fill="#1c1b17">tokens.json</text>
+        <text x="150" y="160" text-anchor="middle" font-size="12" fill="rgba(28,27,23,.6)" font-family="IBM Plex Mono, monospace">DTCG canonical · v2.0</text>
         <rect x="356" y="100" width="232" height="82" rx="10" fill="#bb0a1e"/>
         <text x="472" y="90" text-anchor="middle" font-size="12" fill="#bb0a1e" font-family="IBM Plex Mono, monospace">TRANSFORM</text>
         <text x="472" y="138" text-anchor="middle" font-size="18" font-weight="800" fill="#fff5ef">Style Dictionary</text>
         <text x="472" y="162" text-anchor="middle" font-size="12" fill="#f6d9c0" font-family="IBM Plex Mono, monospace">generate per platform</text>
         <rect x="716" y="30" width="350" height="58" rx="10" fill="#efebe0" stroke="#c9952b" stroke-width="1.5"/>
-        <text x="738" y="65" font-size="16" font-weight="800" fill="#1c1b17">Web — Rails gem + NPM</text>
+        <text x="738" y="56" font-size="15" font-weight="800" fill="#1c1b17">Web · rails_variables.scss</text>
+        <text x="738" y="76" font-size="12" fill="rgba(28,27,23,.6)" font-family="IBM Plex Mono, monospace">+ ruby_token_map.rb</text>
         <rect x="716" y="112" width="350" height="58" rx="10" fill="#efebe0" stroke="#c9952b" stroke-width="1.5"/>
-        <text x="738" y="147" font-size="16" font-weight="800" fill="#1c1b17">iOS tokens</text>
+        <text x="738" y="140" font-size="15" font-weight="800" fill="#1c1b17">Mobile · mobile_tokens.json</text>
+        <text x="738" y="160" font-size="12" fill="rgba(28,27,23,.6)" font-family="IBM Plex Mono, monospace">iOS (Swift) + Android (Kotlin)</text>
         <rect x="716" y="194" width="350" height="58" rx="10" fill="#efebe0" stroke="#c9952b" stroke-width="1.5"/>
-        <text x="738" y="229" font-size="16" font-weight="800" fill="#1c1b17">Android tokens</text>
+        <text x="738" y="222" font-size="15" font-weight="800" fill="#1c1b17">Figma Variables</text>
+        <text x="738" y="242" font-size="12" fill="rgba(28,27,23,.6)" font-family="IBM Plex Mono, monospace">design ⇄ code, kept in sync</text>
         <line x1="270" y1="141" x2="350" y2="141" stroke="rgba(28,27,23,.5)" stroke-width="1.5" marker-end="url(#a2)"/>
         <path d="M592,141 C650,141 656,59 710,59" fill="none" stroke="rgba(28,27,23,.5)" stroke-width="1.5" marker-end="url(#a2)"/>
         <line x1="592" y1="141" x2="710" y2="141" stroke="rgba(28,27,23,.5)" stroke-width="1.5" marker-end="url(#a2)"/>
@@ -484,6 +549,7 @@
     </div>
 
     <p class="body">Components were specified for every state and validated in isolation before landing in product, the mobile team maintained a dedicated "UI Component Kit" sample app for exactly this. Hardening the web components with the Rails engineers took roughly four months of component-level testing and fixing.</p>
+    <p class="body soft">On the reconciliation side, the component work was made concrete: <b>16 components specified</b> with variants, states, token references and accessibility notes, of which <b>12 are mapped to the canonical tokens</b> (Button, Input, Checkbox, Radio, Select, Card, Modal, Tooltip, Tabs, Badge, Alert, Navigation) — paired with an old→new <b>migration map</b> covering colour, spacing, radius, typography and shadow, with deprecations flagged, so the rename is a mechanical step for developers rather than a guessing game.</p>
 
     <div class="ds-ex">
       <div class="ds-exlabel">One component, every state</div>
@@ -512,7 +578,8 @@
   <section>
     <div class="sechead"><span class="dash"></span><h2>The <em>Conclusion</em></h2></div>
     <h3 class="sub">Results</h3>
-    <p class="body">The V7 system now underpins the AuthBox web auth experience, a unified login and account-creation flow, and the Self-Service Portal, both consuming one shared component library, alongside the iOS and Android apps. The AuthBox migration shipped incrementally and low-risk. The token consolidation is the current work: closing the gap between Figma and code so the single source of truth is truly single.</p>
+    <p class="body">The V7 system now underpins the AuthBox web auth experience, a unified login and account-creation flow, and the Self-Service Portal, both consuming one shared component library, alongside the iOS and Android apps. The AuthBox migration shipped incrementally and low-risk.</p>
+    <p class="body soft">The token consolidation is the current work, and the design-judgment-heavy half is done: the cross-platform audit (81% colour match), the drafted canonical set, the migration map, the 12-component mapping, and the four conflicts isolated for sign-off. What remains is largely engineering — automating the build pipeline, migrating the Rails ViewComponents and mobile component definitions onto the canonical tokens, syncing Figma Variables, and formal sign-off on the four conflicts — scoped as TLP-97 for the development team to validate and implement.</p>
     <h3 class="sub">Reflections</h3>
     <p class="body">Inheriting a half-built system taught me that a design system's hardest problem isn't the components, it's governance with no design peer. Duplicate tokens and Figma-to-code drift are what happen when a system grows faster than its source of truth. Next time I'd treat the token pipeline as foundational infrastructure from day one.</p>
     <h3 class="sub">Collaborators</h3>
