@@ -188,6 +188,14 @@
   .cs-copy .cs-h{font-family:var(--grotesque);font-weight:900;font-size:clamp(var(--step-4),2.2vw,var(--step-5));letter-spacing:-.02em;color:var(--ink);margin-top:34px;}
   .cs-copy .cs-sub{font-family:var(--grotesque);font-weight:800;font-size:var(--step-1);letter-spacing:.12em;text-transform:uppercase;color:var(--ochre-ink);margin-top:24px;}
   .cs-copy .cs-q{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(var(--step-4),2.2vw,var(--step-5));line-height:1.4;color:var(--ink);border-left:2px solid var(--coral);padding-left:18px;margin-top:18px;}
+  /* Inline case-study figures — images sit in the text flow, under the section they illustrate */
+  .cs-copy .cs-fig{margin:22px 0 0;border-radius:14px;overflow:hidden;background:var(--paper-2);border:1px solid var(--hairline);box-shadow:0 14px 30px -22px rgba(28,27,23,.5);position:relative;}
+  .cs-copy .cs-fig .media{display:block;width:100%;height:auto;}
+  .cs-copy .cs-fig img.media{transition:transform .5s var(--ease-out);}
+  .cs-copy .cs-fig:hover img.media{transform:scale(1.03);}
+  .cs-copy .cs-figs{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .cs-copy .cs-figs .cs-fig{margin:0;}
+  @media (max-width:560px){.cs-copy .cs-figs{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -358,10 +366,12 @@
       <p>To inform the design of Futurebens' ESG platform, we conducted a competitive analysis of several companies in the market, including Wespire, Jump, CultureAmp, and Pawprint. While these companies share a similar goal of engaging employees and individuals in ESG topics, they position themselves differently in the market and have unique features and functionality.</p>
       <p>Pawprint is focused on the individual impact of employees, while CultureAmp is more company-driven and focuses on employee progress and satisfaction. Jump, on the other hand, focuses exclusively on environmental topics, while Wespire covers a range of environmental and social topics.</p>
       <p>We analyzed the strengths and weaknesses of each company's product and how they differ in functionality. This helped us identify potential areas of differentiation for Futurebens' ESG platform, such as a focus on specific ESG topics or a more individualized approach to tracking progress. By understanding the competition and their unique value propositions, we can design a product that meets the needs and expectations of users while also standing out in the market.</p>
+      <figure class="cs-fig tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-11.webp" alt="Competitor product analysis"></figure>
       <h3 class="cs-h">User Research</h3>
       <p>To better understand user needs and preferences, we conducted a quantitative survey of 50 people, consisting of 9 questions related to environmental and social topics. The results showed that 90% of respondents considered these topics to be essential and that they were a crucial factor in choosing their employer.</p>
       <p>Furthermore, we learned that people primarily obtain information about environmental and social topics from websites, as well as conversations with friends, family, and colleagues. These insights will help inform the design of Futurebens' ESG platform, ensuring that it meets users' needs and preferences and aligns with their values and priorities.</p>
       <p>We will use these findings to prioritize content and features that are most relevant and engaging to users, such as easy access to information about specific ESG topics and opportunities to connect and collaborate with colleagues and other users around shared interests and values. By designing a product that meets users' needs and preferences, we can increase engagement and create a more meaningful and impactful user experience.</p>
+      <figure class="cs-fig tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-01.webp" alt="Survey results"></figure>
       <h3 class="cs-h">User Interviews</h3>
       <p>We conducted five user interviews focused on understanding millennials' perspectives on ESG topics in both personal and work environments.</p>
       <p>Through these interviews, we found that sustainability and social factors played a critical role in the decision-making process for three of the five interviewees when choosing their current employer. These individuals felt a strong alignment between their personal values and those of their employers.</p>
@@ -373,23 +383,37 @@
       <p>These insights will help us design a more targeted and effective product that meets the needs and expectations of our target audience. By understanding the diverse motivations and behaviors of users, we can create a product that is engaging, informative, and aligned with their values and priorities. For example, we can prioritize features that promote personal initiatives and information sharing around ESG topics, while also providing easy access to reliable and curated information. By doing so, we can create a more impactful and meaningful user experience that resonates with our users.</p>
       <h3 class="cs-h">Card Sorting</h3>
       <p>From the 5 interviews, we built an affinity diagram to find some patterns and dot-voted.</p>
+      <figure class="cs-fig tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-09.webp" alt="Affinity diagram and dot-voting"></figure>
       <h4 class="cs-sub">Key Insights</h4>
+      <figure class="cs-fig tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-14.webp" alt="Key insights"></figure>
       <h3 class="cs-h">User Persona</h3>
       <p>Helena is aware of the importance of engaging in environmental and social topics. She does waste segregation at home and is interested in recycling and animal welfare, but due to her busy schedule, she cannot learn more about it. Moreover, she cannot find reliable and easy-to-consume content, nor does she know which other work colleagues might be interested in the same topics as her or who can motivate and encourage her.</p>
+      <figure class="cs-fig tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-15.webp" alt="User persona — Helena"></figure>
       <h3 class="cs-h">User Journey Map</h3>
       <p>We then created a user journey map focusing on how Helena feel during one of her regular days. By mapping Helena's Journey map, we are able to clearly see her pain points, as well as find possible opportunities to develop a product that truly would help.</p>
+      <figure class="cs-fig tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-08.webp" alt="User journey map"></figure>
       <h3 class="cs-h">Problem Statement</h3>
       <p>With a better knowledge of our users and an understanding of their pain points, we form our problem statement.</p>
       <p>It was here that we came up with the point system/ reward system! Since our stakeholder- Ivan had mentioned gamification, the only way that makes sense for this platform to work is by collecting points on every single action. This idea set the foundation for our overall final product.</p>
       <p>The other key features we got from the 28 ideas that we generated in 8 minutes were -Ability to take initiative and create a dashboard to track progress. We also had to consider the social and the company where our user Helena works- so objective setting from the company so that it is integrated within the personal growth part of the corporation.</p>
+      <figure class="cs-fig tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-04.webp" alt="Problem framing"></figure>
+      <figure class="cs-fig tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-17.webp" alt="Crazy 8s ideation sketches"></figure>
       <h3 class="cs-h">MOSCOW method</h3>
       <p>Placing the Working Groups feature in the won't have sections for now because we weren’t sure if companies would allocate time for it on a regular basis and we were unable to decide who would take the initiative so due to uncertainties we decide this feature will be in the won't have.</p>
       <p>Networking went into "Could have": it's a great way to find people who share your interests within the organisation, but we needed to look deeper into whether this would be a social chatting platform or only a contact-info page — so we kept it for the next version of the platform.</p>
+      <figure class="cs-fig tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-05.webp" alt="MoSCoW prioritisation"></figure>
       <h3 class="cs-h">Minimum Viable Product</h3>
       <p>Create an ESG platform to learn, take action, and get points by having the ability to track progress as well as integrated it within the company objectives.</p>
+      <figure class="cs-fig tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-13.webp" alt="MVP definition"></figure>
       <h4 class="cs-sub">Site Map</h4>
+      <figure class="cs-fig tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-02.webp" alt="Site map"></figure>
       <h4 class="cs-sub">User Flow</h4>
+      <figure class="cs-fig tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-06.webp" alt="User flow"></figure>
       <h3 class="cs-h">Mid Fidelity Wireframing</h3>
+      <div class="cs-figs">
+        <figure class="cs-fig tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-03.webp" alt="Mid-fidelity wireframes"></figure>
+        <figure class="cs-fig tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-18.webp" alt="Mid-fidelity wireframes"></figure>
+      </div>
       <h3 class="cs-h">User Interface Design</h3>
       <h4 class="cs-sub">Visual Comparative Analysis</h4>
       <p>When looking into WeSpire, CultureAmp, Jump, and Pawprint, as a group we came to an agreement that we like the Pawprint visual elements more but with some photographic elements from Wespire.</p>
@@ -402,13 +426,16 @@
       <p>Your actions are on a separate page that showcases all the bookmarked actions.</p>
       <p>For the part of gamification, we added the option of scoring extra points by taking a quiz after watching the video or sharing it with a friend.</p>
       <p>Keep the overall look clean and minimal in line with the FutureBens website. We presented this and won the best project award.</p>
+      <div class="cs-figs">
+        <figure class="cs-fig tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-10.webp" alt="High-fidelity dashboard"></figure>
+        <figure class="cs-fig tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-12.webp" alt="High-fidelity actions screen"></figure>
+      </div>
+      <figure class="cs-fig tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-16.webp" alt="High-fidelity screens showcase"></figure>
       <h4 class="cs-sub">Desirability Testing</h4>
+      <figure class="cs-fig tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-07.webp" alt="Desirability reaction words"></figure>
     </div>
         <p class="ph-count">18 pieces</p>
       </div>
-    </div>
-    <div class="grid">
-      <figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-01.webp" alt=""></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-02.webp" alt=""></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-03.webp" alt=""></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-04.webp" alt=""></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-05.webp" alt=""></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-06.webp" alt=""></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-07.webp" alt=""></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-08.webp" alt=""></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-09.webp" alt=""></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-10.webp" alt=""></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-11.webp" alt=""></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-12.webp" alt=""></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-13.webp" alt=""></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-14.webp" alt=""></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-15.webp" alt=""></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-16.webp" alt=""></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-17.webp" alt=""></figure><figure class="tile"><img class="media" loading="lazy" decoding="async" src="studio/futurebens-18.webp" alt=""></figure>
     </div>
   </div></section>
 
