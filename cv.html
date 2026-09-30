@@ -23,18 +23,18 @@
 <meta name="twitter:image" content="https://rheasushara.com/og-cv.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=Rye&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#141310;--panel:#1d1b15;--panel-2:#211e17;
     --ink:#f3f0e7;--soft:rgba(243,240,231,.62);--faint:rgba(243,240,231,.55);
     --coral:#e84356;--coral-solid:#bb0a1e;--ochre:#c9952b;
     --hair:rgba(243,240,231,.13);--glass:rgba(243,240,231,.05);
-    --serif:"Fraunces",serif;--grotesque:"Archivo",sans-serif;--mono:"IBM Plex Mono",monospace;
+    --serif:"Archivo",sans-serif;--grotesque:"Archivo",sans-serif;--mono:"IBM Plex Mono",monospace;
     --step-1:12px;--step-2:13px;--step-3:16px;--step-4:20px;--step-5:25px;--step-6:39px;--step-7:61px;--step-8:76px;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  b{font-weight:800;}
+  b{font-weight:600;}
   html{scroll-behavior:smooth;}
   body{font-family:var(--grotesque);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden;}
   body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.04;
@@ -49,8 +49,8 @@
   nav{position:sticky;top:14px;z-index:50;margin-top:20px;display:flex;align-items:center;gap:22px;padding:11px 12px 11px 20px;border-radius:999px;
     background:var(--glass);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);
     border:1px solid var(--hair);box-shadow:inset 0 1px 0 rgba(255,255,255,.06);}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:var(--step-3);letter-spacing:-.01em;text-decoration:none;color:var(--ink);}
-  .brand .mark{width:25px;height:25px;border-radius:7px;background:var(--coral);color:#1a1208;display:grid;place-items:center;font-family:var(--grotesque);font-weight:900;font-size:var(--step-2);}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:var(--step-3);letter-spacing:-.01em;text-decoration:none;color:var(--ink);}
+  .brand .mark{width:25px;height:25px;border-radius:7px;background:var(--coral);color:#1a1208;display:grid;place-items:center;font-family:var(--grotesque);font-weight:700;font-size:var(--step-2);}
   nav .spacer{flex:1;}
   nav .back{font-size:var(--step-2);font-weight:600;color:var(--soft);text-decoration:none;}
   nav .back:hover{color:var(--coral);}
@@ -73,11 +73,11 @@
   @media (prefers-reduced-motion:reduce){.profile .pglow{animation:none;transition:opacity .4s;}}
   .profile .ptop{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2;}
   .pill{display:inline-flex;align-items:center;gap:9px;font-family:var(--grotesque);font-size:var(--step-1);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);}
-  .pill .b{background:var(--coral);color:#1a1208;border-radius:6px;padding:2px 7px;font-weight:800;}
-  .avatar{width:96px;height:96px;border-radius:50%;margin:26px 0 22px;border:2px solid var(--coral);display:grid;place-items:center;font-family:"Rye",serif;font-style:normal;font-size:var(--step-6);color:var(--ink);background:radial-gradient(circle at 40% 30%,#2c2820,#171510);position:relative;z-index:2;box-shadow:0 0 24px -4px rgba(187,10,30,.5);}
-  .pname{font-family:"Rye",serif;font-weight:400;font-size:clamp(var(--step-5),4.2vw,var(--step-6));line-height:1.08;letter-spacing:0;position:relative;z-index:2;}
+  .pill .b{background:var(--coral);color:#1a1208;border-radius:6px;padding:2px 7px;font-weight:600;}
+  .avatar{width:96px;height:96px;border-radius:50%;margin:26px 0 22px;border:2px solid var(--coral);display:grid;place-items:center;font-family:var(--grotesque);font-style:normal;font-size:var(--step-6);color:var(--ink);background:radial-gradient(circle at 40% 30%,#2c2820,#171510);position:relative;z-index:2;box-shadow:0 0 24px -4px rgba(187,10,30,.5);}
+  .pname{font-family:var(--grotesque);font-weight:600;font-size:clamp(var(--step-5),4.2vw,var(--step-6));line-height:1.08;letter-spacing:-.02em;position:relative;z-index:2;}
   .phandle{font-family:var(--grotesque);font-size:var(--step-1);color:var(--soft);margin-top:12px;position:relative;z-index:2;}
-  .pquote{position:relative;z-index:2;margin:24px 0 26px;padding-left:18px;border-left:2px solid var(--coral);font-family:var(--serif);font-style:italic;font-weight:400;font-size:var(--step-4);line-height:1.45;color:var(--ink);max-width:34ch;}
+  .pquote{position:relative;z-index:2;margin:24px 0 26px;padding-left:18px;border-left:2px solid var(--coral);font-family:var(--grotesque);font-style:normal;font-weight:500;font-size:var(--step-4);line-height:1.45;color:var(--ink);max-width:34ch;}
   .pstats{position:relative;z-index:2;display:flex;gap:40px;padding-top:22px;border-top:1px solid var(--hair);}
   .pstat .big{font-family:var(--mono);font-weight:600;font-size:clamp(var(--step-5),7vw,var(--step-6));letter-spacing:-.01em;}
   .pstat .big.coral{color:var(--coral);}
@@ -94,7 +94,7 @@
   .xp-row:last-child{border-bottom:none;}
   .xp-row:hover{background:var(--glass);}
   .xp-row .rank{font-family:var(--mono);font-size:var(--step-2);color:var(--faint);}
-  .xp-role{font-weight:800;font-size:var(--step-3);letter-spacing:-.01em;}
+  .xp-role{font-weight:600;font-size:var(--step-3);letter-spacing:-.01em;}
   .xp-co{font-family:var(--grotesque);font-size:var(--step-1);color:var(--soft);margin-top:3px;}
   .xp-co .now{color:var(--coral);}
   .xp-sub{font-family:var(--grotesque);font-size:var(--step-1);color:var(--faint);margin-top:6px;line-height:1.45;}
@@ -105,14 +105,14 @@
   section{padding:52px 0;border-top:1px solid var(--hair);}
   .sechead{display:flex;align-items:baseline;gap:14px;margin-bottom:28px;}
   .sechead .dash{width:26px;height:1px;background:var(--coral);align-self:center;}
-  .sechead h2{font-weight:900;font-size:clamp(var(--step-4),3vw,var(--step-6));letter-spacing:-.02em;}
-  .sechead h2 em{font-family:var(--serif);font-style:italic;font-weight:500;}
+  .sechead h2{font-weight:700;font-size:clamp(var(--step-4),3vw,var(--step-6));letter-spacing:-.02em;}
+  .sechead h2 em{font-family:var(--grotesque);font-style:normal;font-weight:500;}
   .sechead .num{margin-left:auto;}
 
   .role{padding:22px 0;border-bottom:1px solid var(--hair);}
   .role:last-child{border-bottom:none;}
   .role .rh{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;}
-  .role .rt{font-weight:800;font-size:var(--step-4);letter-spacing:-.01em;}
+  .role .rt{font-weight:600;font-size:var(--step-4);letter-spacing:-.01em;}
   .role .rt span{color:var(--coral);}
   .role .rm{font-family:var(--grotesque);font-size:var(--step-1);color:var(--soft);text-transform:uppercase;letter-spacing:.06em;}
   .role ul{list-style:none;margin-top:14px;display:grid;gap:9px;}
@@ -121,18 +121,18 @@
   .role p.sum{color:var(--soft);font-size:var(--step-3);line-height:1.55;margin-top:10px;max-width:74ch;}
 
   .grid2{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
-  .block h3{font-family:var(--grotesque);font-weight:800;font-size:var(--step-1);letter-spacing:.1em;text-transform:uppercase;color:var(--coral);margin-bottom:14px;}
+  .block h3{font-family:var(--grotesque);font-weight:600;font-size:var(--step-1);letter-spacing:.1em;text-transform:uppercase;color:var(--coral);margin-bottom:14px;}
   .chips{display:flex;flex-wrap:wrap;gap:8px;}
   .chip{font-family:var(--grotesque);font-size:var(--step-1);letter-spacing:.03em;color:var(--ink);padding:7px 13px;border-radius:999px;border:1px solid var(--hair);background:var(--glass);}
   .deflist{display:grid;gap:14px;}
   .deflist .it{display:flex;justify-content:space-between;gap:16px;padding-bottom:13px;border-bottom:1px solid var(--hair);}
-  .deflist .it .a{font-weight:800;font-size:var(--step-3);}
+  .deflist .it .a{font-weight:600;font-size:var(--step-3);}
   .deflist .it .b{font-family:var(--mono);font-size:var(--step-1);color:var(--soft);text-align:right;white-space:nowrap;}
   .deflist .it .sub{font-family:var(--grotesque);font-size:var(--step-1);color:var(--soft);margin-top:3px;}
 
   .langrow{display:flex;flex-wrap:wrap;gap:10px;}
   .lang{display:flex;align-items:baseline;gap:8px;padding:9px 14px;border:1px solid var(--hair);border-radius:12px;background:var(--glass);}
-  .lang .l{font-weight:800;font-size:var(--step-2);}
+  .lang .l{font-weight:600;font-size:var(--step-2);}
   .lang .lv{font-family:var(--grotesque);font-size:var(--step-1);color:var(--soft);text-transform:uppercase;letter-spacing:.06em;}
 
   .foot{display:flex;justify-content:space-between;align-items:center;padding:26px 0 56px;border-top:1px solid var(--hair);gap:12px;flex-wrap:wrap;}
@@ -257,7 +257,7 @@
   <!-- SUMMARY -->
   <section style="border-top:none;">
     <div class="sechead"><span class="dash"></span><h2>The <em>summary</em></h2></div>
-    <p class="role sum" style="border:none;padding:0;font-size:var(--step-3);line-height:1.6;color:var(--ink);max-width:74ch;">Senior product designer with <b>8+ years</b> in design and 5+ focused on product and UI/UX, shaping how people interact with complex, regulated B2B platforms. I currently define the design direction across iOS, Android, and web at Digidentity — a Qualified Trust Service Provider on the EU Trusted List, powering a digital-identity scheme with <b>25M+ verified identities</b> across 180+ nationalities, in 8 languages. I own the end-to-end product design function: strategy, research, interaction design, a cross-platform design system with design tokens, and accessibility (WCAG 2.1 AA). I validate direction through usability testing and rapid prototyping, work shoulder-to-shoulder with product, engineering, and compliance, and use AI tools for faster ideation and research synthesis. A foundation in illustration and motion gives me an edge in interaction detail and storytelling — <b style="color:var(--coral);font-weight:800;">I bring craft where it earns trust</b>.</p>
+    <p class="role sum" style="border:none;padding:0;font-size:var(--step-3);line-height:1.6;color:var(--ink);max-width:74ch;">Senior product designer with <b>8+ years</b> in design and 5+ focused on product and UI/UX, shaping how people interact with complex, regulated B2B platforms. I currently define the design direction across iOS, Android, and web at Digidentity — a Qualified Trust Service Provider on the EU Trusted List, powering a digital-identity scheme with <b>25M+ verified identities</b> across 180+ nationalities, in 8 languages. I own the end-to-end product design function: strategy, research, interaction design, a cross-platform design system with design tokens, and accessibility (WCAG 2.1 AA). I validate direction through usability testing and rapid prototyping, work shoulder-to-shoulder with product, engineering, and compliance, and use AI tools for faster ideation and research synthesis. A foundation in illustration and motion gives me an edge in interaction detail and storytelling — <b style="color:var(--coral);font-weight:600;">I bring craft where it earns trust</b>.</p>
   </section>
 
   <!-- EXPERIENCE IN DEPTH -->
