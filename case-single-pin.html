@@ -121,6 +121,14 @@
   .rows .row .t{font-size:var(--step-3);line-height:1.5;}
 
   /* phase / two-col */
+  /* ownership — what I led vs. what partners decided */
+  .owner{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hairline);border:1px solid var(--hairline);border-radius:14px;overflow:hidden;margin-top:18px;}
+  .owner .oc{background:var(--paper-2);padding:20px 22px;}
+  .owner .ok{font-family:var(--mono);font-size:var(--step-1);letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;}
+  .owner ul{list-style:none;display:grid;gap:8px;}
+  .owner li{font-size:var(--step-2);line-height:1.5;padding-left:16px;position:relative;}
+  .owner li::before{content:"–";position:absolute;left:0;color:var(--ink-faint);}
+  @media(max-width:680px){.owner{grid-template-columns:1fr;}}
   .two{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:22px;}
   .phase{padding:22px;border:1px solid var(--hairline);border-radius:14px;background:var(--paper-2);}
   .phase .tag{font-family:var(--mono);font-size:var(--step-1);letter-spacing:.1em;text-transform:uppercase;color:var(--coral);}
@@ -252,6 +260,31 @@
       <div class="row"><span class="n">02</span><span class="t">Certain recovery states must block to the service desk: a security requirement, not a gap to design away.</span></div>
       <div class="row"><span class="n">03</span><span class="t">Migration had to happen for 300K+ live users with no disruptive forced reset, and all copy had to localise cleanly.</span></div>
     </div>
+
+    <h3 class="sub">My Role, and Who Decided What</h3>
+    <p class="body soft">I was the sole designer. The security architecture underneath was not mine to change, so most of the design work was finding the user experience that architecture allowed.</p>
+    <div class="owner">
+      <div class="oc"><div class="ok">I led</div><ul>
+        <li>Mapping all seven user states and single-PIN eligibility for each</li>
+        <li>The migration journey: happy and unhappy paths</li>
+        <li>Removing "smart card" from the interface, rather than renaming it</li>
+        <li>Redesigning the failure state after launch, including a new "incomplete" status</li>
+      </ul></div>
+      <div class="oc"><div class="ok">I worked out with partners</div><ul>
+        <li>Migration timing and batching, with the PM and mobile engineering</li>
+        <li>PIN storage and card sync, with mobile engineering</li>
+        <li>Upgrade sequencing and where certificate logic lives, with Security &amp; Compliance</li>
+      </ul></div>
+      <div class="oc"><div class="ok">Decided by others</div><ul>
+        <li>One PIN per certificate stays in the backend (security architecture)</li>
+        <li>Which recovery states block to the service desk</li>
+      </ul></div>
+      <div class="oc"><div class="ok">After handoff</div><ul>
+        <li>Design QA on builds before release</li>
+        <li>Watching the first migration batches with the service desk</li>
+        <li>Iterating once those batches surfaced the "try again" dead end</li>
+      </ul></div>
+    </div>
   </section>
 
   <!-- STRATEGY -->
@@ -319,6 +352,10 @@
     <h3 class="sub">The Migration Flow</h3>
     <p class="body">On renewal, users migrate to a single PIN seamlessly. The happy path is calm and legible: <b>log in → account updating → account active → wallet</b>. The unhappy path went through a real revision post-launch: the first version offered a "try again" button on failure, but retrying just re-ran the same failed process. The shipped version instead lets users continue into the wallet with the affected product marked <b>"incomplete,"</b> and finish the migration later from there. No dead end, and no button promising a fix that wasn't happening.</p>
 
+    <h3 class="sub">How I Validated It</h3>
+    <p class="body">Access to clients for testing was limited, so I validated the migration flow and the new language through internal user acceptance testing with the service desk team, the people who fielded PIN and "smart card" confusion every day.</p>
+    <p class="body soft">UAT caught a lot, but not everything: the broken "try again" state only surfaced once real accounts migrated in batches. That gap is exactly why I now watch the first live batch as closely as the design itself.</p>
+
     <h3 class="sub">The Rebrand, In Practice</h3>
     <p class="body soft">The word "smart card" disappears from every user-facing surface, replaced by "account." Underneath, the architecture doesn't change: each product is still tied to its own certificate (technically, a Level of Assurance certificate), and each certificate still holds its own PIN. What changes is what the user has to manage: instead of setting and remembering a separate PIN per smart card, they're guided to set the same PIN across every certificate they hold, so someone with three smart cards ends up with one PIN in practice, even though the backend still stores three. Anyone with genuinely separate accounts keeps a separate PIN per account: the consolidation happens within an account, not across them.</p>
 
@@ -337,6 +374,7 @@
 
     <h3 class="sub">Results</h3>
     <p class="body">A single PIN per account for 300K+ users, and a login that finally matches how people actually think about their identity — one email, one account, one PIN — with the technical scaffolding tucked safely out of sight.</p>
+    <p class="body soft">The number of users affected isn't proof of success, so here's what I can honestly evidence: the migration ran without a forced reset, and when the first batch exposed a broken failure state (5 support calls in the first 100 accounts), we caught it in that first batch and redesigned the failure state. I don't have an aggregate success metric for the full migration, so I don't claim one.</p>
 
     <h3 class="sub">Reflections</h3>
     <p class="body">The unhappy path didn't work the way I first designed it. My initial version gave users a "try again" button when migration failed, based on early conversations with engineering, but once it rolled out in batches, "try again" turned out to do nothing: it just re-ran the same failed process. Of the first 100 accounts migrated, 5 called customer support before we caught it. I redesigned the failure state so users could continue into the wallet with the affected product marked "incomplete" and finish migration later, introducing a new incomplete-status model that wasn't in the original scope. The same gap put me in real friction with our Security &amp; Compliance lead: my PO, tech lead, and I hadn't fully understood where certification logic actually lived in the architecture, and the upgrade sequencing had to be reworked because of it. The friction was fair, since we'd underestimated it going in. A multi-pseudonym / multi-device edge case can still cause PINs to diverge; solving it fully needs backend work in a future iteration. And "certificate," while clearer than "smart card," is still a compromise: ideally users would never need to see it at all.</p>

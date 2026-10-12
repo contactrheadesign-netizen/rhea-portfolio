@@ -121,6 +121,14 @@
   .rows .row .t{font-size:var(--step-3);line-height:1.5;}
 
   /* phase / two-col */
+  /* ownership — what I led vs. what partners decided */
+  .owner{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hairline);border:1px solid var(--hairline);border-radius:14px;overflow:hidden;margin-top:18px;}
+  .owner .oc{background:var(--paper-2);padding:20px 22px;}
+  .owner .ok{font-family:var(--mono);font-size:var(--step-1);letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;}
+  .owner ul{list-style:none;display:grid;gap:8px;}
+  .owner li{font-size:var(--step-2);line-height:1.5;padding-left:16px;position:relative;}
+  .owner li::before{content:"–";position:absolute;left:0;color:var(--ink-faint);}
+  @media(max-width:680px){.owner{grid-template-columns:1fr;}}
   .two{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:22px;}
   .phase{padding:22px;border:1px solid var(--hairline);border-radius:14px;background:var(--paper-2);}
   .phase .tag{font-family:var(--mono);font-size:var(--step-1);letter-spacing:.1em;text-transform:uppercase;color:var(--coral);}
@@ -210,15 +218,15 @@
     <p style="font-size:var(--step-2);line-height:1.5;color:var(--ink-faint);margin-top:14px;max-width:62ch;">Context: Digidentity is an eIDAS Qualified Trust Service Provider on the EU Trusted List, whose platform has created 25M+ verified identities across 180+ nationalities.</p>
 
     <div class="metagrid">
-      <div class="cell"><div class="k">Role</div><div class="v">Lead Product Designer<br><span style="font-weight:400;color:var(--ink-soft);font-size:var(--step-1);">with external design partner</span></div></div>
+      <div class="cell"><div class="k">Role</div><div class="v">Lead Product Designer<br><span style="font-weight:400;color:var(--ink-soft);font-size:var(--step-1);">external design partner in support</span></div></div>
       <div class="cell"><div class="k">Timeline</div><div class="v">Mid-2024 → 2026<br><span style="font-weight:400;color:var(--ink-soft);font-size:var(--step-1);">paused, restarted, shipped</span></div></div>
       <div class="cell"><div class="k">Platform</div><div class="v">iOS + Android<br><span style="font-weight:400;color:var(--ink-soft);font-size:var(--step-1);">responsive · + tablet</span></div></div>
-      <div class="cell"><div class="k">Impact</div><div class="v" style="color:var(--coral);">-<span class="count" data-to="60">0</span>% wrong-account logins<br><span style="font-weight:400;color:var(--ink-soft);font-size:var(--step-1);">Hidden icon → upfront carousel</span></div></div>
+      <div class="cell"><div class="k">Impact</div><div class="v" style="color:var(--coral);">-<span class="count" data-to="60">0</span>% wrong-account logins<br><span style="font-weight:400;color:var(--ink-soft);font-size:var(--step-1);">switching tickets → near zero</span></div></div>
     </div>
 
     <div class="resultbar">
       <span class="rk">Result</span>
-      <div class="rv">Wrong-account logins down <b>−60%</b> and successful multi-account switches up <b>+40%</b> since launch, across iOS, Android and tablet. <span class="src">Confirmed by the analytics team.</span></div>
+      <div class="rv">Support tickets from people who couldn't get into their other account dropped to <b>almost zero</b>. Wrong-account logins are down <b>−60%</b> and successful switches up <b>+40%</b> since launch. <span class="src">Zendesk tickets and product analytics.</span></div>
     </div>
 
     <div style="margin-top:34px;">
@@ -255,6 +263,32 @@
       <div class="row"><span class="n">01</span><span class="t">No direct user testing available: recruiting external users to test a regulated identity product isn't straightforward, so I had to validate another way.</span></div>
       <div class="row"><span class="n">02</span><span class="t">The design had to gracefully handle 8+ accounts, blocked and inactive states, dark mode, and tablet sizes.</span></div>
       <div class="row"><span class="n">03</span><span class="t">It had to feel native on both iOS and Android while staying consistent with Digidentity's existing component library.</span></div>
+    </div>
+
+    <h3 class="sub">My Role, and Who Decided What</h3>
+    <p class="body soft">I led this project end to end, with an external design partner supporting exploration and visual execution.</p>
+    <div class="owner">
+      <div class="oc"><div class="ok">I led</div><ul>
+        <li>Framing the problem and the five login scenarios</li>
+        <li>Three competing directions, prototyped</li>
+        <li>Cross-functional workshops and the structured survey</li>
+        <li>The final direction, and the case for it</li>
+        <li>Every state, plus iOS and Android specs and handoff</li>
+      </ul></div>
+      <div class="oc"><div class="ok">I worked out with partners</div><ul>
+        <li>Exploration and visual execution, with the external design partner</li>
+        <li>Pressure-testing directions with the CTO, PMs, developers and service desk</li>
+        <li>Feasibility and platform behaviour, with engineering</li>
+      </ul></div>
+      <div class="oc"><div class="ok">Decided by others</div><ul>
+        <li>Pausing and restarting the project (product prioritisation)</li>
+        <li>Apple's Liquid Glass, which reset the iOS visual standard mid-project</li>
+      </ul></div>
+      <div class="oc"><div class="ok">After handoff</div><ul>
+        <li>Design QA on builds before release</li>
+        <li>Resolving edge cases with engineering during development</li>
+        <li>Iterating after launch, leading into Phase 2 account icons</li>
+      </ul></div>
     </div>
   </section>
 
@@ -323,7 +357,9 @@
     <div class="sechead"><span class="dash"></span><h2>The <em>Conclusion</em></h2></div>
 
     <h3 class="sub">Results</h3>
-    <p class="body">Since launch, wrong-account login attempts are down <b>60%</b> and successful multi-account switches are up <b>40%</b>, both confirmed by the analytics team. Worth noting: many users only open the app once a year around tax season, so logging into the wrong account wasn't just an annoyance, it was a real blocking problem. The redesign puts every account in front of the user from the first second, on a product where logging into the right identity actually matters.</p>
+    <p class="body">Before the redesign, the service desk regularly received Zendesk tickets from people who didn't know how to log into another account. Since launch, that ticket category has dropped to <b>almost zero</b>. Product analytics tell the same story: wrong-account login attempts are down <b>60%</b>, and successful multi-account switches are up <b>40%</b>.</p>
+    <p class="body soft">I can't isolate the redesign from every other change in the app. But the drop came in exactly the complaint the carousel was designed to remove, and that's the clearest signal I have that it was the cause.</p>
+    <p class="body"> Worth noting: many users only open the app once a year around tax season, so logging into the wrong account wasn't just an annoyance, it was a real blocking problem. The redesign puts every account in front of the user from the first second, on a product where logging into the right identity actually matters.</p>
 
     <h3 class="sub">Future Development</h3>
     <p class="body">This is Phase 1 of a longer arc. Phase 2 introduces customisable account icons, so multi-account users can recognise accounts at a glance, moving the product from "functional" to genuinely personal.</p>
@@ -334,7 +370,7 @@
 
     <h3 class="sub">Collaborators</h3>
     <div class="collab-tags">
-      <span class="tag">External design partner · co-designer</span>
+      <span class="tag">External design partner · exploration &amp; visuals</span>
       <span class="tag">CTO · workshop</span>
       <span class="tag">Product · prioritisation</span>
       <span class="tag">Service Desk · support insight</span>
@@ -347,9 +383,9 @@
   <nav class="nextcase" aria-label="Next case study">
     <div>
       <div class="label2">Next case →</div>
-      <p style="font-weight:700;font-size:clamp(var(--step-4),3vw,var(--step-5));letter-spacing:-.02em;margin-top:6px;">One account, <em style="font-family:var(--serif);font-style:italic;font-weight:500;color:var(--coral);">one PIN</em></p>
+      <p style="font-weight:700;font-size:clamp(var(--step-4),3vw,var(--step-5));letter-spacing:-.02em;margin-top:6px;">Bringing <em style="font-family:var(--serif);font-style:italic;font-weight:500;color:var(--coral);">NFC ID verification</em> in-house</p>
     </div>
-    <a class="btn btn-coral" href="case-single-pin.html">Read next case →</a>
+    <a class="btn btn-coral" href="case-nfc-id-flow.html">Read next case →</a>
   </nav>
 
   <footer>

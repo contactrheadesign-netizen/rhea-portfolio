@@ -1,2 +1,4 @@
 .vercel
 case-design-system.src.html
+.claude/
+.og-src/

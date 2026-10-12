@@ -188,12 +188,28 @@
   .wd-card{scroll-snap-align:start;background:transparent;border-radius:18px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;}
   .wd-art{position:relative;overflow:hidden;aspect-ratio:886/1064;display:flex;align-items:center;justify-content:center;border-radius:18px 18px 0 0;}
   .wd-art::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.08);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;transition:opacity .3s;z-index:2;border-radius:18px 18px 0 0;}
-  .wd-art img{transition:transform .4s;}
+  .wd-art img,.wd-art video{transition:transform .4s;}
+  .wd-art video{width:100%;height:100%;object-fit:cover;object-position:top;display:block;}
+  .wd-card:hover .wd-art video{transform:scale(1.08);}
   .wd-card:hover .wd-art::after{opacity:1;}
   .wd-card:hover .wd-art img{transform:scale(1.08);}
   .wd-art img{width:100%;height:100%;object-fit:cover;object-position:top;}
   .wd-card-bottom{background:var(--paper-2);padding:22px 24px 18px;display:flex;flex-direction:column;border-radius:0 0 18px 18px;}
   .wd-headline{font-family:var(--grotesque);font-style:normal;font-weight:600;font-size:clamp(var(--step-4),2.2vw,var(--step-5));line-height:1.12;letter-spacing:-.01em;color:var(--ink);}
+  /* proof strip — evidence near the top, each linking to its case */
+  .proof{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline);border-radius:16px;overflow:hidden;margin-top:56px;}
+  .proof a{background:var(--paper-2);padding:22px 24px 20px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:10px;transition:background .2s;}
+  .proof a:hover{background:var(--paper);}
+  .proof .pn{font-family:var(--grotesque);font-weight:700;font-size:clamp(34px,4vw,48px);letter-spacing:-.03em;line-height:1;color:var(--coral);font-variant-numeric:tabular-nums;}
+  .proof .pt{font-size:var(--step-3);line-height:1.5;color:var(--ink-soft);text-wrap:pretty;}
+  .proof .pc{margin-top:auto;font-family:var(--mono);font-size:var(--step-1);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);}
+  .proof a:hover .pc{color:var(--coral);}
+  @media(max-width:820px){.proof{grid-template-columns:1fr;margin-top:40px;}}
+  /* card problem + result lines */
+  .wd-sub{font-size:var(--step-2);line-height:1.5;color:var(--ink-soft);margin-top:10px;text-wrap:pretty;}
+  .wd-res{font-family:var(--mono);font-size:var(--step-1);letter-spacing:.06em;text-transform:uppercase;color:var(--coral);margin-top:12px;margin-bottom:14px;}
+  .wd-card-bottom{flex:1;}
+  .wd-card-bottom .wd-cta{margin-top:auto;}
   .wd-cta{display:inline-flex;align-items:center;gap:8px;font-family:var(--grotesque);font-size:clamp(var(--step-1),1.2vw,var(--step-2));letter-spacing:.04em;text-transform:uppercase;color:var(--coral);font-weight:600;margin-top:12px;align-self:flex-end;text-decoration:none;}
   .wd-cta .arr{transition:transform .2s;}
   .wd-card:hover .wd-cta .arr{transform:translateX(3px);}
@@ -361,12 +377,30 @@
       <div class="kicker"><span class="dash"></span><span class="label">SENIOR PRODUCT DESIGNER</span></div>
       <h1>I design products people can use<br><span class="it coral">without a second&nbsp;thought</span><span class="dot">.</span></h1>
       <div class="hero-foot">
-        <p class="lead">I'm Rhea — a senior product designer, and the sole designer across iOS, Android and web for a regulated platform that has created 25M+ verified identities across 180+ nationalities. I take security-heavy systems — verification, recovery, authentication — and make each step clear enough to follow the first time: intuitive UI, effortless UX, and plain-language guidance that holds up across 8 languages.</p>
+        <p class="lead">I'm Rhea, a senior product designer and the sole designer at Digidentity, a regulated identity platform that has created 25M+ verified identities across 180+ nationalities. I lead product design across iOS, Android and web, working with product, engineering, security and compliance to turn security-heavy requirements (verification, recovery, authentication) into flows people can follow the first time, in 8 languages.</p>
         <div class="actions">
           <a href="#work" class="btn btn-coral">View selected work →</a>
           <a href="#contact" class="link-tert">Get in touch</a>
         </div>
       </div>
+    </div>
+
+    <div class="proof" aria-label="Selected outcomes">
+      <a href="case-account-recovery.html">
+        <span class="pn">86%</span>
+        <span class="pt">of users recovered their account without calling the service desk in the first month after launch, up from 0%.</span>
+        <span class="pc">Account Recovery →</span>
+      </a>
+      <a href="case-account-switcher.html">
+        <span class="pn">≈0</span>
+        <span class="pt">support tickets about switching accounts, and 60% fewer wrong-account logins.</span>
+        <span class="pc">Account Switcher →</span>
+      </a>
+      <a href="case-nfc-id-flow.html">
+        <span class="pn">−80%</span>
+        <span class="pt">UI-related errors in an in-house ID scan, tracked across 210K+ live sessions.</span>
+        <span class="pc">NFC ID Verification →</span>
+      </a>
     </div>
   </section>
 
@@ -407,6 +441,8 @@
           </div>
           <div class="wd-card-bottom">
             <h3 class="wd-headline">Getting users back into their own identity</h3>
+            <p class="wd-sub">Four fragmented, web-only flows became one self-serve native journey, without loosening security.</p>
+            <p class="wd-res">86% self-serve · up from 0%</p>
             <span class="wd-cta">READ <span class="arr">&rarr;</span></span>
           </div>
         </a>
@@ -418,6 +454,8 @@
           </div>
           <div class="wd-card-bottom">
             <h3 class="wd-headline">Bringing hidden accounts into view</h3>
+            <p class="wd-sub">A hidden, unlabelled switch icon became an upfront account carousel at login.</p>
+            <p class="wd-res">Switching tickets → near zero</p>
             <span class="wd-cta">READ <span class="arr">&rarr;</span></span>
           </div>
         </a>
@@ -425,10 +463,12 @@
         <!-- Card 3: NFC ID Flow (animation) -->
         <a class="wd-card" href="case-nfc-id-flow.html">
           <div class="wd-art" style="background:#5090A8;">
-            <img loading="lazy" decoding="async" src="Passport_gif.gif" alt="NFC ID Flow animation">
+            <video src="thumb-nfc-passport.mp4" poster="thumb-nfc-passport-poster.webp" autoplay muted loop playsinline preload="metadata" aria-label="NFC ID Flow animation"></video>
           </div>
           <div class="wd-card-bottom">
             <h3 class="wd-headline">Animating the way through an ID scan</h3>
+            <p class="wd-sub">Replacing a third-party NFC SDK with an owned, guided scan for passport, ID and licence.</p>
+            <p class="wd-res">−80% UI errors · −25% abandonment</p>
             <span class="wd-cta">READ <span class="arr">&rarr;</span></span>
           </div>
         </a>
@@ -440,12 +480,14 @@
           </div>
           <div class="wd-card-bottom">
             <h3 class="wd-headline">Consolidating every PIN into one</h3>
+            <p class="wd-sub">One PIN per account for 300K+ wallet users, migrated without a forced reset.</p>
+            <p class="wd-res">Shipped iOS + Android · jargon removed</p>
             <span class="wd-cta">READ <span class="arr">&rarr;</span></span>
           </div>
         </a>
 
-        <!-- Card: V7 Design System (placeholder thumbnail · gated) -->
-        <a class="wd-card" href="case-design-system.html">
+        <!-- Card: V7 Design System — hidden until the case study is public (remove this comment wrapper to restore)
+                <a class="wd-card" href="case-design-system.html">
           <div class="wd-art" style="background:#c9952b;">
             <img loading="lazy" decoding="async" src="thumb-design-system.svg" alt="V7 design system — cross-platform components">
           </div>
@@ -454,6 +496,7 @@
             <span class="wd-cta">READ <span class="arr">&rarr;</span></span>
           </div>
         </a>
+        -->
 
       </div>
 
@@ -498,11 +541,12 @@
       </div>
     </div>
     <div class="strengths">
-      <span class="lbl">What I bring</span>
+      <span class="lbl">How that shows up in the work</span>
       <ul>
-        <li>Regulated digital identity depth: eIDAS, qualified electronic signatures, eHerkenning, and the EU Digital Identity Wallet. Fluent in the compliance logic, not just the screens.</li>
-        <li>Evidence-led decisions under real constraints. When external user testing isn't possible, I validate direction through structured surveys and stakeholder research.</li>
-        <li>An illustration and motion background I bring into product, from instructional scan animations to a design system that holds across three platforms and eight languages.</li>
+        <li><b>Product thinking.</b> I phase work to match real capacity, like fixing web recovery first while the native flow was built, and I validate direction with surveys and workshops when user testing isn't possible.</li>
+        <li><b>Interaction design for complex flows.</b> Five recovery scenarios routed into three clear paths, and error states that always offer a next step, supported by my illustration and motion background.</li>
+        <li><b>Systems thinking.</b> I own the design system across iOS, Android and web, and build features as reusable patterns, like one scan pattern for three document types.</li>
+        <li><b>Technical and regulatory collaboration.</b> Fluent in eIDAS, eHerkenning and qualified signatures. I work through specs, edge cases and design QA with engineering, security and compliance.</li>
       </ul>
     </div>
   </section>
@@ -707,6 +751,12 @@ if(cvS){
   },{threshold:.2});
   cards.forEach(function(c){io.observe(c);});
 })();
+</script>
+<script>
+  /* reduced motion: hold looping card videos on their poster frame */
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.querySelectorAll('.wd-art video').forEach(function(v){v.removeAttribute('autoplay');v.pause();});
+  }
 </script>
 </body>
 </html>

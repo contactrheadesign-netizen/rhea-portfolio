@@ -123,6 +123,14 @@
   .rows .row .t{font-size:var(--step-3);line-height:1.5;}
 
   /* phase / two-col */
+  /* ownership — what I led vs. what partners decided */
+  .owner{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hairline);border:1px solid var(--hairline);border-radius:14px;overflow:hidden;margin-top:18px;}
+  .owner .oc{background:var(--paper-2);padding:20px 22px;}
+  .owner .ok{font-family:var(--mono);font-size:var(--step-1);letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;}
+  .owner ul{list-style:none;display:grid;gap:8px;}
+  .owner li{font-size:var(--step-2);line-height:1.5;padding-left:16px;position:relative;}
+  .owner li::before{content:"–";position:absolute;left:0;color:var(--ink-faint);}
+  @media(max-width:680px){.owner{grid-template-columns:1fr;}}
   .two{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:22px;}
   .phase{padding:22px;border:1px solid var(--hairline);border-radius:14px;background:var(--paper-2);}
   .phase .tag{font-family:var(--mono);font-size:var(--step-1);letter-spacing:.1em;text-transform:uppercase;color:var(--coral);}
@@ -211,20 +219,20 @@
   <!-- HERO -->
   <section class="chero">
     <div class="kicker"><span class="dash"></span><span class="label">CASE STUDY · DIGITAL IDENTITY</span></div>
-    <h1 class="case">Giving users back control of their <em>digital identity</em></h1>
-    <p class="lead">I redesigned Digidentity's account recovery — the flow people hit at their most vulnerable moment with the product — from a fragmented, web-only experience full of dead ends into a self-serve native mobile journey that works across 8 languages.</p>
+    <h1 class="case">Getting locked-out users back in, <em>without the service desk</em></h1>
+    <p class="lead">When people lost access to their digital identity, every recovery ended with a call to the service desk. I redesigned four fragmented, web-only flows into one self-serve native journey that routes five recovery scenarios safely, without loosening the security rules underneath.</p>
     <p style="font-size:var(--step-2);line-height:1.5;color:var(--ink-faint);margin-top:14px;max-width:62ch;">Context: Digidentity is an eIDAS Qualified Trust Service Provider on the EU Trusted List, whose platform has created 25M+ verified identities across 180+ nationalities.</p>
 
     <div class="metagrid">
       <div class="cell"><div class="k">Role</div><div class="v">Lead Product Designer<br><span style="font-weight:400;color:var(--ink-soft);font-size:var(--step-1);">Sole designer</span></div></div>
       <div class="cell"><div class="k">Timeline</div><div class="v">Early 2025 → ongoing<br><span style="font-weight:400;color:var(--ink-soft);font-size:var(--step-1);">phased delivery</span></div></div>
       <div class="cell"><div class="k">Platform</div><div class="v">Web → iOS + Android<br><span style="font-weight:400;color:var(--ink-soft);font-size:var(--step-1);">responsive · 8 languages</span></div></div>
-      <div class="cell"><div class="k">Impact</div><div class="v" style="color:var(--coral);"><span class="count" data-to="99">0</span>% self-serve<br><span style="font-weight:400;color:var(--ink-soft);font-size:var(--step-1);">5 scenarios → 1 native flow</span></div></div>
+      <div class="cell"><div class="k">Impact</div><div class="v" style="color:var(--coral);"><span class="count" data-to="86">0</span>% self-serve<br><span style="font-weight:400;color:var(--ink-soft);font-size:var(--step-1);">5 scenarios → 1 native flow</span></div></div>
     </div>
 
     <div class="resultbar">
       <span class="rk">Result</span>
-      <div class="rv">Self-serve recovery went from <b>0 → 99%</b> — the web fix first lifted it to <b>40%</b>, the fully native flow took it to <b>99%</b>, across web, iOS and Android. <span class="src">Both figures confirmed by the service desk.</span></div>
+      <div class="rv"><b>86%</b> of users now recover their account without calling the service desk, up from <b>0%</b>, when every recovery went through support. <span class="src">First month after launch, Sep–Oct 2026 · reported by the service desk.</span></div>
     </div>
 
     <div class="hplate" style="background:#7A101C;display:flex;align-items:center;justify-content:center;">
@@ -260,6 +268,33 @@
       <div class="row"><span class="n">03</span><span class="t">PIN attempt counts are deliberately never disclosed to users.</span></div>
       <div class="row"><span class="n">04</span><span class="t">All copy has to work across 8 languages: short, modular, and translation-safe.</span></div>
     </div>
+
+    <h3 class="sub">My Role, and Who Decided What</h3>
+    <p class="body soft">I was the only designer on this project, but recovery in a regulated product is a team decision. Here's where my ownership ended and my partners' began.</p>
+    <div class="owner">
+      <div class="oc"><div class="ok">I led</div><ul>
+        <li>The audit of four existing flows and five recovery scenarios</li>
+        <li>The phasing proposal: fix the web flow first, then go native</li>
+        <li>End-to-end flow, routing logic and every screen, iOS and Android</li>
+        <li>Failure and safety-net states, and all copy for 8 languages</li>
+      </ul></div>
+      <div class="oc"><div class="ok">I worked out with partners</div><ul>
+        <li>Routing rules for each credential level, with Security &amp; Compliance</li>
+        <li>Scope and release order, with the PM</li>
+        <li>Feasibility and rollout, with engineering</li>
+        <li>Scenario and edge-case coverage, with QA</li>
+      </ul></div>
+      <div class="oc"><div class="ok">Decided by others</div><ul>
+        <li>When biometrics vs. a document upload is required (Security)</li>
+        <li>Which failure states must escalate to the service desk</li>
+        <li>That PIN attempt counts are never shown to users</li>
+      </ul></div>
+      <div class="oc"><div class="ok">After handoff</div><ul>
+        <li>Design QA on builds before release</li>
+        <li>Resolving edge cases with engineering during development</li>
+        <li>Iterating on states once the flow was live</li>
+      </ul></div>
+    </div>
   </section>
 
   <!-- STRATEGY -->
@@ -282,6 +317,13 @@
     <div style="margin:32px 0 32px;">
       <div style="font-family:var(--mono);font-size:var(--step-1);letter-spacing:.1em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;">Complaints &amp; dead ends</div>
       <img loading="lazy" decoding="async" src="complains.webp" alt="Complaints — fragmented flows with dead ends and web to mobile handoffs annotated" style="width:100%;border-radius:10px;display:block;">
+    </div>
+
+    <h3 class="sub">Options I Weighed</h3>
+    <div class="rows">
+      <div class="row"><span class="n">A</span><span class="t"><b>Patch the web flow and stop there.</b> Fast to build, but most users are mobile-first and would still bounce between app and web.</span></div>
+      <div class="row"><span class="n">B</span><span class="t"><b>A big-bang native rebuild.</b> The right end state, but users would wait months with no improvement at all.</span></div>
+      <div class="row"><span class="n">C</span><span class="t"><b>Fix the web now, build native properly next.</b> Chosen: an immediate fix within engineering capacity, without compromising the long-term solution.</span></div>
     </div>
 
     <h3 class="sub">A Phased Approach</h3>
@@ -357,6 +399,10 @@
       <img loading="lazy" decoding="async" src="fig05-recovery-safetynet.webp" alt="Recovery status states — account and product active, versus account active with a product unable to activate and marked incomplete" style="width:100%;border-radius:10px;display:block;">
     </div>
 
+    <h3 class="sub">How I Validated It</h3>
+    <p class="body">Getting clients into testing sessions for a regulated identity product was hard, so I ran user acceptance testing internally with the service desk team. They were the right proxy: before the redesign they had handled every recovery by hand, so they knew exactly where people got stuck and which scenarios broke.</p>
+    <p class="body soft">It's not the same as watching real users recover their accounts, and I treat it that way. The service desk's post-launch reporting is what confirmed the flow worked in the wild.</p>
+
     <h3 class="sub">Design System &amp; Accessibility</h3>
     <p class="body">Built on Digidentity's native component library for consistency across the app: the recovery screens share the same visual language as the rest of the product. Every screen has a clear hierarchy so users always know what's happening, why, and what to do next, and all copy was written short and modular to localise cleanly across 8 languages.</p>
   </section>
@@ -366,10 +412,18 @@
     <div class="sechead"><span class="dash"></span><h2>The <em>Conclusion</em></h2></div>
 
     <h3 class="sub">Results</h3>
-    <p class="body">Before this project, recovery had no self-serve path at all: every case went through the service desk. The phased rollout changed that in two steps: stabilising the web flow first lifted self-serve success to <b>40%</b>, limited because most users are mobile-first and the fix hadn't reached them yet. Moving to a fully native mobile flow then pushed it to <b>99%</b>, both figures confirmed directly by the service desk team. Recovery now resolves independently for the vast majority of users, across iOS and Android.</p>
+    <p class="body">Before this project, recovery had no self-serve path at all: every case went through the service desk. In the first month after the native flow launched, <b>86%</b> of users who went through recovery completed it themselves, without calling support.</p>
+    <div class="rows">
+      <div class="row"><span class="n">What</span><span class="t">Share of users going through recovery who finish without contacting the service desk</span></div>
+      <div class="row"><span class="n">Baseline</span><span class="t">0%: before the redesign there was no self-serve route, so every recovery became a support case</span></div>
+      <div class="row"><span class="n">Period</span><span class="t">September to October 2026, the first month after launch</span></div>
+      <div class="row"><span class="n">Source</span><span class="t">Reported by the service desk team, who handled every recovery before the redesign</span></div>
+    </div>
+    <p class="body soft" style="margin-top:18px;">100% was never the target. Some failure states route to the service desk on purpose as a security control, so part of the remaining group is the system working as intended. One month is an early signal, not a settled result, so I'm continuing to track it.</p>
 
     <h3 class="sub">Reflections</h3>
     <p class="body">I'd involve engineering earlier in the mobile phase: some technical constraints surfaced late. And I'd lock the smart-card assurance and authorisation requirements with the security team up front; getting that clarity earlier would have saved significant rework and reached the right solution faster.</p>
+    <p class="body soft">Next, I'd want in-app measurement on each of the three routes, to see exactly where the remaining users leave for the service desk, and whether those exits are intended security escalations or friction we can still design out.</p>
 
     <h3 class="sub">Collaborators</h3>
     <p class="body soft">A cross-functional effort across the team. I credit each partner by role:</p>
